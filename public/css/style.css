@@ -1,0 +1,32 @@
+footer{
+    color:#9dd1f2;
+    background: black;
+    /* margin-top: 21vh; */
+
+ }
+ footer a{
+    color:#9dd1f2;
+ }
+ 
+ footer a:hover{
+     background:white;
+     color: black;
+     text-transform: uppercase;
+     text-decoration: none;
+ }
+ section{
+    margin: 40px;   
+}
+.card{
+    margin:10px;
+    background: #f8f9f7;
+}
+
+section h5{
+    color:#59aaec;
+}
+
+header nav div a:hover{
+   border-bottom: 3px solid rgb(91, 165, 207);
+   
+}
