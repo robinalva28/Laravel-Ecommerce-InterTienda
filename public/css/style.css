@@ -3,7 +3,7 @@ html {
     position: relative;
 }
 body {
-    margin: 0;
+    margin: 0 auto;
     margin-bottom: 25vh;
 }
 footer {
@@ -14,7 +14,9 @@ footer {
     bottom: 0;
     width: 100%;
     height: 25vh;
+
     color: white;
+
 }
 
 

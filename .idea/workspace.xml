@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../resources/views/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/faq.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../public/DER_ecomerce_equipo8.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../public/UML_SPRINT_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/cat_otros.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/cat_tecno.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/cat_vestimenta.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/perfil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/head.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +151,7 @@
       <updated>1581355737276</updated>
       <workItem from="1581355741419" duration="731000" />
       <workItem from="1581458704666" duration="2038000" />
-      <workItem from="1581460845393" duration="7897000" />
+      <workItem from="1581460845393" duration="13242000" />
     </task>
     <servers />
   </component>
@@ -151,10 +159,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="778" y="445" width="354" height="147" key="NewPhpFileDialog" timestamp="1581468977268">
+    <state x="778" y="445" width="354" height="147" key="NewPhpFileDialog" timestamp="1581470222101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="778" y="445" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581468977268" />
+    <state x="778" y="445" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581470222101" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1581466850781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

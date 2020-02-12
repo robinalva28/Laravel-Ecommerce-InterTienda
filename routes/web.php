@@ -33,3 +33,16 @@ Route::get('/faq', function(){
 Route::get('/contact', function(){
     return view('contact');
 });
+Route::get('/cat_otros', function(){
+    return view('cat_otros');
+});
+Route::get('/cat_tecno', function(){
+    return view('cat_tecno');
+});
+Route::get('/cat_vestimenta', function(){
+    return view('cat_vestimenta');
+});
+Route::get('/perfil', function(){
+    return view('perfil');
+});
+
