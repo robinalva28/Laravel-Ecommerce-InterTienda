@@ -47,7 +47,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Tecnologia</h5>
                             <p class="card-text">Cualquier equipo tecnologico que quieras comprar</p>
-                            <a href="cat_tecno.php" class="btn btn-primary">Ir</a>
+                            <a href="cat_tecno" class="btn btn-primary">Ir</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Vestimenta</h5>
                             <p class="card-text">Cualquier ropa o calzado que quieras comprar</p>
-                            <a href="cat_vestimenta.php" class="btn btn-primary">Ir</a>
+                            <a href="cat_vestimenta" class="btn btn-primary">Ir</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Otros + Servicios</h5>
                             <p class="card-text">Otros productos mas servicios ofrecidos</p>
-                            <a href="cat_otros.php" class="btn btn-primary">Ir</a>
+                            <a href="cat_otros" class="btn btn-primary">Ir</a>
                         </div>
                     </div>
                 </div>

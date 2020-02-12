@@ -22,23 +22,23 @@
         <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav ml-auto ">
                 <li class="nav-item active ">
-                    <a class="nav-link" href="index.php">PRINCIPAL</a>
+                    <a class="nav-link" href="index">PRINCIPAL</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">INGRESAR</a>
+                    <a class="nav-link" href="login">INGRESAR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.php">REGISTRAR</a>
+                    <a class="nav-link" href="register">REGISTRAR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="faq.php">F.A.Q.</a>
+                    <a class="nav-link" href="faq">F.A.Q.</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">CONTACTO</a>
+                    <a class="nav-link" href="contact">CONTACTO</a>
                 </li>
 
                 <li>
-                    <a class="nav-link" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="nav-link" href="carrito"><i class="fas fa-shopping-cart"></i></a>
 
                 </li>
             </ul>

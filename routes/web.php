@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('inicio');
 });
 
-Route::get('/inicio', function(){
+Route::get('/index', function(){
     return view('inicio');
+});
+Route::get('/carrito', function(){
+    return view('carrito');
+});
+Route::get('/login', function(){
+    return view('login');
 });

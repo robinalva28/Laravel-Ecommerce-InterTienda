@@ -1,13 +1,27 @@
-footer{
-    color:#9dd1f2;
-    background: black;
+html {
+    min-height: 100%;
+    position: relative;
+}
+body {
+    margin: 0;
+    margin-bottom: 25vh;
+}
+footer {
+    color: #9dd1f2;
     /* margin-top: 21vh; */
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25vh;
+    color: white;
+}
 
- }
+
  footer a{
     color:#9dd1f2;
  }
- 
+
  footer a:hover{
      background:white;
      color: black;
@@ -15,7 +29,7 @@ footer{
      text-decoration: none;
  }
  section{
-    margin: 40px;   
+    margin: 40px;
 }
 .card{
     margin:10px;
@@ -28,5 +42,5 @@ section h5{
 
 header nav div a:hover{
    border-bottom: 3px solid rgb(91, 165, 207);
-   
+
 }
