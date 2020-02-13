@@ -7,6 +7,7 @@ body {
     margin-bottom: 25vh;
 }
 footer {
+    margin-bottom: -5px;
     color: #9dd1f2;
     /* margin-top: 21vh; */
     background-color: black;

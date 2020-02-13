@@ -18,13 +18,13 @@
 
                 <!-- Name -->
                 <div class="md-form mt-3">
-                    <input type="text" id="materialContactFormName" class="form-control" placeholder="Escriba su nombre">
+                    <input type="text" id="materialContactFormName" class="form-control" placeholder="Nombre">
                     <label for="materialContactFormName"></label>
                 </div>
 
                 <!-- E-mail -->
                 <div class="md-form">
-                    <input type="email" id="materialContactFormEmail" class="form-control" placeholder="Escriba su correo electrónico">
+                    <input type="email" id="materialContactFormEmail" class="form-control" placeholder="Correo electrónico">
                     <label for="materialContactFormEmail"></label>
                 </div>
 

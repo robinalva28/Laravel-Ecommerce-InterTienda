@@ -27,6 +27,9 @@ Route::get('/login', function(){
 Route::get('/register', function(){
     return view('register');
 });
+######### ADD REGISTER #########
+Route::post('/register/add', "UsuariosController@add");
+
 Route::get('/faq', function(){
     return view('faq');
 });
