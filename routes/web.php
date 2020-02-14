@@ -29,13 +29,15 @@ Route::get('/register', function(){
 });
 ######### ADD REGISTER #########
 Route::post('/register/add', "UsuariosController@add");
-
+######## PREG FRECUENTES #########
 Route::get('/faq', function(){
     return view('faq');
 });
+######## FORM CONTACT ###########
 Route::get('/contact', function(){
     return view('contact');
 });
+######### CATEGORIAS DE LOS PRODUCTOS #######
 Route::get('/cat_otros', function(){
     return view('cat_otros');
 });
@@ -45,6 +47,7 @@ Route::get('/cat_tecno', function(){
 Route::get('/cat_vestimenta', function(){
     return view('cat_vestimenta');
 });
+####### PERFIL #######
 Route::get('/perfil', function(){
     return view('perfil');
 });

@@ -4,7 +4,13 @@
 
 <div class="container">
 
-
+    <ul class="errores">
+        @foreach($errors->all() as $error)
+            <li>
+                {{$error}}
+            </li>
+        @endforeach
+    </ul>
     <form action="register/add" method="POST" enctype="multipart/form-data">
         @csrf
         <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
@@ -58,7 +64,9 @@
             <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-2 col-lg-2 mt-4">Registrar</button>
         </div>
 
+
     </form>
+
 
 </div>
 
