@@ -6,6 +6,9 @@ body {
     margin: 0 auto;
     margin-bottom: 25vh;
 }
+#footer{
+background-color: black;
+}
 footer {
     margin-bottom: -5px;
     color: #9dd1f2;

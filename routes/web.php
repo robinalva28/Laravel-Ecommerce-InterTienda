@@ -24,7 +24,7 @@ Route::get('/carrito', function(){
 Route::get('/login', function(){
     return view('login');
 });
-Route::get('/register', function(){
+Route::get('/registe', function(){
     return view('register');
 });
 ######### ADD REGISTER #########
@@ -52,3 +52,7 @@ Route::get('/perfil', function(){
     return view('perfil');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -28,7 +28,7 @@
                 <input type="checkbox" id="checkbox" name="recordarUsuario">
             </div>
         </div>
-        <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1  mt-5">Iniciar</button>
+        <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1 mb-5 mt-5">Iniciar</button>
     </form>
     <!-- VALIDACIONES -->
 

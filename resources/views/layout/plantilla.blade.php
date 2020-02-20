@@ -54,7 +54,7 @@
 <footer class="page-footer font-small blue mt-auto">
     ​
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
+    <div id="footer" class="container-fluid text-center text-md-left">
 
         <!-- Grid row -->
         <div class="row">

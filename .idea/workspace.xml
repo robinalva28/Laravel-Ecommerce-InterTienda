@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Usuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
@@ -146,6 +152,14 @@
       <workItem from="1581460845393" duration="13798000" />
       <workItem from="1581556110024" duration="9715000" />
       <workItem from="1581614282470" duration="1310000" />
+      <workItem from="1581637314959" duration="4029000" />
+      <workItem from="1581719323761" duration="307000" />
+      <workItem from="1581771562602" duration="1672000" />
+      <workItem from="1581961341330" duration="3510000" />
+      <workItem from="1581965802104" duration="2750000" />
+      <workItem from="1581985459141" duration="3529000" />
+      <workItem from="1582066869212" duration="2207000" />
+      <workItem from="1582225252492" duration="2920000" />
     </task>
     <servers />
   </component>
@@ -153,6 +167,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581719629413">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581719629413" />
     <state x="231" y="71" width="476" height="886" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581560737285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
