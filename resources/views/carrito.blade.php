@@ -1,5 +1,7 @@
 @extends('layout.plantilla')
 
+@section('title', 'Carrito')
+
 @section("contenido")
 <div class="container d-flex flex-column h-100 mt-5">
     <table class="table table-hover">

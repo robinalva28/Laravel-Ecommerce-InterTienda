@@ -1,5 +1,5 @@
 @extends('layout.plantilla')
-
+@section('title', 'Registro')
 @section('contenido')
 
 {{--@extends('layouts.app')--}}
@@ -19,7 +19,7 @@
                             <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nombre" type="text" class="form-control @error('nombre') is-invalid @enderror" name="nombre" value="{{ old('nombre') }}" required autocomplete="name" autofocus>
+                                <input id="nombre" type="text" class="form-control @error('nombre') is-invalid @enderror" name="usrNombre" value="{{ old('usrNombre') }}" required autocomplete="name" autofocus>
 
                                 @error('nombre')
                                     <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
                             <label for="apellido" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
 
                             <div class="col-md-6">
-                                <input id="apellido" type="text" class="form-control @error('apellido') is-invalid @enderror" name="apellido" value="{{ old('apellido') }}" required autocomplete="apellido" autofocus>
+                                <input id="apellido" type="text" class="form-control @error('apellido') is-invalid @enderror" name="apellido" value="{{ old('usrApellido') }}" required autocomplete="apellido" autofocus>
 
                                 @error('apellido')
                                 <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                             <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
-                                <input id="celular" type="text" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{ old('celular') }}" required autocomplete="email">
+                                <input id="celular" type="text" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{ old('usrCelular') }}" required autocomplete="email">
 
                                 @error('celular')
                                 <span class="invalid-feedback" role="alert">
@@ -146,7 +146,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Registrar') }}
                                 </button>
                             </div>

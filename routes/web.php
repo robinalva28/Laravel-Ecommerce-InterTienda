@@ -47,6 +47,9 @@ Route::get('/cat_tecno', function(){
 Route::get('/cat_vestimenta', function(){
     return view('cat_vestimenta');
 });
+###### admin producto
+Route::get('adminProductos' ,'ProductosController@index');
+Route::get('/formAgregarProducto', 'ProductosController@create');
 ####### PERFIL #######
 Route::get('/perfil', function(){
     return view('perfil');

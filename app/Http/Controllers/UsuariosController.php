@@ -32,10 +32,10 @@ class UsuariosController extends Controller
             "unique" => "El campo :attribute ya existe",
             "required" => "El campo :attribute es requerido"
         ];
-        if($req['usrPassword'] !=$req['pass']){
+       /* if($req['usrPassword'] !=$req['pass']){
            $errors = "las contraseñas no coinciden";
 
-        }
+        }*/
 
 
        /* try {*/

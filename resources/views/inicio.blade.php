@@ -1,5 +1,8 @@
 @extends("layout.plantilla")
 
+@section('title', 'InterTienda')
+
+
 @section('contenido')
 
     <!-- CARRUSEL -->
@@ -34,7 +37,7 @@
         <!--QUIENES SOMOS-->
 
         <!-- CARDS -->
-        {{--<div class="container container-fluid">
+        <div class="container container-fluid">
 
 
             <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
@@ -80,7 +83,7 @@
 
             </div>
         </div>
-        <!-- CARDS -->--}}
+        <!-- CARDS -->
     </div>
 
 

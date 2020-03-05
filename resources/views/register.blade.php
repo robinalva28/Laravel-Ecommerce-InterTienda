@@ -1,4 +1,4 @@
-@extends("layout.plantilla")
+{{--@extends("layout.plantilla")
 
 @section('contenido')
 
@@ -70,7 +70,7 @@
         @endif
 
         <div class="form-group row">
-            <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-2 col-lg-2 mt-4">Registrar</button>
+            <button type="submit" class="btn btn-dark mx-5 col-sm-2 col-md-2 col-lg-2 mt-4">Registrar</button>
         </div>
 
 
@@ -79,4 +79,4 @@
 
 </div>
 
-@endsection
+@endsection--}}

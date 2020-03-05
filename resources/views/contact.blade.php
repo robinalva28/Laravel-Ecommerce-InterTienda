@@ -1,5 +1,5 @@
 @extends('layout.plantilla')
-
+@section('title', 'Contacto')
 @section('contenido')
 
 <div class="card ">

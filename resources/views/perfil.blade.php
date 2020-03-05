@@ -1,5 +1,7 @@
 @extends('layout.plantilla')
 
+@section('title', 'Mi perfil')
+
 @section('contenido')
 
 <div class="mx-auto" style="width: 200px;">

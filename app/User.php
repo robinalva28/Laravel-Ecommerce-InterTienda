@@ -1,13 +1,17 @@
 <?php
 
 namespace App;
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    protected $table = "usuarios";
+    protected $primaryKey = "usrId";
+    public $guarded = [];
+
     use Notifiable;
 
     /**
@@ -16,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','apellido','celular', 'email', 'password','repass','fecha_nac','avatar','empresa','cuil_empresa',
+        'nombre','apellido','celular', 'usrEmail', 'fecha_nac','empresa','cuil_empresa','avatar','password',
     ];
 
     /**
@@ -25,7 +29,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password','repass', 'remember_token',
+        'password', 'remember_token',
     ];
 
     /**

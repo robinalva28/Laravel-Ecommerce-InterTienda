@@ -1,5 +1,5 @@
 @extends('layout.plantilla')
-
+@section('title', 'Preguntas frecuentes')
 @section('contenido')
 
 <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
