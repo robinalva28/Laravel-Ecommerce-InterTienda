@@ -29,10 +29,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/index';
-    protected $table = "usuarios";
+    protected $redirectTo = '/';
+    /*protected $table = "usuarios";
     protected $primaryKey = "usrId";
-    public $guarded = [];
+    public $guarded = [];*/
     /**
      * Create a new controller instance.
      *
@@ -53,10 +53,10 @@ class RegisterController extends Controller
     {
 
         return Validator::make($data, [
-            'nombre' => ['required', 'string', 'max:255'],
-            'apellido' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'usrNombre' => ['required', 'string', 'max:255'],
+            'usrApellido' => ['required', 'string', 'max:255'],
+            'usrEmail' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
+            'usrPassword' => ['required', 'string', 'min:4',/* 'confirmed'*/]
         ]);
     }
 
@@ -70,13 +70,13 @@ class RegisterController extends Controller
     {
 
         return User::create([
-            'usrNombre' => $data['nombre'],
-            'usrApellido' => $data ['apellido'],
-            'usrCelular' => $data ['celular'],
-            'usrEmail' => $data['email'],
-            'usrFechaNacimiento' => $data['fecha_nac'],
-            'usrPassword' => Hash::make($data['password']),
-            'usrAvatar' => $data['avatar'],
+            'usrNombre' => $data['usrNombre'],
+            'usrApellido' => $data ['usrApellido'],
+            'usrCelular' => $data ['usrCelular'],
+            'usrEmail' => $data['usrEmail'],
+            'usrFechaNacimiento' => $data['usrFechaNacimiento'],
+            'usrPassword' => Hash::make($data['usrPassword']),
+            'usrAvatar' => $data['usrAvatar'],
             'usrValidado' => false,
         ]);
     }

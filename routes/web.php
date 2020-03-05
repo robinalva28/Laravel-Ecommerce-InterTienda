@@ -27,6 +27,9 @@ Route::get('/login', function(){
 Route::get('/registe', function(){
     return view('register');
 });
+Route::post('/register' ,'RegisterController@create');
+
+
 ######### ADD REGISTER #########
 Route::post('/register/add', "UsuariosController@add");
 ######## PREG FRECUENTES #########

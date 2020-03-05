@@ -10,7 +10,7 @@ class User extends Authenticatable
 {
     protected $table = "usuarios";
     protected $primaryKey = "usrId";
-    public $guarded = [];
+  /*  public $guarded = [];*/
 
     use Notifiable;
 
@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre','apellido','celular', 'usrEmail', 'fecha_nac','empresa','cuil_empresa','avatar','password',
+        'usrNombre','usrApellido','usrCelular', 'usrEmail', 'usrFechaNacimiento','usrEmpresa','usrCuil_empresa','usrAvatar','usrPassword',
     ];
 
     /**
