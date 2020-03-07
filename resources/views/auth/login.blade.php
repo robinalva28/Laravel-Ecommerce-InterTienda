@@ -1,4 +1,4 @@
-@extends('layout.plantilla')
+@extends('..layout.plantilla')
 
 @section('title', 'Inicio de Sesion')
 
@@ -17,7 +17,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('usrEmail') is-invalid @enderror" name="usrEmail" value="{{ old('usrEmail') }}" required autocomplete="usrEmail" autofocus>
+                                <input id="email" type="email" class="form-control @error('usrEmail') is-invalid @enderror" name="usrEmail" value="{{ old('usrEmail') }}" required autocomplete="email" autofocus>
 
                                 @error('usrEmail')
                                     <span class="invalid-feedback" role="alert">

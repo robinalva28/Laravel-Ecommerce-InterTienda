@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/perfil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/perfil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,6 +140,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../public" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -174,7 +180,15 @@
       <workItem from="1582734269290" duration="901000" />
       <workItem from="1583173718207" duration="295000" />
       <workItem from="1583174122781" duration="6598000" />
-      <workItem from="1583428823430" duration="6356000" />
+      <workItem from="1583428823430" duration="8666000" />
+      <workItem from="1583444433019" duration="915000" />
+      <workItem from="1583498924592" duration="265000" />
+      <workItem from="1583501111032" duration="76000" />
+      <workItem from="1583501251135" duration="23000" />
+      <workItem from="1583501705358" duration="358000" />
+      <workItem from="1583502876085" duration="4213000" />
+      <workItem from="1583511482870" duration="3215000" />
+      <workItem from="1583541298803" duration="5364000" />
     </task>
     <servers />
   </component>
@@ -194,10 +208,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="625" y="177" width="674" height="679" key="#phpunit.xml/0.0.1920.1040@0.0.1920.1040" timestamp="1583175686383" />
+    <state x="743" y="263" width="424" height="506" key="FileChooserDialogImpl" timestamp="1583541569586">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="263" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583541569586" />
     <state x="778" y="445" width="354" height="147" key="NewPhpFileDialog" timestamp="1583176308258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="778" y="445" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583176308258" />
+    <state x="464" y="154" key="SettingsEditor" timestamp="1583541570416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="464" y="154" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583541570416" />
+    <state x="1211" y="238" key="run.anything.popup" timestamp="1583542048954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1211" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583542048954" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1581466850781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -17,8 +17,9 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">email</li>
         </ul>
-        <form action="perfil" method="" >
-            <button  type="buttom"  class="btn btn-danger col-sm-12 col-md-12 col-lg-12" name="" value="sdestroy"><Strong>Salir</Strong></button>
+        <form action="{{ route('logout') }}" method="POST" >
+            @csrf
+            <button  type="buttom"  class="btn btn-danger col-sm-12 col-md-12 col-lg-12" name="" value=""><Strong>Salir</Strong></button>
         </form>
 
     </div>

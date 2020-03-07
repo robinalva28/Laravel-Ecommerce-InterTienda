@@ -16,35 +16,52 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="index.php"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
+        <a href="/"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav ml-auto ">
-                <li class="nav-item active ">
-                    <a class="nav-link" href="index">PRINCIPAL</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">INGRESAR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register">REGISTRAR</a>
-                </li>
+
+                @if (Route::has('login'))
+                        @auth
+
+                        <li class="nav-item active ">
+                            <a class="nav-link" href="index">PRINCIPAL</a>
+                        </li>
+                        @else
+                        <li class="nav-item ">
+                            <a class="nav-link"  href="login">INGRESAR</a>
+                        </li>
+                            @if (Route::has('register'))
+                            <li class="nav-item ">
+                                <a class="nav-link" href="register">REGISTRAR</a>
+                            </li>
+                            @endif
+                        @endauth
+
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="faq">F.A.Q.</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact">CONTACTO</a>
                 </li>
-                <li>
-                    <a class="nav-link" href="perfil"><i class="fas fa-user-edit "></i></a>
-                </li>
-                <li>
-                    <a class="nav-link" href="carrito"><i class="fas fa-shopping-cart"></i></a>
 
-                </li>
-                <li >
+                    @if (Route::has('login'))
+                        @auth
+                            <li>{{--Coloco el nombre del usuario al lado del logo de user solo si esta logueado--}}
+                                <a class="nav-link" href="perfil">{{ strtoupper(Auth::user()->usrNombre . ' ') }}<i class="fas fa-user-edit "></i></a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="carrito"><i class="fas fa-shopping-cart"></i></a>
+
+                            </li>
+                        @endauth
+
+                    @endif
+
+                        <li >
                     <a class="nav-link" href="adminProductos">add</a>
                 </li>
             </ul>

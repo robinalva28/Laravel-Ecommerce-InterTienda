@@ -1,4 +1,5 @@
 <?php
+/*
 
 namespace App\Http\Controllers;
 
@@ -38,11 +39,11 @@ class UsuariosController extends Controller
         }*/
 
 
-       /* try {*/
+       /* try {
             $this->validate($req, $rules, $mensaje);
-      /*  } catch (ValidationException $e) {
+        } catch (ValidationException $e) {
             dd("Error al validar: $e");
-        }*/
+        }
 
         $newUser = new Usuario();
 
@@ -57,4 +58,4 @@ class UsuariosController extends Controller
         $newUser->save();
         return redirect('/perfil');
     }
-}
+}*/
