@@ -54,7 +54,7 @@ class ProductosController extends Controller
             'prdImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $imageName = 'noDisponible.jpg';
+        $imageName = 'noDisponible.png';
         if( $request->file('prdImagen') ) {
             //$imageName = time().'.'.request()->prdImagen->getClientOriginalExtension();
             $imagen = $request->file('prdImagen');

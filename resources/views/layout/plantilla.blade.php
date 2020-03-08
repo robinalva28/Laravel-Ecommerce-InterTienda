@@ -24,8 +24,8 @@
             <ul class="navbar-nav ml-auto ">
 
                 @if (Route::has('login'))
-                        @auth
 
+                        @auth
                         <li class="nav-item active ">
                             <a class="nav-link" href="index">PRINCIPAL</a>
                         </li>
@@ -47,24 +47,44 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact">CONTACTO</a>
                 </li>
-
                     @if (Route::has('login'))
                         @auth
-                            <li>{{--Coloco el nombre del usuario al lado del logo de user solo si esta logueado--}}
-                                <a class="nav-link" href="perfil">{{ strtoupper(Auth::user()->usrNombre . ' ') }}<i class="fas fa-user-edit "></i></a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="carrito"><i class="fas fa-shopping-cart"></i></a>
 
+                            {{--boton del usuario desplegable--}}
+                            <li class="nav-item dropdown">
+                                <a style="color:green;" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                   Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="adminProductos">Mis publicaciones</a>
+                                    <a class="dropdown-item" href="perfil">Mis datos</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <form action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                            <button  type="submit"  class="btn btn-danger small col-sm-12 col-md-12 col-lg-12 p-0" name="" value=""><small>Cerrar Sesión</small></button>
+                                        </form>
+                                    </a>
+                                </div>
                             </li>
+
+                            <li>
+                                <a style="color:royalblue;" class="nav-link" href="carrito"><i class="fas fa-shopping-cart"></i> CARRITO</a>
+                            </li>
+
+                           {{-- <li>--}}{{--Coloco el nombre del usuario al lado del logo de user solo si esta logueado--}}{{--
+                                <a style="color:green;" class="nav-link" --}}{{--href="perfil"--}}{{--><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}</a>
+                            </li>--}}
                         @endauth
 
                     @endif
 
-                        <li >
-                    <a class="nav-link" href="adminProductos">add</a>
-                </li>
+                     {{--   <li >
+                    <a class="nav-link" href="adminProductos">MIS PUBLICACIONES</a>
+                </li>--}}
             </ul>
+
         </div>
     </nav>
 </header>

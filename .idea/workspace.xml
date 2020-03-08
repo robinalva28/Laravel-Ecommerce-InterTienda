@@ -4,13 +4,21 @@
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Usuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/passwords/reset.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/perfil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/perfil.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/register.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +196,10 @@
       <workItem from="1583501705358" duration="358000" />
       <workItem from="1583502876085" duration="4213000" />
       <workItem from="1583511482870" duration="3215000" />
-      <workItem from="1583541298803" duration="5364000" />
+      <workItem from="1583541298803" duration="7676000" />
+      <workItem from="1583549214027" duration="7956000" />
+      <workItem from="1583591627637" duration="13107000" />
+      <workItem from="1583681529705" duration="2846000" />
     </task>
     <servers />
   </component>
@@ -196,14 +207,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582735761334">
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583603512619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582735761334" />
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583603512619" />
     <state x="231" y="71" width="476" height="886" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581560737285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="231" y="71" width="476" height="886" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581560737285" />
+    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583555991086">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583555991086" />
     <state x="625" y="177" width="674" height="679" key="#phpunit.xml" timestamp="1583175686383">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -220,6 +235,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="464" y="154" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583541570416" />
+    <state x="757" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583596431684">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="757" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583596431684" />
     <state x="1211" y="238" key="run.anything.popup" timestamp="1583542048954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -228,5 +247,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581466850781" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,8 +1,8 @@
 @extends('layout.plantilla')
 
-@section('title', 'Panel de Productos')
+@section('title', 'Mis publicaciones')
 
-@section('h1', 'Panel de Productos')
+@section('h1', 'Mis publicaciones')
 
 @section('contenido')
 
@@ -18,7 +18,7 @@
             <th>Imagen</th>
             <th colspan="2">
                 <a href="/formAgregarProducto" class="btn btn-dark">
-                    Agregar
+                    Nueva publicación
                 </a>
             </th>
         </tr>

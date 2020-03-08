@@ -1,3 +1,4 @@
+{{--
 @extends('layout.plantilla')
 
 @section('contenido')
@@ -34,3 +35,4 @@
 
 </div>
 @endsection
+--}}

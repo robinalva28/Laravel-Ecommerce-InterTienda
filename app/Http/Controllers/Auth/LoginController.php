@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -33,19 +35,40 @@ class LoginController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
 
-    public function authenticate(Request $request)
+
+    protected function username()
     {
-        $credentials = $request->only('usrEmail', 'usrPassword');
+        return 'email';
+    }
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+        ]);
+    }
+    protected function credentials(Request $request)
+    {
+        return $request->only($this->username(), 'password');
+    }
+
+    protected function authenticated(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('inicio');
 
         }
+
     }
+
+
 }

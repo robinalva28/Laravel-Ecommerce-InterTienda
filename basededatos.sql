@@ -43,15 +43,15 @@ create table usuarios(
 	created_at DATE,
 	updated_at date,
 	usrId				int auto_increment primary key,
-    usrNombre			varchar(40),
-    usrApellido			varchar(40),
-    usrEmail varchar(40),
-    usrCelular			varchar(40),
-    usrFechaNacimiento	date,
+    nombre			varchar(40),
+    apellido			varchar(40),
+    email varchar(40),
+    celular			varchar(40),
+    fechaNacimiento	date,
     usrIdEmpresa		int,
-    usrPassword			varchar(100),
-    usrAvatar			varchar(100),
-    usrValidado boolean,/*por agregar*/
+    password			varchar(100),
+    avatar			varchar(100),
+    validado boolean,/*por agregar*/
     foreign key (usrIdEmpresa) references empresas(empId)
 );
 
@@ -69,7 +69,7 @@ create table productos(
     foreign key (prdIdCategoria) references categorias(catId),
     foreign key (prdIdMarca) references marcas(marId),
     foreign key (prdIdUsuario) references usuarios(usrId)
-    
+
 );
 
 drop table carritos;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -30,9 +31,6 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
-    /*protected $table = "usuarios";
-    protected $primaryKey = "usrId";
-    public $guarded = [];*/
     /**
      * Create a new controller instance.
      *
@@ -52,11 +50,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
+
+        $edad = Carbon::now()->subYears(18);
+        $edad->format('Y-m-d');
+        /*return dd( $edad->format('Y-m-d'));exit;*/
+
         return Validator::make($data, [
-            'usrNombre' => ['required', 'string', 'max:255'],
-            'usrApellido' => ['required', 'string', 'max:255'],
-            'usrEmail' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
-            'usrPassword' => ['required', 'string', 'min:4',/* 'confirmed'*/]
+            'nombre' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
+            'fechaNacimiento'=>['required','date','before:'. $edad->format('Y-m-d')],
+            'password' => ['required', 'string', 'min:4','confirmed']
         ]);
     }
 
@@ -70,14 +74,14 @@ class RegisterController extends Controller
     {
 
         return User::create([
-            'usrNombre' => $data['usrNombre'],
-            'usrApellido' => $data ['usrApellido'],
-            'usrCelular' => $data ['usrCelular'],
-            'usrEmail' => $data['usrEmail'],
-            'usrFechaNacimiento' => $data['usrFechaNacimiento'],
-            'usrPassword' => Hash::make($data['usrPassword']),
-            'usrAvatar' => $data['usrAvatar'],
-            'usrValidado' => false,
+            'nombre' => $data['nombre'],
+            'apellido' => $data ['apellido'],
+            'celular' => $data ['celular'],
+            'email' => $data['email'],
+            'fechaNacimiento' => $data['fechaNacimiento'],
+            'password' => Hash::make($data['password']),
+            'avatar' => $data['avatar'],
+            'validado' => false,
         ]);
     }
 }

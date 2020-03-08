@@ -27,15 +27,15 @@ Route::get('/login', function(){
     return view('login');
 });
 
+/*
+
 Route::get('/registe', function(){
     return view('register');
 });
 Route::get('login','LoginController@authenticate');
-Route::post('/register' ,'RegisterController@create');
+Route::post('/register' ,'RegisterController@create');*/
 
 
-######### ADD REGISTER #########
-Route::post('/register/add', "UsuariosController@add");
 ######## PREG FRECUENTES #########
 Route::get('/faq', function(){
     return view('faq');
