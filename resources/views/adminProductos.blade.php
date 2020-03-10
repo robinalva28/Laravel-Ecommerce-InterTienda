@@ -6,21 +6,18 @@
 
 @section('contenido')
 
-    <table class="table table-hover table-striped table-border">
+    <div class="{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
+    <table class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
         <thead class="thead-dark">
-        <tr>
+        <tr class="mr-3">
             <th>Nombre</th>
             <th>Precio</th>
             <th>Marca</th>
             <th>Categoria</th>
-            <th>Presentacion</th>
+            <th>Descripción</th>
             <th>Stock</th>
             <th>Imagen</th>
-            <th colspan="2">
-                <a href="/formAgregarProducto" class="btn btn-dark">
-                    Nueva publicación
-                </a>
-            </th>
+            <th colspan="2"></th>
         </tr>
         </thead>
         <tbody>
@@ -28,11 +25,11 @@
             <tr>
                 <td>{{ $producto->prdNombre }}</td>
                 <td>{{ $producto->prdPrecio }}</td>
-                <td>{{ $producto->getMarca->mkNombre }}</td>
+                <td>{{ $producto->getMarca->marNombre}}</td>
                 <td>{{ $producto->getCategoria->catNombre }}</td>
-                <td>{{ $producto->Presentacion }}</td>
+                <td>{{ $producto->prdDescripcion }}</td>
                 <td>{{ $producto->prdStock }}</td>
-                <td><img src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail"></td>
+                <td ><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" ></td>
                 <td>
                     <a href="" class="btn btn-outline-secondary">
                         Modificar
@@ -45,7 +42,13 @@
                 </td>
             </tr>
         @endforeach
+
+        <th style="background-color: white;"  colspan="2">
+            <a href="/formAgregarProducto" class="btn btn-dark">
+                Nueva publicación
+            </a>
+        </th>
         </tbody>
     </table>
-
+    </div>
 @endsection

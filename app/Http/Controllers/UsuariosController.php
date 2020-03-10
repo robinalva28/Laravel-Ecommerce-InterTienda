@@ -1,17 +1,40 @@
 <?php
 
 
-/*namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-Use App\Usuario;
+Use App\User;
 use Illuminate\Validation\ValidationException;
 
 
 class UsuariosController extends Controller
 {
-    public function add(Request $req){
+
+    public function index()
+    {
+        //
+        $usuario = User::all();
+
+        return view('perfil',
+            [
+                'usuario'=>$usuario,
+            ]);
+    }
+    public function listaUsuarios()
+    {
+        //
+        $usuario = User::all();
+
+        return view('adminListaUsuarios',
+            [
+                'usuario'=>$usuario,
+            ]);
+    }
+}
+
+  /*  public function add(Request $req){
 
 
         $rules = [
@@ -57,5 +80,5 @@ class UsuariosController extends Controller
         $newUser->usrValidado = false;
         $newUser->save();
         return redirect('/perfil');
-    }
-}*/
+    }*/
+

@@ -34,6 +34,6 @@
             </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-primary">Comprar</button>
+    <button type="button" class="btn btn-dark">Comprar</button>
 </div>
     @endsection

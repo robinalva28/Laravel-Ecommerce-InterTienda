@@ -37,14 +37,14 @@
         <!--QUIENES SOMOS-->
 
         <!-- CARDS -->
-        <div class="container container-fluid">
+        <div class="container container-fluid col-9 ">
 
 
-            <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
+            <div class="row  mt-4 mb-4 d-flex  justify-content-center justify-content-md-end ">
 
 
 
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
+                <div class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
                     <div class="card" style="width: 18rem;">
                         <img src="./img/cateroria_tecnologia.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
+                <div class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
                     <div class="card" style="width: 18rem;">
                         <img src="./img/cateroria_vestimenta.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -66,13 +66,24 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
+                <div class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
                     <div class="card" style="width: 18rem;">
                         <img src="./img/cateroria_otros.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Otros + Servicios</h5>
                             <p class="card-text">Otros productos mas servicios ofrecidos</p>
                             <a href="cat_otros" class="btn btn-primary">Ir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/categoria_todo.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Todo</h5>
+                            <p class="card-text">Todos los productos y servicios publicados</p>
+                            <a href="#" class="btn btn-primary">Ir</a>
                         </div>
                     </div>
                 </div>

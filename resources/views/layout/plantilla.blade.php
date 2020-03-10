@@ -52,12 +52,15 @@
 
                             {{--boton del usuario desplegable--}}
                             <li class="nav-item dropdown">
-                                <a style="color:green;" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                <a style="color:royalblue;" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="adminProductos">Mis publicaciones</a>
                                     <a class="dropdown-item" href="perfil">Mis datos</a>
+                                    <a class="dropdown-item" href="adminListaUsuarios">Usuarios registrados</a>
+                                    <a class="dropdown-item" href="formAgregarMarca">add marca</a>
+                                    <a class="dropdown-item" href="formAgregarCategoria">add categoria</a>
 
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">
@@ -119,17 +122,19 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="index">Home</a>
                     </li>
                     <li>
-                        <a href="faq.php">FAQ</a>
+                        <a href="faq">FAQ</a>
+                    </li>
+
+                    <li>
+                        <a href="login">Login</a>
                     </li>
                     <li>
-                        <a href="login.php">Login</a>
+                        <a href="register">Registro</a>
                     </li>
-                    <li>
-                        <a href="register.php">Registro</a>
-                    </li>
+
                 </ul>
 
             </div>

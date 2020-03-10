@@ -1,6 +1,6 @@
-@extends('layout/plantilla')
+@extends('layout.plantilla')
 
-@section('title', 'Alta de una nueva Marca')
+@section('title', 'Agregar producto')
 
 
 @section('contenido')
@@ -8,7 +8,7 @@
 @section('h1', 'Alta de un nuevo producto')
 
 <div class="card bg-light col-md-7 mt-5 p-3 mx-auto">
-    <form action="/agregarProducto" method="post" enctype="multipart/form-data">
+    <form action="/formAgregarProducto" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -27,27 +27,27 @@
 
         <div class="form-group">
             <label>Marca:</label>
-            <select name="idMarca" class="form-control" required>
+            <select name="marId" class="form-control" required>
                 <option value="">Seleccione una marca</option>
                 @foreach ( $marcas as $marca )
-                    <option value="{{ $marca->idMarca }}">{{ $marca->mkNombre }}</option>
+                    <option value="{{ $marca->marId }}">{{ $marca->marNombre }}</option>
                 @endforeach
             </select>
         </div>
 
         <div class="form-group">
             <label>Categoría:</label>
-            <select name="idCategoria" class="form-control" required>
+            <select name="catId" class="form-control" required>
                 <option value="">Seleccione una Categoría</option>
                 @foreach( $categorias as $categoria )
-                    <option value="{{ $categoria->idCategoria }}">{{ $categoria->catNombre }}</option>
+                    <option value="{{ $categoria->catId }}">{{ $categoria->catNombre }}</option>
                 @endforeach
             </select>
         </div>
 
         <div class="form-group">
-            <label for="prdPresentacion">Presentación:</label>
-            <textarea name="prdPresentacion" class="form-control" id="prdPresentacion">{{ old('prdPresentacion') }}</textarea>
+            <label for="prdDescripcion">Descripción:</label>
+            <textarea name="prdDescripcion" class="form-control" id="prdDescripcion">{{ old('prdDescripcion') }}</textarea>
         </div>
 
         <div class="form-group">

@@ -18,9 +18,10 @@ class ProductosController extends Controller
     {
         //
         $productos = Producto::with('getMarca', 'getCategoria')->get();
+
         return view('adminProductos',
             [
-                'productos'=>$productos
+                'productos'=>$productos,
             ]);
     }
 
@@ -31,6 +32,7 @@ class ProductosController extends Controller
      */
     public function create()
     {
+        //
         //
         $marcas = Marca::all();
         $categorias = Categoria::all();
@@ -55,16 +57,43 @@ class ProductosController extends Controller
         ]);
 
         $imageName = 'noDisponible.png';
-        if( $request->file('prdImagen') ) {
+        if ($request->file('prdImagen')) {
             //$imageName = time().'.'.request()->prdImagen->getClientOriginalExtension();
             $imagen = $request->file('prdImagen');
             //$imagen->getClientOriginalExtension();
             $imageName = $request->prdImagen->getClientOriginalName();
             $request->prdImagen->move(public_path('images/productos'), $imageName);
         }
-        return $imageName;
-    }
+        //
 
+
+        //return $imageName;
+  /*  $producto = new Producto();
+        $producto->prdNombre = $request['prdNombre'];
+        $producto->prdDescripcion = $request['prdDescripcion'];
+        $producto->prdIdMarca = $request['marId'];
+        $producto->prdIdCategoria = $request['catId'];
+        $producto->prdPrecio = $request['prdPrecio'];
+        $producto->prdIdUsuario = $request['usrId'];
+        $producto->prdImagen = $imageName;
+        $producto->prdStock = $request['prdStock'];*/
+
+
+
+            Producto::create([
+            'prdNombre' => $request['prdNombre'],
+            'prdDescripcion' => $request ['prdDescripcion'],
+            'prdIdMarca' => $request ['marId'],
+            'prdIdCategoria' => $request['catId'],
+            'prdPrecio' => $request['prdPrecio'],
+            'prdIdUsuario' => $request['usrId'],
+            'prdImagen' => $imageName,
+            'prdStock' => $request['prdStock'],
+        ]);
+
+            return redirect('adminProductos'/*,'ProductosController@index'*/);
+
+    }
     /**
      * Display the specified resource.
      *

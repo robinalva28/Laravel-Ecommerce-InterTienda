@@ -59,13 +59,13 @@ create table usuarios(
 create table productos(
 	prdId			int auto_increment primary key,
     prdNombre		varchar(40),
-    prdModelo		varchar(40),
     prdDescripcion	varchar(200),
     prdPrecio		float,
     prdIdCategoria	int,
     prdIdMarca		int,
     prdIdUsuario	int,
     prdImagen		varchar(100),
+    prdStock        int,
     foreign key (prdIdCategoria) references categorias(catId),
     foreign key (prdIdMarca) references marcas(marId),
     foreign key (prdIdUsuario) references usuarios(usrId)

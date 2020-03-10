@@ -27,14 +27,6 @@ Route::get('/login', function(){
     return view('login');
 });
 
-/*
-
-Route::get('/registe', function(){
-    return view('register');
-});
-Route::get('login','LoginController@authenticate');
-Route::post('/register' ,'RegisterController@create');*/
-
 
 ######## PREG FRECUENTES #########
 Route::get('/faq', function(){
@@ -55,18 +47,38 @@ Route::get('/cat_tecno', function(){
     return view('cat_tecno');
 });
 
+
+
 Route::get('/cat_vestimenta', function(){
     return view('cat_vestimenta');
 });
 
-###### admin producto
-Route::get('adminProductos' ,'ProductosController@index');
+############## CRUD Categorias
+Route::get('/adminCategorias', 'CategoriasController@index');
+Route::get('/formAgregarCategoria', 'CategoriasController@create');
+Route::post('/agregarCategoria', 'CategoriasController@store');
+
+############## CRUD Marcas ###################
+Route::get('/adminMarcas', 'MarcasController@index');
+Route::get('/formAgregarMarca', 'MarcasController@create');
+Route::post('/agregarMarca', 'MarcasController@store');
+Route::get('/formModificarMarca/{id}', 'MarcasController@edit');
+Route::post('/modificarMarca', 'MarcasController@update');
+
+############## CRUD PRODUCTOS ###################
+Route::get('/adminProductos', 'ProductosController@index');
 Route::get('/formAgregarProducto', 'ProductosController@create');
+Route::post('formAgregarProducto', 'ProductosController@store');
 
 ####### PERFIL #######
-Route::get('/perfil', function(){
+Route::get('/perfil','UsuariosController@index');
+/*Route::get('/perfil', function(){
     return view('perfil');
-});
+});*/
+
+#################### ADMIN
+Route::get('adminListaUsuarios','UsuariosController@listaUsuarios');
+
 
 //logout
 
