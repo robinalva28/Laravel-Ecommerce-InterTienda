@@ -23,12 +23,13 @@
         <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav ml-auto ">
 
+                <li class="nav-item active ">
+                    <a class="nav-link" href="index">PRINCIPAL</a>
+                </li>
                 @if (Route::has('login'))
 
                         @auth
-                        <li class="nav-item active ">
-                            <a class="nav-link" href="index">PRINCIPAL</a>
-                        </li>
+
                         @else
                         <li class="nav-item ">
                             <a class="nav-link"  href="login">INGRESAR</a>
@@ -49,19 +50,19 @@
                 </li>
                     @if (Route::has('login'))
                         @auth
-
                             {{--boton del usuario desplegable--}}
                             <li class="nav-item dropdown">
                                 <a style="color:royalblue;" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="adminProductos">Mis publicaciones</a>
+                                    <a class="dropdown-item" href="adminProductos">Todas Publicaciones</a>
+                                    <a class="dropdown-item" href="adminUsuarioProductos">Mis publicaciones</a>
                                     <a class="dropdown-item" href="perfil">Mis datos</a>
                                     <a class="dropdown-item" href="adminListaUsuarios">Usuarios registrados</a>
-                                    <a class="dropdown-item" href="formAgregarMarca">add marca</a>
-                                    <a class="dropdown-item" href="formAgregarCategoria">add categoria</a>
-
+                                    <a class="dropdown-item" href="adminMarcas">Admin marcas</a>
+                                    <a class="dropdown-item" href="adminCategorias">Admin categorias</a>
+                                    <a class="dropdown-item" href="inicioAuth">inicioAutenticado</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">
                                         <form action="{{ route('logout') }}" method="POST" >

@@ -18,7 +18,7 @@
                 <th scope="row"><img src="./img/tecno_01.png" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
                 <td>$5000</td>
                 <td>1</td>
-                <td><a href="#"><i class="far fa-trash-alt"></i></a></i></td>
+                <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
             </tr>
             <tr>
                 <th scope="row"><img src="./img/ropa_01.png" alt="..." class="img-fluid img-thumbnail" width="80px"></th>

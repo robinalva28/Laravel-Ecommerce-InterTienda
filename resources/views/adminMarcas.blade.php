@@ -13,14 +13,16 @@
         </div>
     @endif
 
-    <table class="table table-bordered table-hover table-striped">
+    <table class="mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped">
         <thead class="thead-dark">
         <tr>
             <th>id</th>
             <th>Marca</th>
-            <th colspan="2">
+            <th></th>
+            <th></th>
+           {{-- <th colspan="2">
                 <a href="/formAgregarMarca" class="btn btn-dark">Agregar</a>
-            </th>
+            </th>--}}
         </tr>
         </thead>
         <tbody>
@@ -40,6 +42,11 @@
                 </td>
             </tr>
         @endforeach
+        <th colspan="2">
+            <a href="/formAgregarMarca" class="btn btn-dark">Agregar</a>
+        </th>
+        <th></th>
+        <th></th>
         </tbody>
     </table>
 

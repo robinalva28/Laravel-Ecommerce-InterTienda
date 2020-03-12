@@ -6,14 +6,25 @@
 
 @section('contenido')
 
-    <table class="table table-bordered table-hover table-striped">
+    {{-- mensajes de ok --}}
+    @if( session()->has('mensaje') )
+        <div class="alert alert-success">
+            {{ session()->get('mensaje') }}
+        </div>
+    @endif
+
+    <table class=" mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped">
         <thead class="thead-dark">
         <tr>
             <th>id</th>
             <th>Categoria</th>
-            <th colspan="2">
+            <th>Descripcion</th>
+            <th>Miniatura</th>
+            <th></th>
+            <th></th>
+           {{-- <th colspan="2">
                 <a href="/formAgregarCategoria" class="btn btn-dark">Agregar</a>
-            </th>
+            </th>--}}
         </tr>
         </thead>
         <tbody>
@@ -21,8 +32,10 @@
             <tr>
                 <td>{{$categoria->catId}}</td>
                 <td>{{$categoria->catNombre}}</td>
+                <td>{{$categoria->catDescripcion}}</td>
+                <td><img  src="{{ asset('images/categorias') }}/{{ $categoria->catImagen  }}" class="img-thumbnail" width="80px" ></td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
+                    <a href="formModificarCategoria/{{$categoria->catId}}" class="btn btn-outline-secondary">
                         Modificar
                     </a>
                 </td>
@@ -33,6 +46,13 @@
                 </td>
             </tr>
         @endforeach
+        <th colspan="2">
+            <a href="/formAgregarCategoria" class="btn btn-dark">Agregar</a>
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
         </tbody>
     </table>
 

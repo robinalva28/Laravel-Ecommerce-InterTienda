@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use App\Categoria;
 use App\Marca;
 use App\Producto;
@@ -25,6 +27,29 @@ class ProductosController extends Controller
             ]);
     }
 
+    public function allProductos(){
+
+        $productos = Producto::with('getMarca', 'getCategoria')->get();
+
+        return view('inicioAutenticado',
+            [
+                'productos'=>$productos
+            ]);
+
+
+    }
+
+    public function productosUsuario()
+    {
+        //
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+
+        return view('adminUsuarioProductos',
+            [
+                'productos'=>$productos,
+            ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -34,11 +59,11 @@ class ProductosController extends Controller
     {
         //
         //
-        $marcas = Marca::all();
+        $Productos = Marca::all();
         $categorias = Categoria::all();
         return view('formAgregarProducto',
             [
-                'marcas'=>$marcas,
+                'marcas'=>$Productos,
                 'categorias'=>$categorias
             ]);
     }
@@ -64,20 +89,6 @@ class ProductosController extends Controller
             $imageName = $request->prdImagen->getClientOriginalName();
             $request->prdImagen->move(public_path('images/productos'), $imageName);
         }
-        //
-
-
-        //return $imageName;
-  /*  $producto = new Producto();
-        $producto->prdNombre = $request['prdNombre'];
-        $producto->prdDescripcion = $request['prdDescripcion'];
-        $producto->prdIdMarca = $request['marId'];
-        $producto->prdIdCategoria = $request['catId'];
-        $producto->prdPrecio = $request['prdPrecio'];
-        $producto->prdIdUsuario = $request['usrId'];
-        $producto->prdImagen = $imageName;
-        $producto->prdStock = $request['prdStock'];*/
-
 
 
             Producto::create([
@@ -89,6 +100,7 @@ class ProductosController extends Controller
             'prdIdUsuario' => $request['usrId'],
             'prdImagen' => $imageName,
             'prdStock' => $request['prdStock'],
+            'prdIdUsuario'=>Auth::user()->usrId
         ]);
 
             return redirect('adminProductos'/*,'ProductosController@index'*/);
@@ -113,8 +125,16 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Productos = Marca::all();
+        $categorias = Categoria::all();
+        $producto = Producto::find($id);
+        return view('formModificarProducto',
+            [ 'producto'=>$producto,
+                'marcas'=>$Productos,
+                'categorias'=>$categorias
+            ]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -125,7 +145,24 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Producto= Producto::findOrFail($id);
+
+        // For a sanity check, die and dump here temporarily
+        dd($Producto);
+
+       // $Producto = Producto::find($request->input('prdId'));
+        $Producto->prdNombre = $request->input('prdNombre');
+        $Producto->prdDescripcion = $request->input('prdDescripcion');
+        $Producto->prdPrecio = $request->input('prdPrecio');
+        $Producto->prdIdCategoria = $request->input('prdIdCategoria');
+        $Producto->prdIdMarca = $request->input('prdIdMarca');
+        $Producto->prdIdUsuario = $request->input('prdIdUsuario');
+        $Producto->prdImagen = $request->input('prdImagen');
+        $Producto->prdIdUsuario = Auth::user()->usrId;
+        $Producto->save();
+
+        return redirect('/adminProductos')
+            ->with('mensaje', 'Publicacion '.$Producto->prdNombre.' modificada con éxito');
     }
 
     /**

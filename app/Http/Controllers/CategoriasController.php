@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Categoria;
+use App\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoriasController extends Controller
 {
@@ -16,7 +19,8 @@ class CategoriasController extends Controller
     {
         //
         $categorias = Categoria::paginate(6);
-        return view('adminCategorias', [ 'categorias' =>  $categorias ]);
+        return view('adminCategorias',
+            [ 'categorias' =>  $categorias ]);
     }
 
     /**
@@ -24,6 +28,19 @@ class CategoriasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function allCategorias(){
+
+        $categorias = Categoria::all();
+
+        return view('inicioAutenticado',
+            [
+                'categorias'=>$categorias
+            ]);
+
+
+    }
+
     public function create()
     {
         //
@@ -46,7 +63,25 @@ class CategoriasController extends Controller
                 'catNombre' => 'required|min:3|max:75',
             ]
         );
+        ###
+
+        //
+        $validacion = $request->validate([
+            'catImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $imageName = 'noDisponible.png';
+        if ($request->file('catImagen')) {
+           $imageName = time().'.'.request()->catImagen->getClientOriginalExtension();
+            $imagen = $request->file('catImagen');
+            $imagen->getClientOriginalExtension();
+           $imageName = $request->catImagen->getClientOriginalName();
+            $request->catImagen->move(public_path('images/categorias'), $imageName);
+        }
+
         $categoria->catNombre = request('catNombre');
+        $categoria->catDescripcion = request('catDescripcion');
+        $categoria->catImagen = $imageName;
         $categoria->save();
         return redirect('/adminCategorias')->with('mensaje', 'Categoria '.$categoria->catNombre.' agregada con éxito');
     }
@@ -80,9 +115,14 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        $Categoria = Categoria::find($request->input('catId'));
+        $Categoria->catNombre = $request->input('catNombre');
+        $Categoria->save();
+        return redirect('/adminCategorias')
+            ->with('mensaje', 'Categoria '.$Categoria->catNombre.' modificada con éxito');
     }
 
     /**

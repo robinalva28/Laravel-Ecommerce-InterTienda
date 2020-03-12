@@ -24,14 +24,14 @@
         @foreach( $productos as $producto )
             <tr>
                 <td>{{ $producto->prdNombre }}</td>
-                <td>{{ $producto->prdPrecio }}</td>
+                <td>{{ '$'. $producto->prdPrecio }}</td>
                 <td>{{ $producto->getMarca->marNombre}}</td>
                 <td>{{ $producto->getCategoria->catNombre }}</td>
                 <td>{{ $producto->prdDescripcion }}</td>
                 <td>{{ $producto->prdStock }}</td>
                 <td ><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" ></td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
+                    <a href="formModificarProducto/{{$producto->prdId}}" class="btn btn-outline-secondary">
                         Modificar
                     </a>
                 </td>

@@ -14,7 +14,9 @@ use ecomerce;
 /*CREAMOS LA TABLA CATEGORIAS*/
 create table categorias(
 	catId 			int auto_increment primary key,
-	catNombre 		varchar(40)
+	catNombre 		varchar(40),
+	catDescripcion  varchar(50),
+	catImagen       varchar(100)
 
 );
 

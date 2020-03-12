@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
+class Carrito extends Model
 {
-    protected $table = 'categorias';
-    protected $primaryKey = 'catId';
+    protected $table = 'carritos';
+    protected $primaryKey = 'carId';
     protected $guarded = [];
     public $timestamps = false;
+
 }

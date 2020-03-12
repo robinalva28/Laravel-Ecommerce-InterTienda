@@ -8,20 +8,29 @@
 
 @section('h1', 'Alta de una nueva categoria')
 
-<div class="card bg-light col-md-7 mt-5 p-3 mx-auto">
-    <form action="/agregarCategoria" method="post" >
+<div class="mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped alert bg-light p-4">
+    <form action="/agregarCategoria" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
             <label for="catNombre">Categoria:</label>
             <input type="text" class="form-control" name="catNombre"  value="{{ old('catNombre') }}" id="catNombre" placeholder="nombre de la Categoria">
         </div>
+
+<div class="form-group">
+            <label for="catDescripcion">Descripcion:</label>
+            <input type="text" class="form-control" name="catDescripcion"  value="{{ old('catDescripcion') }}" id="catDescripcion" placeholder="descripcion de la Categoria">
+        </div>
+
+    Imagen: <br>
+    <input type="file" name="catImagen" class="form-control">
+    <br>
         <button type="submit" class="btn btn-dark px-4">
             <i class="far fa-plus-square fa-lg mr-2"></i>
             Agregar Categoria
         </button>
         <a href="/adminCategorias" class="btn btn-outline-secondary ml-3">
-            volver al panel de categorias
+            Ir al panel de categorias
         </a>
 
         @if(count($errors))
@@ -38,6 +47,7 @@
 
     </form>
 </div>
+
 
 @endsection
 

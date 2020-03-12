@@ -18,7 +18,7 @@
                     <h5 class="card-title">Celular Chantung x4 </h5>
                     <p class="card-text">Liberado. Pantalla TFT de 6.2". Cámara trasera de 13Mpx. Cámara delantera de 5Mpx. Procesador Exynos 7884 Octa-core de 1.6GHz con 2GB de RAM.Batería de 3400mAh.</p>
                     <p><b>$15.000</b></p>
-                    <a href="tecno_01.php" class="btn btn-primary">+info</a>
+                    <a href="tecno_01" class="btn btn-primary">+info</a>
                 </div>
             </div>
         </div>

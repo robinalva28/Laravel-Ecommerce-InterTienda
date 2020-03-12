@@ -23,21 +23,25 @@
 
 
         <!-- CARRUSEL -->
-        <!--QUIENES SOMOS-->
-        <div class="jumbotron">
-            <h1 class="display-4">HOME- QUIENES SOMOS</h1>
 
-            <hr class="my-4">
-            <p>Bienvenidos al Círculo Privado de Compra-Venta de Artículos.</p>
-            <p>Tenemos algo que vender, quizá mi compañero de oficina o de la oficina de al lado está buscando justo lo mismo, sin gastos de envíos ni comisiones. Conociendo a quien nos lo vende así nace InterTienda, un círculo de transacciones de productos dentro de tu ámbito de trabajo.</p>
-            <p>¿Cómo acceder? Sencillo, te registrás y un administrador valida que pertenecés a la empresa, luego de ésto te llega el email y ya puedes publicar y ver los productos.</p>
+    <!--QUIENES SOMOS-->
+    <div class="jumbotron">
+        <h1 class="display-4">HOME- QUIENES SOMOS</h1>
 
-        </div>
+        <hr class="my-4">
+        <p>Bienvenidos al Círculo Privado de Compra-Venta de Artículos.</p>
+        <p>Tenemos algo que vender, quizá mi compañero de oficina o de la oficina de al lado está buscando justo lo mismo, sin gastos de envíos ni comisiones. Conociendo a quien nos lo vende así nace InterTienda, un círculo de transacciones de productos dentro de tu ámbito de trabajo.</p>
+        <p>¿Cómo acceder? Sencillo, te registrás y un administrador valida que pertenecés a la empresa, luego de ésto te llega el email y ya puedes publicar y ver los productos.</p>
 
-        <!--QUIENES SOMOS-->
+    </div>
 
-        <!-- CARDS -->
-        <div class="container container-fluid col-9 ">
+    <!--QUIENES SOMOS-->
+
+
+
+
+        <!-- CARDS DE PRODUCTOS-->
+  {{--      <div class="container container-fluid col-9 ">
 
 
             <div class="row  mt-4 mb-4 d-flex  justify-content-center justify-content-md-end ">
@@ -87,13 +91,8 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
-        </div>
+        </div>--}}
         <!-- CARDS -->
     </div>
 

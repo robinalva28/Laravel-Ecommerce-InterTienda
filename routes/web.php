@@ -11,13 +11,14 @@
 |
 */
 
+Route::get('/index', 'HomeController@index');/**/
+
+
 Route::get('/', 'HomeController@index');
 
-Route::get('/index', function(){
-
-
-    return view('inicio');
-});
+/*Route::get('index',function(){
+    return view('/');
+});*/
 
 Route::get('/carrito', function(){
     return view('carrito');
@@ -30,13 +31,17 @@ Route::get('/login', function(){
 
 ######## PREG FRECUENTES #########
 Route::get('/faq', function(){
-    return view('faq');
+    return view('/faq');
 });
 
 ######## FORM CONTACT ###########
 Route::get('/contact', function(){
     return view('contact');
 });
+
+######### PUBLICACIONES INICIO
+
+Route::get('/inicioAuth', 'CategoriasController@allCategorias');
 
 ######### CATEGORIAS DE LOS PRODUCTOS #######
 Route::get('/cat_otros', function(){
@@ -45,6 +50,9 @@ Route::get('/cat_otros', function(){
 
 Route::get('/cat_tecno', function(){
     return view('cat_tecno');
+});
+Route::get('tecno_01', function(){
+   return view ('tecno_01');
 });
 
 
@@ -57,6 +65,8 @@ Route::get('/cat_vestimenta', function(){
 Route::get('/adminCategorias', 'CategoriasController@index');
 Route::get('/formAgregarCategoria', 'CategoriasController@create');
 Route::post('/agregarCategoria', 'CategoriasController@store');
+Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit');
+Route::post('/modificarCategoria', 'CategoriasController@update');
 
 ############## CRUD Marcas ###################
 Route::get('/adminMarcas', 'MarcasController@index');
@@ -66,9 +76,12 @@ Route::get('/formModificarMarca/{id}', 'MarcasController@edit');
 Route::post('/modificarMarca', 'MarcasController@update');
 
 ############## CRUD PRODUCTOS ###################
+Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
 Route::get('/adminProductos', 'ProductosController@index');
 Route::get('/formAgregarProducto', 'ProductosController@create');
-Route::post('formAgregarProducto', 'ProductosController@store');
+Route::post('/formAgregarProducto', 'ProductosController@store');
+Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
+Route::post('/modificarProducto', 'ProductosController@update');
 
 ####### PERFIL #######
 Route::get('/perfil','UsuariosController@index');
@@ -77,7 +90,7 @@ Route::get('/perfil','UsuariosController@index');
 });*/
 
 #################### ADMIN
-Route::get('adminListaUsuarios','UsuariosController@listaUsuarios');
+Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
 
 
 //logout

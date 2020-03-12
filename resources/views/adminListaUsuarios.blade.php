@@ -15,10 +15,12 @@
             <th>Apellido</th>
             <th>Email</th>
             <th>Celular</th>
+         {{--   <th>Avatar</th>--}}
             <th>Fecha de nacimiento</th>
-            <th>Avatar</th>
-            <th>Empresa</th>
-            <th>CUIL</th>
+          {{--  <th>Empresa</th>
+            <th>CUIL</th>--}}
+            <th>Validado</th>
+            <th> </th>
        {{--     <th colspan="2">
                 <a href="/formAgregarProducto" class="btn btn-dark">
                     Nueva publicación
@@ -36,20 +38,33 @@
                 <td>{{ $detalle->apellido }}</td>
                 <td>{{ $detalle->email}}</td>
                 <td>{{ $detalle->celular }}</td>
-                <td>{{ $detalle->cui }}</td>
+
+               {{-- <td ><img  src="{{ asset('images/avatares') }}/{{ $detalle->avatar }}" class="img-thumbnail" width="150px" ></td>--}}
+               {{-- <td>{{ $detalle->usrIdEmpresa->empNombre }}</td>
+                <td>{{ $detalle->usrIdEmpresa->empCuil }}</td>--}}
                 <td>{{ $detalle->fechaNacimiento }}</td>
-                <td>{{ $detalle->fechaNacimiento }}</td>
-                <td ><img  src="{{ asset('images/avatares') }}/{{ $detalle->avatar }}" class="img-thumbnail" width="150px" ></td>
+                @if($detalle->validado == 1)
+                <td>Validado</td>
+
+                    <td>
+                        <a href="" class="btn btn-outline-secondary">
+                            Inhabilitar usuario
+                        </a>
+                    </td>
+                @else
+                <td style="color:red;" >No Validado</td>
+
                 <td>
                     <a href="" class="btn btn-outline-secondary">
-                        Modificar
+                        Validar usuario
                     </a>
                 </td>
-                <td>
+                @endif
+              {{--  <td>
                     <a href="" class="btn btn-outline-secondary">
                         Eliminar
                     </a>
-                </td>
+                </td>--}}
             </tr>
         @endforeach
         </tbody>

@@ -44,6 +44,12 @@ class MarcasController extends Controller
     {
         //validacion
 
+        $validacion = $request->validate(
+            [
+                'marNombre' => 'required|min:3|max:75',
+            ]
+        );
+
         $marNombre = $request->input('marNombre');
         $Marca = new Marca;
         $Marca->marNombre = $marNombre;

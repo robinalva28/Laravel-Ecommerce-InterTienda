@@ -8,6 +8,7 @@ class Producto extends Model
 {
     //
     protected $table = 'productos';
+    protected $primaryKey = 'prdId';
     protected $guarded = [];
    public $timestamps = false;
 
@@ -19,6 +20,11 @@ class Producto extends Model
     public function getCategoria()
     {
         return $this->belongsTo('App\Categoria', 'prdIdCategoria', 'catId');
+    }
+
+    public function getUsuario()
+    {
+        return $this->belongsTo('App\User', 'prdIdUsuario', 'usrId');
     }
 
 
