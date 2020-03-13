@@ -31,7 +31,7 @@
                 <td>{{ $producto->prdStock }}</td>
                 <td ><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" ></td>
                 <td>
-                    <a href="formModificarProducto/{{$producto->prdId}}" class="btn btn-outline-secondary">
+                    <a href="/formModificarProducto/{{$producto->prdId}}" class="btn btn-outline-secondary">
                         Modificar
                     </a>
                 </td>

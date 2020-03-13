@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
 </head>
@@ -16,7 +16,7 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="/"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
+        <a href="/"><img class="navbar-brand" src="{{asset('img/logo-198x66.png')}}" alt="logo" height="60px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,13 +56,13 @@
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="adminProductos">Todas Publicaciones</a>
-                                    <a class="dropdown-item" href="adminUsuarioProductos">Mis publicaciones</a>
-                                    <a class="dropdown-item" href="perfil">Mis datos</a>
-                                    <a class="dropdown-item" href="adminListaUsuarios">Usuarios registrados</a>
-                                    <a class="dropdown-item" href="adminMarcas">Admin marcas</a>
-                                    <a class="dropdown-item" href="adminCategorias">Admin categorias</a>
-                                    <a class="dropdown-item" href="inicioAuth">inicioAutenticado</a>
+                                    <a class="dropdown-item" href="/adminProductos">Todas Publicaciones</a>
+                                    <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
+                                    <a class="dropdown-item" href="/perfil">Mis datos</a>
+                                    <a class="dropdown-item" href="/adminListaUsuarios">Usuarios registrados</a>
+                                    <a class="dropdown-item" href="/adminMarcas">Admin marcas</a>
+                                    <a class="dropdown-item" href="/adminCategorias">Admin categorias</a>
+                                    <a class="dropdown-item" href="/inicioAuth">inicioAutenticado</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">
                                         <form action="{{ route('logout') }}" method="POST" >

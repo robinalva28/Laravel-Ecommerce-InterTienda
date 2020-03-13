@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../public/images/productos/facebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioProductos.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/formModificarCategoria.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/formModificarProducto.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/tecno_01.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Categoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Categoria.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/CategoriasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/CategoriasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/MarcasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/MarcasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Producto.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Producto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminCategorias.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminCategorias.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminMarcas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminMarcas.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/carrito.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/carrito.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/cat_tecno.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/cat_tecno.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/formAgregarCategoria.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formAgregarCategoria.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/formAgregarMarca.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formAgregarMarca.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/inicio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/cat_tecno.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/cat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
@@ -217,7 +200,8 @@
       <workItem from="1584030298614" duration="2528000" />
       <workItem from="1584041197333" duration="9000" />
       <workItem from="1584041990009" duration="5000" />
-      <workItem from="1584042142891" duration="4159000" />
+      <workItem from="1584042142891" duration="5548000" />
+      <workItem from="1584103005547" duration="4810000" />
     </task>
     <servers />
   </component>
@@ -277,6 +261,11 @@
           <url>file://$PROJECT_DIR$/../vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php</url>
           <line>4</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php</url>
+          <line>89</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

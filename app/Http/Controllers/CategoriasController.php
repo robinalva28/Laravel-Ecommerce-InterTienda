@@ -37,9 +37,8 @@ class CategoriasController extends Controller
             [
                 'categorias'=>$categorias
             ]);
-
-
     }
+
 
     public function create()
     {

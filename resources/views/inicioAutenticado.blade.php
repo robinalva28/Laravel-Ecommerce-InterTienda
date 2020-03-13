@@ -34,7 +34,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$categoria->catNombre}}</h5>
                             <p class="card-text">{{$categoria->catDescripcion}}</p>
-                            <a href="cat_tecno" class="btn btn-primary">Ir</a>
+                            <a href="cat/{{$categoria->catId}}" class="btn btn-primary">Ir</a>
                         </div>
                     </div>
                 </div>

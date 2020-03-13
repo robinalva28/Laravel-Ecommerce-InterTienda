@@ -83,6 +83,11 @@ Route::post('/formAgregarProducto', 'ProductosController@store');
 Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
 Route::post('/modificarProducto', 'ProductosController@update');
 
+########## CATEGORIAS VISIBLES
+Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
+
+
+
 ####### PERFIL #######
 Route::get('/perfil','UsuariosController@index');
 /*Route::get('/perfil', function(){

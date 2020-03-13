@@ -50,6 +50,18 @@ class ProductosController extends Controller
             ]);
     }
 
+    public function prdEnCategorias()
+    {
+        //
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+
+        return view('cat',
+            [
+                'productos'=>$productos,
+            ]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
