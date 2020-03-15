@@ -35,14 +35,12 @@ class ProductosController extends Controller
             [
                 'productos'=>$productos
             ]);
-
-
     }
 
     public function productosUsuario()
     {
         //
-        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->paginate(6);
 
         return view('adminUsuarioProductos',
             [
@@ -61,6 +59,17 @@ class ProductosController extends Controller
                 'productos'=>$productos,
                 'categorias'=>$categorias,
                 'categoria'=>$categoria
+            ]);
+    }
+    public function prdEnCategorias2()
+    {
+        //
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+        $categorias = Categoria::all();
+        return view('todosLosProductos',
+            [
+                'productos'=>$productos,
+                'categorias'=>$categorias
             ]);
     }
     //PROGRAMAR PARA MOSTRAR LOS DETALLES DE LA PUBLICACION DDESDE DONDE SE PUEDE AGREGAR AL CARRITO

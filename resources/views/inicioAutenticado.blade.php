@@ -22,14 +22,14 @@
 
         <!-- CARDS DE PRODUCTOS-->
         <div class="container container-fluid col-9 ">
+            <h1>Categorías</h1>
 
-
-            <div class="row  mt-4 mb-4 d-flex  justify-content-center justify-content-md-end ">
+            <div class="row  mt-4 mb-4 d-flex  justify-content-center  ">
 
         @foreach($categorias as $categoria)
 
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <img src="{{ asset('images/categorias') }}/{{$categoria->catImagen}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$categoria->catNombre}}</h5>

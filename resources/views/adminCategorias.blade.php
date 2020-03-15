@@ -46,9 +46,10 @@
                 </td>
             </tr>
         @endforeach
-        <th colspan="2">
+        <th colspan="1">
             <a href="/formAgregarCategoria" class="btn btn-dark">Agregar</a>
         </th>
+        <th>{{ $categorias->links() }}</th>
         <th></th>
         <th></th>
         <th></th>
@@ -56,7 +57,6 @@
         </tbody>
     </table>
 
-    {{ $categorias->links() }}
 
 
 @endsection

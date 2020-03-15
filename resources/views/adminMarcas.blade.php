@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <table class="mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped">
+    <table class="mx-auto mt-1 p-1  col-5 table table-bordered table-hover table-striped">
         <thead class="thead-dark">
         <tr>
             <th>id</th>
@@ -42,15 +42,18 @@
                 </td>
             </tr>
         @endforeach
-        <th colspan="2">
-            <a href="/formAgregarMarca" class="btn btn-dark">Agregar</a>
+        <th></th>
+        <th colspan="1">
+            <a href="/formAgregarMarca" class="btn btn-dark">AGREGAR MARCA</a>
         </th>
+
+        <th>  {{ $marcas->links() }}</th>
         <th></th>
-        <th></th>
+
         </tbody>
     </table>
 
-    {{ $marcas->links() }}
+
 
 
 @endsection

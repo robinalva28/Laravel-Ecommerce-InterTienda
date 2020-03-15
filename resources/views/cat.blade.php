@@ -13,7 +13,7 @@
     </div>
     <a href="/inicioAuth" class="btn btn-link">Volver a categorias</a>
     <a href="/index" class="btn btn-link">Ir a principal</a>
-    <a href="/inicioAuth" class="btn btn-link">Ver todo</a>
+    <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
 
     <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
 
@@ -25,6 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$detalle->prdNombre}}</h5>
                    {{-- <p class="card-text">{{$detalle->prdDescripcion}}</p>--}}
+                    <p><b>{{'Marca: '.$detalle->getMarca->marNombre}}</b></p>
                     <p><b>{{'$'.$detalle->prdPrecio}}</b></p>
                     <a href="/detallePublicacion/{{$detalle->prdId}}" class="btn btn-primary">+info</a>
                 </div>

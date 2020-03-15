@@ -86,6 +86,7 @@ Route::post('/modificarProducto', 'ProductosController@update');
 ########## CATEGORIAS VISIBLES
 Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
 Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
+Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
 
 
 ####### PERFIL #######

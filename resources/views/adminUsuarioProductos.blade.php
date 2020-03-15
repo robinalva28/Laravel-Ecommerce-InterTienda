@@ -48,11 +48,18 @@
 
             @endforeach
 
-            <th style="background-color: white;"  colspan="2">
+            <th colspan="2">
                 <a href="/formAgregarProducto" class="btn btn-dark">
                     Nueva publicación
                 </a>
             </th>
+            <th></th>
+            <th></th>
+            <th>{{ $productos->links() }}</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
             </tbody>
         </table>
     </div>
