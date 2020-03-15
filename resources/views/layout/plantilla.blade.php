@@ -24,7 +24,7 @@
             <ul class="navbar-nav ml-auto ">
 
                 <li class="nav-item active ">
-                    <a class="nav-link" href="index">PRINCIPAL</a>
+                    <a class="nav-link" href="{{asset('/')}}">PRINCIPAL</a>
                 </li>
                 @if (Route::has('login'))
 
@@ -32,21 +32,21 @@
 
                         @else
                         <li class="nav-item ">
-                            <a class="nav-link"  href="login">INGRESAR</a>
+                            <a class="nav-link"  href="/login">INGRESAR</a>
                         </li>
                             @if (Route::has('register'))
                             <li class="nav-item ">
-                                <a class="nav-link" href="register">REGISTRAR</a>
+                                <a class="nav-link" href="/register">REGISTRAR</a>
                             </li>
                             @endif
                         @endauth
 
                 @endif
                 <li class="nav-item">
-                    <a class="nav-link" href="faq">F.A.Q.</a>
+                    <a class="nav-link" href="/faq">F.A.Q.</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact">CONTACTO</a>
+                    <a class="nav-link" href="/contact">CONTACTO</a>
                 </li>
                     @if (Route::has('login'))
                         @auth
@@ -74,7 +74,7 @@
                             </li>
 
                             <li>
-                                <a style="color:royalblue;" class="nav-link" href="carrito"><i class="fas fa-shopping-cart"></i> CARRITO</a>
+                                <a style="color:royalblue;" class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i> CARRITO</a>
                             </li>
 
                            {{-- <li>--}}{{--Coloco el nombre del usuario al lado del logo de user solo si esta logueado--}}{{--
@@ -123,17 +123,17 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="index">Home</a>
+                        <a href="/index">Home</a>
                     </li>
                     <li>
-                        <a href="faq">FAQ</a>
+                        <a href="/faq">FAQ</a>
                     </li>
 
                     <li>
-                        <a href="login">Login</a>
+                        <a href="/login">Login</a>
                     </li>
                     <li>
-                        <a href="register">Registro</a>
+                        <a href="/register">Registro</a>
                     </li>
 
                 </ul>

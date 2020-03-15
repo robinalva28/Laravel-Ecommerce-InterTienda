@@ -51,4 +51,9 @@
         </tbody>
     </table>
     </div>
+    
+
+    {{ $productos->links() }}
+
+
 @endsection

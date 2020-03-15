@@ -26,6 +26,16 @@
         </div>
 
         <div class="form-group">
+            <label>Categoría:</label>
+            <select name="catId" class="form-control" required>
+                <option value="">Seleccione una Categoría</option>
+                @foreach( $categorias as $categoria )
+                    <option value="{{ $categoria->catId }}">{{ $categoria->catNombre }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
             <label>Marca:</label>
             <select name="marId" class="form-control" required>
                 <option value="">Seleccione una marca</option>
@@ -35,15 +45,7 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label>Categoría:</label>
-            <select name="catId" class="form-control" required>
-                <option value="">Seleccione una Categoría</option>
-                @foreach( $categorias as $categoria )
-                    <option value="{{ $categoria->catId }}">{{ $categoria->catNombre }}</option>
-                @endforeach
-            </select>
-        </div>
+
 
         <div class="form-group">
             <label for="prdDescripcion">Descripción:</label>

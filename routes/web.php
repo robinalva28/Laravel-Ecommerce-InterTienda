@@ -36,7 +36,7 @@ Route::get('/faq', function(){
 
 ######## FORM CONTACT ###########
 Route::get('/contact', function(){
-    return view('contact');
+    return view('/contact');
 });
 
 ######### PUBLICACIONES INICIO
@@ -85,7 +85,7 @@ Route::post('/modificarProducto', 'ProductosController@update');
 
 ########## CATEGORIAS VISIBLES
 Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
-
+Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
 
 
 ####### PERFIL #######

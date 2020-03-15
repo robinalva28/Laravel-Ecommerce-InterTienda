@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/CategoriasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/CategoriasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/cat_tecno.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/cat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/cat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/cat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/formAgregarProducto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formAgregarProducto.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/formModificarProducto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formModificarProducto.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/tecno_01.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +202,11 @@
       <workItem from="1584041197333" duration="9000" />
       <workItem from="1584041990009" duration="5000" />
       <workItem from="1584042142891" duration="5548000" />
-      <workItem from="1584103005547" duration="4810000" />
+      <workItem from="1584103005547" duration="9040000" />
+      <workItem from="1584115520501" duration="3060000" />
+      <workItem from="1584121001243" duration="667000" />
+      <workItem from="1584210103472" duration="3781000" />
+      <workItem from="1584233120838" duration="429000" />
     </task>
     <servers />
   </component>
@@ -209,10 +214,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583603512619">
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584210862627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583603512619" />
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584210862627" />
     <state x="231" y="71" width="476" height="886" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581560737285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -264,8 +269,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php</url>
-          <line>89</line>
-          <option name="timeStamp" value="3" />
+          <line>106</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
