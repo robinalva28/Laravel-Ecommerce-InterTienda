@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//rutas del administrador
+Route::group(['middleware' => 'admin'], function () {
+  /*  Route::get('/admin/series', 'Admin\SeriesController@index');
+    Route::get('/admin/series/{id}', 'Admin\SeriesController@edit');*/
+});
 Route::get('/index', 'HomeController@index');/**/
 
 

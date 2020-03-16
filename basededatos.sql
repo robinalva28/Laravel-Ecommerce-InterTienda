@@ -8,6 +8,12 @@ create database ecomerce;
 /*CREATE USER 'root'@'localhost' IDENTIFIED BY 'rob';
 GRANT ALL PRIVILEGES ON ecomerce. * TO 'root'@'localhost';
 FLUSH PRIVILEGES;*/
+/*HABILITAR USUARIO ADMINISTRADOR luego de haberlo creado con nombre = admin*/
+/*UPDATE usuarios
+SET
+    isAdmin = true
+WHERE
+    nombre = 'admin';	;*/
 
 use ecomerce;
 
@@ -54,6 +60,7 @@ create table usuarios(
     password			varchar(100),
     avatar			varchar(100),
     validado boolean,/*por agregar*/
+    isAdmin boolean,
     foreign key (usrIdEmpresa) references empresas(empId)
 );
 
@@ -90,3 +97,6 @@ create table ventas(
     foreign key (venIdProducto) references productos(prdId),
     foreign key (venIdUsuario) references usuarios(usrId)
 );
+
+
+

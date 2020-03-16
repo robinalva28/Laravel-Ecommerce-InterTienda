@@ -1,8 +1,8 @@
 @extends('layout.plantilla')
 
-@section('title', 'Mis publicaciones')
+@section('title', 'Publicaciones')
 
-@section('h1', 'Mis publicaciones')
+@section('h1', 'Publicaciones')
 
 @section('contenido')
 

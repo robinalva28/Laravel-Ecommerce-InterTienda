@@ -7,13 +7,12 @@
 
         <div class="tittle">
 
-
+        <br>
             <h1>Todos</h1>
 
         </div>
         <a href="/inicioAuth" class="btn btn-link">Volver a categorias</a>
         <a href="/index" class="btn btn-link">Ir a principal</a>
-        <a href="/inicioAuth" class="btn btn-link">Ver todo</a>
 
         <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
 

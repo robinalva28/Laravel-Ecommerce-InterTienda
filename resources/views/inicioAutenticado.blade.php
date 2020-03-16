@@ -22,6 +22,7 @@
 
         <!-- CARDS DE PRODUCTOS-->
         <div class="container container-fluid col-9 ">
+            <br>
             <h1>Categorías</h1>
 
             <div class="row  mt-4 mb-4 d-flex  justify-content-center  ">
