@@ -18,6 +18,7 @@
     <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
 
     @foreach($productos as $detalle)
+
         @if($detalle->prdIdCategoria == $categoria->catId)
         <div class="col-lg-3 col-sm-12 col-md-6 mb-4 mx-2">
             <div class="card" style="width: 18rem;" >
@@ -31,8 +32,15 @@
                 </div>
             </div>
         </div>
-        @endif
+               @endif
     @endforeach
+
+       {{-- @if($categoria->catId != $detalle->prdIdProducto)
+
+            <div class="col-lg-3 col-sm-12 col-md-6 mb-4 mx-2">
+                <img style="height: 15vh;" src="{{ asset('images/notificaciones/dificultadesTecnicas.png')}}" alt="">
+            </div>
+        @endif--}}
 
     </div>
 </div>

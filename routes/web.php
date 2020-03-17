@@ -11,9 +11,16 @@
 |
 */
 //rutas del administrador
-Route::group(['middleware' => 'admin'], function () {
-  /*  Route::get('/admin/series', 'Admin\SeriesController@index');
-    Route::get('/admin/series/{id}', 'Admin\SeriesController@edit');*/
+Route::group(['middleware' => 'admin',
+                'prefix' => 'admin',
+               /* 'namespace' => 'Admin'*/], function () {
+
+         Route::get('/adminCategorias', 'CategoriasController@index');
+         Route::get('/adminMarcas', 'MarcasController@index');
+    Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
+    Route::get('/adminProductos', 'ProductosController@index');
+    Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
+
 });
 Route::get('/index', 'HomeController@index');/**/
 
@@ -66,14 +73,14 @@ Route::get('/cat_vestimenta', function(){
 });
 
 ############## CRUD Categorias
-Route::get('/adminCategorias', 'CategoriasController@index');
+
 Route::get('/formAgregarCategoria', 'CategoriasController@create');
 Route::post('/agregarCategoria', 'CategoriasController@store');
 Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit');
 Route::post('/modificarCategoria', 'CategoriasController@update');
 
 ############## CRUD Marcas ###################
-Route::get('/adminMarcas', 'MarcasController@index');
+
 Route::get('/formAgregarMarca', 'MarcasController@create');
 Route::post('/agregarMarca', 'MarcasController@store');
 Route::get('/formModificarMarca/{id}', 'MarcasController@edit');
@@ -81,7 +88,7 @@ Route::post('/modificarMarca', 'MarcasController@update');
 
 ############## CRUD PRODUCTOS ###################
 Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
-Route::get('/adminProductos', 'ProductosController@index');
+
 Route::get('/formAgregarProducto', 'ProductosController@create');
 Route::post('/formAgregarProducto', 'ProductosController@store');
 Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
@@ -90,7 +97,7 @@ Route::post('/modificarProducto', 'ProductosController@update');
 ########## CATEGORIAS VISIBLES
 Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
 Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
-Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
+
 
 
 ####### PERFIL #######
@@ -100,7 +107,7 @@ Route::get('/perfil','UsuariosController@index');
 });*/
 
 #################### ADMIN
-Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
+
 
 
 //logout

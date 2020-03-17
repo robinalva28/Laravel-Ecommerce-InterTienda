@@ -4,17 +4,12 @@
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Middleware/AdminMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Middleware/AdminMiddleware.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/cat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/cat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/cat_otros.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/cat_vestimenta.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +208,8 @@
       <workItem from="1584210103472" duration="3781000" />
       <workItem from="1584233120838" duration="7203000" />
       <workItem from="1584290157116" duration="742000" />
-      <workItem from="1584370136996" duration="4603000" />
+      <workItem from="1584370136996" duration="6091000" />
+      <workItem from="1584465019190" duration="4847000" />
     </task>
     <servers />
   </component>
@@ -277,7 +273,7 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php</url>
           <line>115</line>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

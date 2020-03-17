@@ -51,6 +51,9 @@
                             Inhabilitar usuario
                         </a>
                     </td>
+                    @elseif($detalle->isAdmin == 1)
+                    <td style="color:green;" >Administrador</td>
+                    <td></td>
                 @else
                 <td style="color:red;" >No Validado</td>
 

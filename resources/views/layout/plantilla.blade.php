@@ -59,14 +59,16 @@
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/adminProductos">Todas Publicaciones</a>
+                                    <a class="dropdown-item" href="/inicioAuth">inicioAutenticado</a>
                                     <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
                                     <a class="dropdown-item" href="/perfil">Mis datos</a>
-                                    <a class="dropdown-item" href="/adminListaUsuarios">Usuarios registrados</a>
-                                    <a class="dropdown-item" href="/adminMarcas">Admin marcas</a>
-                                    <a class="dropdown-item" href="/adminCategorias">Admin categorias</a>
-                                    <a class="dropdown-item" href="/inicioAuth">inicioAutenticado</a>
-                                    <div class="dropdown-divider"></div>
+                                    @if(Auth::user()->isAdmin)
+                                    <a class="dropdown-item" href="/admin/adminProductos">Todas Publicaciones</a>
+                                    <a class="dropdown-item" href="/admin/adminListaUsuarios">Usuarios registrados</a>
+                                    <a class="dropdown-item" href="/admin/adminMarcas">Admin marcas</a>
+                                    <a class="dropdown-item" href="/admin/adminCategorias">Admin categorias</a>
+                                    @endif
+                                        <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">
                                         <form action="{{ route('logout') }}" method="POST" >
                                             @csrf
