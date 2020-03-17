@@ -17,7 +17,7 @@ Route::group(['middleware' => 'admin',
 
          Route::get('/adminCategorias', 'CategoriasController@index');
          Route::get('/adminMarcas', 'MarcasController@index');
-    Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
+
     Route::get('/adminProductos', 'ProductosController@index');
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
 
@@ -88,7 +88,7 @@ Route::post('/modificarMarca', 'MarcasController@update');
 
 ############## CRUD PRODUCTOS ###################
 Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
-
+Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
 Route::get('/formAgregarProducto', 'ProductosController@create');
 Route::post('/formAgregarProducto', 'ProductosController@store');
 Route::get('/formModificarProducto/{id}', 'ProductosController@edit');

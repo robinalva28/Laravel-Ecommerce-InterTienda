@@ -178,7 +178,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright Equipo 8 Digital House:
+    <div class="footer-copyright text-center py-3">© 2020 Copyright Equipo 8 Digital House & Robinson Alvarez Company
 
     </div>
     <!-- Copyright -->
