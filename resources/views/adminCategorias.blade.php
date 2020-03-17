@@ -40,14 +40,14 @@
                     </a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
+                    <a onclick="return confirm('¿Está seguro de eliminar ésta categoría?')" href="" class="btn btn-outline-secondary">
                         Eliminar
                     </a>
                 </td>
             </tr>
         @endforeach
         <th colspan="1">
-            <a href="/formAgregarCategoria" class="btn btn-dark">Agregar</a>
+            <a href="/admin/formAgregarCategoria" class="btn btn-dark">Agregar</a>
         </th>
         <th>{{ $categorias->links() }}</th>
         <th></th>

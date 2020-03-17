@@ -14,14 +14,51 @@
 Route::group(['middleware' => 'admin',
                 'prefix' => 'admin',
                /* 'namespace' => 'Admin'*/], function () {
+    ###### CRUD CATEGORIAS
+    Route::get('/adminCategorias', 'CategoriasController@index');
+    Route::get('/formAgregarCategoria', 'CategoriasController@create');
+    Route::post('/agregarCategoria', 'CategoriasController@store');
+    Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit');
+    Route::post('/modificarCategoria', 'CategoriasController@update');
+    Route::get('/eliminarCategoria/{id}','CategoriasController@destroy');
 
-         Route::get('/adminCategorias', 'CategoriasController@index');
-         Route::get('/adminMarcas', 'MarcasController@index');
+
+    ###### CRUD MARCAS
+    Route::get('/adminMarcas', 'MarcasController@index');
+    Route::get('/formAgregarMarca', 'MarcasController@create');
+    Route::post('/agregarMarca', 'MarcasController@store');
+    Route::get('/formModificarMarca/{id}', 'MarcasController@edit');
+    Route::post('/modificarMarca', 'MarcasController@update');
+    Route::get('/eliminarMarca/{id}','MarcasController@destroy');
+
+
 
     Route::get('/adminProductos', 'ProductosController@index');
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
 
 });
+
+
+
+############## CRUD PRODUCTOS ###################
+Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
+Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
+Route::get('/formAgregarProducto', 'ProductosController@create');
+Route::post('/formAgregarProducto', 'ProductosController@store');
+Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
+Route::post('/modificarProducto', 'ProductosController@update');
+
+########## CATEGORIAS VISIBLES
+Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
+Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
+
+
+
+####### PERFIL #######
+Route::get('/perfil','UsuariosController@index');
+
+
+
 Route::get('/index', 'HomeController@index');/**/
 
 
@@ -67,47 +104,9 @@ Route::get('tecno_01', function(){
 });
 
 
-
 Route::get('/cat_vestimenta', function(){
     return view('cat_vestimenta');
 });
-
-############## CRUD Categorias
-
-Route::get('/formAgregarCategoria', 'CategoriasController@create');
-Route::post('/agregarCategoria', 'CategoriasController@store');
-Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit');
-Route::post('/modificarCategoria', 'CategoriasController@update');
-
-############## CRUD Marcas ###################
-
-Route::get('/formAgregarMarca', 'MarcasController@create');
-Route::post('/agregarMarca', 'MarcasController@store');
-Route::get('/formModificarMarca/{id}', 'MarcasController@edit');
-Route::post('/modificarMarca', 'MarcasController@update');
-
-############## CRUD PRODUCTOS ###################
-Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
-Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
-Route::get('/formAgregarProducto', 'ProductosController@create');
-Route::post('/formAgregarProducto', 'ProductosController@store');
-Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
-Route::post('/modificarProducto', 'ProductosController@update');
-
-########## CATEGORIAS VISIBLES
-Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
-Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
-
-
-
-####### PERFIL #######
-Route::get('/perfil','UsuariosController@index');
-/*Route::get('/perfil', function(){
-    return view('perfil');
-});*/
-
-#################### ADMIN
-
 
 
 //logout

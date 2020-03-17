@@ -8,7 +8,7 @@
 
 
 <div class="card bg-light col-md-7 mt-5 p-3 mx-auto">
-    <form action="/formModificarProducto" method="post" enctype="multipart/form-data">
+    <form action="/modificarProducto/{{$producto->prdId }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -63,7 +63,7 @@
             <i class="far fa-plus-square fa-lg mr-2"></i>
             Modificar Producto
         </button>
-        <a href="/adminProductos" class="btn btn-outline-secondary ml-3">
+        <a href="/adminUsuarioProductos" class="btn btn-outline-secondary ml-3">
             volver al panel de productos
         </a>
 

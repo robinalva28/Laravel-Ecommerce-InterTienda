@@ -19,7 +19,7 @@ class CategoriasController extends Controller
     {
         //
         $categorias = Categoria::paginate(6);
-        return view('adminCategorias',
+        return view('/adminCategorias',
             [ 'categorias' =>  $categorias ]);
     }
 
@@ -43,7 +43,7 @@ class CategoriasController extends Controller
     public function create()
     {
         //
-        return view('formAgregarCategoria');
+        return view('/formAgregarCategoria');
     }
 
     /**
@@ -82,7 +82,7 @@ class CategoriasController extends Controller
         $categoria->catDescripcion = request('catDescripcion');
         $categoria->catImagen = $imageName;
         $categoria->save();
-        return redirect('/adminCategorias')->with('mensaje', 'Categoria '.$categoria->catNombre.' agregada con éxito');
+        return redirect('/admin/adminCategorias')->with('mensaje', 'Categoria '.$categoria->catNombre.' agregada con éxito');
     }
 
     /**
@@ -120,7 +120,7 @@ class CategoriasController extends Controller
         $Categoria = Categoria::find($request->input('catId'));
         $Categoria->catNombre = $request->input('catNombre');
         $Categoria->save();
-        return redirect('/adminCategorias')
+        return redirect('/admin/adminCategorias')
             ->with('mensaje', 'Categoria '.$Categoria->catNombre.' modificada con éxito');
     }
 

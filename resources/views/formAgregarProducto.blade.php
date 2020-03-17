@@ -64,7 +64,7 @@
             <i class="far fa-plus-square fa-lg mr-2"></i>
             Agregar Producto
         </button>
-        <a href="/adminProductos" class="btn btn-outline-secondary ml-3">
+        <a href="/adminUsuarioProductos" class="btn btn-outline-secondary ml-3">
             volver al panel de productos
         </a>
 

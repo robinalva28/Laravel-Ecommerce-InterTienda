@@ -7,7 +7,7 @@
 @section('contenido')
 
     <div class="mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped alert bg-light p-4">
-        <form action="/agregarMarca" method="post">
+        <form action="/admin/agregarMarca" method="post">
             @csrf
             Nombre:
             <br>
@@ -15,7 +15,7 @@
             <br>
 
             <button class="btn btn-dark">Agregar</button>
-            <a href="/adminMarcas" class="btn btn-outline-secondary ml-3">
+            <a href="/admin/adminMarcas" class="btn btn-outline-secondary ml-3">
                 Ir al panel de marcas
             </a>
 

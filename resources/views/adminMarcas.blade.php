@@ -31,20 +31,23 @@
                 <td>{{$marca->marId}}</td>
                 <td>{{$marca->marNombre}}</td>
                 <td>
-                    <a href="/formModificarMarca/{{$marca->marId}}" class="btn btn-outline-secondary">
+                    <a href="/admin/formModificarMarca/{{$marca->marId}}" class="btn btn-outline-secondary">
                         Modificar
                     </a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
+                    <form action="/admin/eliminarMarca/{{$marca->marId}}">
+                        @csrf
+                    <button type="submit" onclick="return confirm('¿Desea eliminar ésta marca?')" class="btn btn-outline-secondary">
                         Eliminar
-                    </a>
+                    </button>
+                 </form>
                 </td>
             </tr>
         @endforeach
         <th></th>
         <th colspan="1">
-            <a href="/formAgregarMarca" class="btn btn-dark">AGREGAR MARCA</a>
+            <a href="/admin/formAgregarMarca" class="btn btn-dark">AGREGAR MARCA</a>
         </th>
 
         <th>  {{ $marcas->links() }}</th>

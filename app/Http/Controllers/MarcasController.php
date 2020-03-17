@@ -54,7 +54,7 @@ class MarcasController extends Controller
         $Marca = new Marca;
         $Marca->marNombre = $marNombre;
         $Marca->save();
-        return redirect('/adminMarcas')
+        return redirect('/admin/adminMarcas')
             ->with('mensaje', 'Marca '.$Marca->marNombre.' agregada con éxito');
     }
 
@@ -92,10 +92,12 @@ class MarcasController extends Controller
     public function update(Request $request)
     {
         //
+
         $Marca = Marca::find($request->input('marId'));
         $Marca->marNombre = $request->input('marNombre');
+
         $Marca->save();
-        return redirect('/adminMarcas')
+        return redirect('/admin/adminMarcas')
             ->with('mensaje', 'Marca '.$Marca->marNombre.' modificada con éxito');
     }
 
@@ -108,6 +110,10 @@ class MarcasController extends Controller
     public function destroy($id)
     {
         //
+        Marca::destroy($id);
+
+        return redirect ('admin/adminMarcas');
+
     }
 }
 

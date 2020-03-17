@@ -18,7 +18,7 @@
 
     <!--QUIENES SOMOS-->
 
-    <div class="container-fluid ">
+    <div class="container-fluid"  >
 
         <!-- CARDS DE PRODUCTOS-->
         <div class="container container-fluid col-9 ">
@@ -26,7 +26,7 @@
             <h1>Categorías</h1>
 
             <div class="row  mt-4 mb-4 d-flex  justify-content-center  ">
-
+                <?php $i= 0 ?>
         @foreach($categorias as $categoria)
 
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
@@ -39,7 +39,18 @@
                         </div>
                     </div>
                 </div>
+                        <?php $i++ ?>
             @endforeach
+            @if($i==0)
+
+                <div class="jumbotron">
+                    <h1 class="display-4">¡No encontramos nada!</h1>
+                    <p class="lead">Puedes publicar algún artículo o servicio..</p>
+                    <hr class="my-4">
+                    <p>Si ya existen productos y/o servicios publicados recarga la página.</p>
+                    <a class="btn btn-primary btn-lg" href="/formAgregarProducto" role="button">Nueva publicación</a>
+                </div>
+            @endif
             </div>
         </div>
         <!-- CARDS -->

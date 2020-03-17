@@ -9,7 +9,7 @@
 @section('h1', 'Alta de una nueva categoria')
 
 <div class="mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped alert bg-light p-4">
-    <form action="/agregarCategoria" method="post" enctype="multipart/form-data">
+    <form action="/admin/agregarCategoria" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -29,7 +29,7 @@
             <i class="far fa-plus-square fa-lg mr-2"></i>
             Agregar Categoria
         </button>
-        <a href="/adminCategorias" class="btn btn-outline-secondary ml-3">
+        <a href="/admin/adminCategorias" class="btn btn-outline-secondary ml-3">
             Ir al panel de categorias
         </a>
 

@@ -41,8 +41,8 @@
         @if($i==0)
 
             <div class="jumbotron">
-                <h1 class="display-4">No encontramos nada en {{$categoria->catNombre}}!</h1>
-                <p class="lead">Puedes publicar algún artículo o servicio relacinado con la categoría {{$categoria->catNombre}}.</p>
+                <h1 class="display-4">¡No encontramos nada en {{$categoria->catNombre}}!</h1>
+                <p class="lead">Puedes publicar algún artículo o servicio relacionado con la categoría {{$categoria->catNombre}}.</p>
                 <hr class="my-4">
                 <p>Si ya existen productos y/o servicios relacionados a esta categoría recarga la página.</p>
                 <a class="btn btn-primary btn-lg" href="/formAgregarProducto" role="button">Nueva publicación</a>

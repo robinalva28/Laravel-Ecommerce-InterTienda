@@ -141,7 +141,7 @@ class ProductosController extends Controller
             'prdIdUsuario'=>Auth::user()->usrId
         ]);
 
-            return redirect('adminProductos'/*,'ProductosController@index'*/);
+            return redirect('adminUsuarioProductos'/*,'ProductosController@index'*/);
 
     }
     /**
@@ -183,10 +183,11 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $Producto= Producto::findOrFail($id);
 
         // For a sanity check, die and dump here temporarily
-        dd($Producto);
+        dd($request);
 
        // $Producto = Producto::find($request->input('prdId'));
         $Producto->prdNombre = $request->input('prdNombre');
@@ -199,7 +200,7 @@ class ProductosController extends Controller
         $Producto->prdIdUsuario = Auth::user()->usrId;
         $Producto->save();
 
-        return redirect('/adminProductos')
+        return redirect('/adminUsuarioProductos')
             ->with('mensaje', 'Publicacion '.$Producto->prdNombre.' modificada con éxito');
     }
 
