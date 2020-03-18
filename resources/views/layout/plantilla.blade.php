@@ -27,7 +27,7 @@
             <ul class="navbar-nav ml-auto ">
 
                 <li class="nav-item active ">
-                    <a class="nav-link" href="{{asset('/')}}">PRINCIPAL</a>
+                    <a class="nav-link" href="/">PRINCIPAL</a>
                 </li>
                 @if (Route::has('login'))
 
@@ -59,7 +59,7 @@
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/inicioAuth">inicioAutenticado</a>
+                                    <a class="dropdown-item" href="/inicioAuth">inicio</a>
                                     <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
                                     <a class="dropdown-item" href="/perfil">Mis datos</a>
                                     @if(Auth::user()->isAdmin)

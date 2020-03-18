@@ -1,5 +1,6 @@
 <?php
-
+use App\User;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,7 +35,13 @@ Route::group(['middleware' => 'admin',
 
 
     Route::get('/adminProductos', 'ProductosController@index');
+
+
+    ###### ADMIN SOBRE USUARIOS
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
+    Route::get('/habilitarUsuario/{id}','UsuariosController@habilitarUsuario');
+    Route::get('/inhabilitarUsuario/{id}','UsuariosController@inhabilitarUsuario');
+
 
 });
 
@@ -60,15 +67,16 @@ Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
 Route::get('/perfil','UsuariosController@index');
 
 
-
-Route::get('/index', 'HomeController@index');/**/
-
-
+Route::get('/inicioAuth' ,'ProductosController@allProductos');
 Route::get('/', 'HomeController@index');
 
-/*Route::get('index',function(){
-    return view('/');
-});*/
+
+
+
+Route::get('/index', function(){
+    return view('inicio');
+});
+
 
 Route::get('/carrito', function(){
     return view('carrito');
@@ -88,29 +96,6 @@ Route::get('/faq', function(){
 Route::get('/contact', function(){
     return view('/contact');
 });
-
-######### PUBLICACIONES INICIO
-
-Route::get('/inicioAuth', 'CategoriasController@allCategorias');
-
-######### CATEGORIAS DE LOS PRODUCTOS #######
-Route::get('/cat_otros', function(){
-    return view('cat_otros');
-});
-
-Route::get('/cat_tecno', function(){
-    return view('cat_tecno');
-});
-Route::get('tecno_01', function(){
-   return view ('tecno_01');
-});
-
-
-Route::get('/cat_vestimenta', function(){
-    return view('cat_vestimenta');
-});
-
-
 //logout
 
 Route::get('perfil/logout','auth\LoginController@logout');
@@ -118,4 +103,4 @@ Route::get('perfil/logout','auth\LoginController@logout');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

@@ -36,6 +36,34 @@ class UsuariosController extends Controller
         $usuario = User::all();
         return $usuario;
     }
+
+    public function habilitarUsuario($id)
+    {
+        //
+        $usuario = User::find($id);
+        $usuario->validado = 1;
+        $usuario->save();
+        $usuario = User::all();
+
+        return view('adminListaUsuarios',
+            [
+                'usuario'=>$usuario,
+            ]);
+    }
+
+    public function inhabilitarUsuario($id)
+    {
+        $usuario = User::find($id);
+        $usuario->validado = 0;
+        $usuario->save();
+        $usuario = User::all();
+
+        return view('adminListaUsuarios',
+            [
+                'usuario'=>$usuario,
+            ]);
+    }
+
 }
 
 

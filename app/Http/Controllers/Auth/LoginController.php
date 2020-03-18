@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use http\Client\Curl\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +29,9 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/inicio';
+    //protected $redirectTo = '/inicio';
+
+
 
     /**
      * Create a new controller instance.
@@ -41,7 +44,12 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-
+    /*public function redirectPath()
+    {
+        if(Auth::user()->isAdmin){
+            return view ('/');
+        }
+    }*/
 
     protected function username()
     {

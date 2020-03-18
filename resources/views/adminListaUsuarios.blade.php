@@ -45,9 +45,8 @@
                 <td>{{ $detalle->fechaNacimiento }}</td>
                 @if($detalle->validado == 1)
                 <td>Validado</td>
-
                     <td>
-                        <a href="" class="btn btn-outline-secondary">
+                        <a href="/admin/inhabilitarUsuario/{{$detalle->usrId}}" onclick="return confirm('¿Inhabilitar usuario?')" class="btn btn-outline-secondary">
                             Inhabilitar usuario
                         </a>
                     </td>
@@ -55,11 +54,10 @@
                     <td style="color:green;" >Administrador</td>
                     <td></td>
                 @else
-                <td style="color:red;" >No Validado</td>
-
+                <td style="color:red;" >No Habilitado</td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
-                        Validar usuario
+                    <a href="/admin/habilitarUsuario/{{$detalle->usrId}}" onclick="return confirm('¿Validar usuario?')" class="btn btn-outline-secondary">
+                        Habilitar usuario
                     </a>
                 </td>
                 @endif

@@ -30,10 +30,11 @@ class ProductosController extends Controller
     public function allProductos(){
 
         $productos = Producto::with('getMarca', 'getCategoria')->get();
-
+        $categorias = Categoria::all();
         return view('inicioAutenticado',
             [
-                'productos'=>$productos
+                'productos'=>$productos,
+                'categorias'=> $categorias
             ]);
     }
 
@@ -73,6 +74,7 @@ class ProductosController extends Controller
             ]);
     }
     //PROGRAMAR PARA MOSTRAR LOS DETALLES DE LA PUBLICACION DDESDE DONDE SE PUEDE AGREGAR AL CARRITO
+
     public function prdEnDetalle($id)
     {
         //
