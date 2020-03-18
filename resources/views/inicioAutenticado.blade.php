@@ -24,13 +24,13 @@
         <div class="container container-fluid col-9 ">
             <br>
             <h1>Categorías</h1>
-
+            <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
             <div class="row  mt-4 mb-4 d-flex  justify-content-center  ">
                 <?php $i= 0 ?>
         @foreach($categorias as $categoria)
 
-                <div class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
-                    <div class="card" style="width: 16rem;">
+                <div  class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
+                    <div onclick="location.href='cat/{{$categoria->catId}}'" class="card" style="width: 16rem;">
                         <img src="{{ asset('images/categorias') }}/{{$categoria->catImagen}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$categoria->catNombre}}</h5>

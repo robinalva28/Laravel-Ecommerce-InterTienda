@@ -44,14 +44,14 @@
                 <td>{{ $detalle->usrIdEmpresa->empCuil }}</td>--}}
                 <td>{{ $detalle->fechaNacimiento }}</td>
                 @if($detalle->validado == 1)
-                <td>Validado</td>
+                <td style="color:green;" >Habilitado</td>
                     <td>
                         <a href="/admin/inhabilitarUsuario/{{$detalle->usrId}}" onclick="return confirm('¿Inhabilitar usuario?')" class="btn btn-outline-secondary">
                             Inhabilitar usuario
                         </a>
                     </td>
                     @elseif($detalle->isAdmin == 1)
-                    <td style="color:green;" >Administrador</td>
+                    <td style="color:blue;" >Administrador</td>
                     <td></td>
                 @else
                 <td style="color:red;" >No Habilitado</td>

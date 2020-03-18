@@ -45,16 +45,22 @@ Route::group(['middleware' => 'admin',
 
 });
 
+    ###### RUTAS DE USUARIOS VALIDADOS
+Route::group(['middleware' => 'validado'], function () {
+
+    Route::get('/formAgregarProducto', 'ProductosController@create');
+    Route::post('/formAgregarProducto', 'ProductosController@store');
+    Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
+    Route::post('/modificarProducto', 'ProductosController@update');
+    Route::get('/eliminarProducto/{id}','ProductosController@destroy');
+
+});
 
 
 ############## CRUD PRODUCTOS ###################
 Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
 Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
-Route::get('/formAgregarProducto', 'ProductosController@create');
-Route::post('/formAgregarProducto', 'ProductosController@store');
-Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
-Route::post('/modificarProducto', 'ProductosController@update');
-Route::get('/eliminarProducto/{id}','ProductosController@destroy');
+
 
 
 ########## CATEGORIAS VISIBLES

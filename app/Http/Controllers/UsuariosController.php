@@ -12,6 +12,8 @@ use Illuminate\Validation\ValidationException;
 class UsuariosController extends Controller
 {
 
+
+
     public function index()
     {
         //

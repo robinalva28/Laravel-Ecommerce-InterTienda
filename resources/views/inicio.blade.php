@@ -4,6 +4,13 @@
 
 
 @section('contenido')
+
+    {{-- mensajes de ok --}}
+    @if( session()->has('mensaje') )
+        <div class="alert alert-success">
+            {{ session()->get('mensaje') }}
+        </div>
+    @endif
     <!--QUIENES SOMOS-->
     <div class="jumbotron">
         <h1 class="display-4">HOME- QUIENES SOMOS</h1>
