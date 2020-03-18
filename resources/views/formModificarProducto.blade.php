@@ -8,6 +8,11 @@
 
 
 <div class="card bg-light col-md-7 mt-5 p-3 mx-auto">
+    @if( session()->has('mensaje') )
+        <div class="alert alert-success">
+            {{ session()->get('mensaje') }}
+        </div>
+    @endif
     <form action="/modificarProducto/{{$producto->prdId }}" method="post" enctype="multipart/form-data">
         @csrf
 

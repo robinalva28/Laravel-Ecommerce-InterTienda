@@ -7,6 +7,11 @@
 @section('contenido')
 
     <div class="{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
+        @if( session()->has('mensaje') )
+            <div class="alert alert-success">
+                {{ session()->get('mensaje') }}
+            </div>
+        @endif
         <table class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
             <thead class="thead-dark">
             <tr class="mr-3">
@@ -39,9 +44,12 @@
                         </a>
                     </td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary">
-                            Eliminar
-                        </a>
+                        <form action="/eliminarProducto/{{$producto->prdId}} " method="get">
+                            @csrf
+                            <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
+                                Eliminar
+                            </button>
+                        </form>
                     </td>
                     @endif
                 </tr>

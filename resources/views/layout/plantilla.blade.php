@@ -72,7 +72,7 @@
                                     <a class="dropdown-item" href="#">
                                         <form action="{{ route('logout') }}" method="POST" >
                                             @csrf
-                                            <button  type="submit"  class="btn btn-danger small col-sm-12 col-md-12 col-lg-12 p-0" name="" value=""><small>Cerrar Sesión</small></button>
+                                            <button onclick="return confirm('¿Cerrar sesión?')" type="submit"  class="btn btn-danger small col-sm-12 col-md-12 col-lg-12 p-0" name="" value=""><small>Cerrar Sesión</small></button>
                                         </form>
                                     </a>
                                 </div>

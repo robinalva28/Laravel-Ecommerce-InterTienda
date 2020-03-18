@@ -129,7 +129,7 @@ class ProductosController extends Controller
         }
 
 
-            Producto::create([
+           $producto = Producto::create([
             'prdNombre' => $request['prdNombre'],
             'prdDescripcion' => $request ['prdDescripcion'],
             'prdIdMarca' => $request ['marId'],
@@ -141,7 +141,8 @@ class ProductosController extends Controller
             'prdIdUsuario'=>Auth::user()->usrId
         ]);
 
-            return redirect('adminUsuarioProductos'/*,'ProductosController@index'*/);
+            return redirect('adminUsuarioProductos'/*,'ProductosController@index'*/)
+                ->with('mensaje', 'Publicación '.$producto->prdNombre.' creada con éxito');;
 
     }
     /**
@@ -212,6 +213,10 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Producto::destroy($id);
+
+        return redirect('/adminUsuarioProductos')
+            ->with('mensaje', 'Publicación eliminada con éxito');
+
     }
 }
