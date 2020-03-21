@@ -22,7 +22,7 @@
                 <th>Descripción</th>
                 <th>Stock</th>
                 <th>Imagen</th>
-                <th colspan="2"></th>
+                <th colspan="3"></th>
             </tr>
             </thead>
             <tbody>
@@ -51,6 +51,10 @@
                             </button>
                         </form>
                     </td>
+                        <td >
+                            <a href="/detallePublicacion/{{$producto->prdId}}" class="nav-link">Vista previa</a>
+
+                        </td>
                     @endif
                 </tr>
 
@@ -64,6 +68,7 @@
             <th></th>
             <th></th>
             <th>{{ $productos->links() }}</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
