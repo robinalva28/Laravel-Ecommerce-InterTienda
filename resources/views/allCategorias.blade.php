@@ -56,7 +56,7 @@
         <!-- CARDS -->
     </div>
 
-    <!-- CARRUSEL -->
+   {{-- <!-- CARRUSEL -->
 
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -73,7 +73,7 @@
         </div>
 
 
-        <!-- CARRUSEL -->
+        <!-- CARRUSEL -->--}}
 
 
 @endsection

@@ -72,7 +72,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
 
-            return redirect()->intended('inicio');
+            return redirect()->intended('/');
 
         }
 

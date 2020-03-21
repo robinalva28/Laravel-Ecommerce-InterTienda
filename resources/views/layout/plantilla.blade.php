@@ -59,7 +59,7 @@
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/inicioAuth">inicio</a>
+                                    <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>
                                     <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
                                     <a class="dropdown-item" href="/perfil">Mis datos</a>
                                     @if(Auth::user()->isAdmin)
@@ -72,23 +72,17 @@
                                     <a class="dropdown-item" href="#">
                                         <form action="{{ route('logout') }}" method="POST" >
                                             @csrf
-                                            <button onclick="return confirm('¿Cerrar sesión?')" type="submit"  class="btn btn-danger small col-sm-12 col-md-12 col-lg-12 p-0" name="" value=""><small>Cerrar Sesión</small></button>
+                                            <button onclick="return confirm('¿Cerrar sesión?')" type="submit"  class="btn btn-block small col-sm-12 col-md-12 col-lg-12 p-0" name="" value=""><small>Cerrar Sesión</small></button>
                                         </form>
                                     </a>
                                 </div>
                             </li>
-
                             <li>
-                                <a style="color:royalblue;" class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"><span style="color:royalblue;" class="badge badge-light">3</span>
+                                <a style="color:royalblue;" class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"><span style="color:royalblue;" class="badge badge-light">2</span>
                                         <span class="sr-only">unread messages</span></i> CARRITO</a>
-
                             </li>
-
                         @endauth
-
                     @endif
-
-
             </ul>
 
         </div>

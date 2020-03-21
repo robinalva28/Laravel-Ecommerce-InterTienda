@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Carrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Carrito.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/CarritoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/CarritoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/carrito.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/carrito.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/inicio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/inicioAutenticado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/allCategorias.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
@@ -211,7 +213,7 @@
       <workItem from="1584465019190" duration="30291000" />
       <workItem from="1584500986221" duration="208000" />
       <workItem from="1584543362131" duration="7013000" />
-      <workItem from="1584810005878" duration="10857000" />
+      <workItem from="1584810005878" duration="19675000" />
     </task>
     <servers />
   </component>
@@ -255,10 +257,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583596431684" />
-    <state x="1211" y="238" key="run.anything.popup" timestamp="1584018662807">
+    <state x="1211" y="238" key="run.anything.popup" timestamp="1584826633985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1211" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584018662807" />
+    <state x="1211" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584826633985" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1584019510973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

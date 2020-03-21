@@ -11,6 +11,18 @@
             {{ session()->get('mensaje') }}
         </div>
     @endif
+
+    @if(Auth::user())
+        <div class="jumbotron">
+            <h1 class="display-4">BIENVENIDO {{ strtoupper(' ' . Auth::user()->nombre) }}</h1>
+
+
+            <hr class="my-4">
+            <a class="nav-link" href="/allCategorias">-Explora todas las categorías.</a>
+
+        </div>
+     @else
+
     <!--QUIENES SOMOS-->
     <div class="jumbotron">
         <h1 class="display-4">HOME- QUIENES SOMOS</h1>
@@ -23,6 +35,9 @@
     </div>
 
     <!--QUIENES SOMOS-->
+
+    @endif
+
     <!-- CARRUSEL -->
     <div class="container-fluid ">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">

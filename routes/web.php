@@ -1,5 +1,6 @@
 <?php
 use App\User;
+use App\Producto;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::group(['middleware' => 'validado'], function () {
     ##################### CARRITO ######################
     Route::get('/carrito', 'CarritoController@index');
     Route::post('/addACarrito','CarritoController@store');
+    Route::post('/eliminarCarrito/{id}','CarritoController@destroy');
+
 });
 
 ############## CRUD PRODUCTOS ###################
@@ -64,17 +67,19 @@ Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
 Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
 Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
 Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
+Route::get('/allCategorias', 'ProductosController@allCategorias');
 
 ####### PERFIL #######
 Route::get('/perfil','UsuariosController@index');
 
+########### INICIO ######################
 
-Route::get('/inicioAuth' ,'ProductosController@allProductos');
-Route::get('/', 'HomeController@index');
+Route::get('/', function(){
 
-Route::get('/index', function(){
-    return view('inicio');
+        return view ('/inicio');
+
 });
+
 
 Route::get('/login', function(){
     return view('login');
@@ -96,4 +101,4 @@ Route::get('perfil/logout','auth\LoginController@logout');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');

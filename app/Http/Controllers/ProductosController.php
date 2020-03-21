@@ -27,11 +27,11 @@ class ProductosController extends Controller
             ]);
     }
 
-    public function allProductos(){
+    public function allCategorias(){
 
         $productos = Producto::with('getMarca', 'getCategoria')->get();
         $categorias = Categoria::all();
-        return view('inicioAutenticado',
+        return view('allCategorias',
             [
                 'productos'=>$productos,
                 'categorias'=> $categorias
@@ -144,7 +144,7 @@ class ProductosController extends Controller
         ]);
 
             return redirect('adminUsuarioProductos'/*,'ProductosController@index'*/)
-                ->with('mensaje', 'Publicación '.$producto->prdNombre.' creada con éxito');;
+                ->with('mensaje', 'Publicación '.$producto->prdNombre.' creada con éxito');
 
     }
     /**

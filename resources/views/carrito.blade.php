@@ -4,6 +4,12 @@
 
 @section("contenido")
 <div class="container d-flex flex-column h-100 mt-5">
+    @if( session()->has('mensaje') )
+        <div class="alert alert-success">
+            {{ session()->get('mensaje') }}
+        </div>
+    @endif
+
     <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
         <h2><strong>Carrito</strong></h2>
     </div>
@@ -22,11 +28,20 @@
                 <tr>
                     <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
                     <td>${{$producto->getProducto->prdPrecio}}</td>
-                    <td>{{$producto->getProducto->prdStock}}</td>
-                    <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
+                    <td>{{$producto->carCantidadPrd}}</td>
+                    <td>
+
+                        <form action="/eliminarCarrito/{{$producto->carId}}" method="post">
+                            @csrf
+                            <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </td>
+
             </tr>
             @endforeach
-
+            <th>  {{ $carrito->links() }}</th>
         </tbody>
     </table>
     <button type="button" class="btn btn-success mb-5">Confirmar compra</button>
