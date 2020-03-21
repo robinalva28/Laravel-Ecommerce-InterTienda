@@ -79,7 +79,9 @@
                             </li>
 
                             <li>
-                                <a style="color:royalblue;" class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i> CARRITO</a>
+                                <a style="color:royalblue;" class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"><span style="color:royalblue;" class="badge badge-light">3</span>
+                                        <span class="sr-only">unread messages</span></i> CARRITO</a>
+
                             </li>
 
                            {{-- <li>--}}{{--Coloco el nombre del usuario al lado del logo de user solo si esta logueado--}}{{--

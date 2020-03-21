@@ -1,6 +1,6 @@
 @extends('layout.plantilla')
 
-@section('title', 'Detalle')
+@section('title', "{$producto->prdNombre}")
 
 @section('contenido')
 
@@ -21,13 +21,60 @@
             </div>
         </div>
         <div  class=" justify-content-end ">
-            <p></p>
-            <p >{{$producto->prdDescripcion}}</p>
-            <h2>PRECIO</h2>
+            <h3>Descripción:</h3>
+            <h4>{{$producto->prdDescripcion}}</h4>
+            <br>
+            <h3>Precio:</h3>
             <h4>{{'$'.$producto->prdPrecio}}</h4>
             <br>
-            <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+            {{--BOTON ADD CARRITO O IR A MIS PUBLICACIONES--}}
+            @if($producto->prdIdUsuario == Auth::user()->usrId)
+
+            <form action="/adminUsuarioProductos" method="GET">
+                @csrf
+                <button type="submit" class="btn btn-primary btn-lg">Administrar</button>
+            </form>
+                @else
+            <a href="#addCarrito" class="btn btn-primary btn-lg" data-toggle="modal">Agregar al Carrito</a>
             <br><br>
+            @endif
+            {{--VENTANA EMERGENTE PARA AGREGAR AL CARRITO--}}
+            <div class="modal fade " id="addCarrito" >
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #dee2e6">
+                        {{--HEADER DE LA VENTANA EMERGENTE--}}
+
+                        <div class="modal-header">
+                        <h4 class="modal-title">Un paso más ¡{{$producto->prdNombre}}!</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                         </div>
+
+                        {{--BODY DE VENTANA EMERGENTE--}}
+                        <div class="modal-body"  >
+                            <div class="card " style="width: 19rem;">
+                                <img src="{{ asset('images/productos') }}/{{$producto->prdImagen}}" class="card-img-top " alt="...">
+                                <div class="card-body ">
+                                    <div class="form-group">
+                                        <label>{{$producto->prdNombre}}</label>
+                                        <select name="marId" class="form-control" required>
+                                            <option value="prdCantidad">Seleccione cantidad</option>
+                                            @foreach ( $producto as $prdStock )
+                                                <option value="{{ $prdStock }}">{{ $prdStock }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {{--FOOTER VENTANA EMERGENTE--}}
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" >Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -61,7 +61,7 @@
         <input type="file" name="prdImagen" class="form-control">
         <br>
         <button type="submit" class="btn btn-dark px-4">
-            <i class="far fa-plus-square fa-lg mr-2"></i>
+          {{--  <i class="far fa-plus-square fa-lg mr-2"></i>--}}
             Agregar Producto
         </button>
         <a href="/adminUsuarioProductos" class="btn btn-outline-secondary ml-3">

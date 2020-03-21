@@ -36,7 +36,8 @@ create table marcas(
 /*CREACION DE LA TABLA CARRITOS*/
 create table carritos(
 	carId			int primary key not null unique,
-    carIdProducto	int not null
+    carIdProducto	int not null,
+    carCantidadPrd  int not null
 );
 
 /*CREACION DE LA TABLA EMPRESAS*/
@@ -87,6 +88,7 @@ create table carritos(
 	carId				int primary key not null unique,
     carIdProducto		int not null,
     carUsuarios_usrId	int not null,
+    carCantidadPrd      int not null,
     foreign key (carUsuarios_usrId) references usuarios(usrId)
 );
 /*CREACIOS DE TABLA INTERMEDIA VENTAS PRODUCTOS-USUARIOS*/

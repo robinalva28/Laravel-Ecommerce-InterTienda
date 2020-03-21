@@ -26,7 +26,16 @@
                                 {{-- <p class="card-text">{{$detalle->prdDescripcion}}</p>--}}
                                 <p><b>{{'Marca: '.$detalle->getMarca->marNombre}}</b></p>
                                 <p><b>{{'$'.$detalle->prdPrecio}}</b></p>
-                                <a href="/detallePublicacion/{{$detalle->prdId}}" class="btn btn-primary">+info</a>
+                                @if($detalle->prdIdUsuario == Auth::user()->usrId)
+
+                                    <form action="/adminUsuarioProductos" method="GET">
+                                        @csrf
+                                        <button type="submit" class="btn btn-block btn-lg">Administrar</button>
+                                    </form>
+                                @else
+                                    <a href="/detallePublicacion/{{$detalle->prdId}}" class="btn btn-primary">+info</a>
+                                    <br><br>
+                                @endif
                             </div>
                         </div>
                     </div>
