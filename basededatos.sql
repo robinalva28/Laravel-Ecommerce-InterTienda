@@ -85,7 +85,7 @@ create table productos(
 drop table carritos;
 
 create table carritos(
-	carId				int primary key not null unique,
+	carId				int auto_increment primary key not null unique,
     carIdProducto		int not null,
     carUsuarios_usrId	int not null,
     carCantidadPrd      int not null,

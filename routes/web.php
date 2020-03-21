@@ -23,7 +23,6 @@ Route::group(['middleware' => 'admin',
     Route::post('/modificarCategoria', 'CategoriasController@update');
     Route::get('/eliminarCategoria/{id}','CategoriasController@destroy');
 
-
     ###### CRUD MARCAS
     Route::get('/adminMarcas', 'MarcasController@index');
     Route::get('/formAgregarMarca', 'MarcasController@create');
@@ -32,10 +31,8 @@ Route::group(['middleware' => 'admin',
     Route::post('/modificarMarca', 'MarcasController@update');
     Route::get('/eliminarMarca/{id}','MarcasController@destroy');
 
-
-
+    ############ SOBRE PRODUCTOS
     Route::get('/adminProductos', 'ProductosController@index');
-
 
     ###### ADMIN SOBRE USUARIOS
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
@@ -44,6 +41,7 @@ Route::group(['middleware' => 'admin',
 
 
 });
+################################################################################################
 
     ###### RUTAS DE USUARIOS VALIDADOS
 Route::group(['middleware' => 'validado'], function () {
@@ -54,20 +52,18 @@ Route::group(['middleware' => 'validado'], function () {
     Route::post('/modificarProducto', 'ProductosController@update');
     Route::get('/eliminarProducto/{id}','ProductosController@destroy');
 
+    ##################### CARRITO ######################
+    Route::get('/carrito', 'CarritoController@index');
+    Route::post('/addACarrito','CarritoController@store');
 });
-
 
 ############## CRUD PRODUCTOS ###################
 Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
-Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
-
-
 
 ########## CATEGORIAS VISIBLES
 Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
 Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
-
-
+Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
 
 ####### PERFIL #######
 Route::get('/perfil','UsuariosController@index');
@@ -76,22 +72,13 @@ Route::get('/perfil','UsuariosController@index');
 Route::get('/inicioAuth' ,'ProductosController@allProductos');
 Route::get('/', 'HomeController@index');
 
-
-
-
 Route::get('/index', function(){
     return view('inicio');
-});
-
-
-Route::get('/carrito', function(){
-    return view('carrito');
 });
 
 Route::get('/login', function(){
     return view('login');
 });
-
 
 ######## PREG FRECUENTES #########
 Route::get('/faq', function(){

@@ -84,16 +84,11 @@
 
                             </li>
 
-                           {{-- <li>--}}{{--Coloco el nombre del usuario al lado del logo de user solo si esta logueado--}}{{--
-                                <a style="color:green;" class="nav-link" --}}{{--href="perfil"--}}{{--><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}</a>
-                            </li>--}}
                         @endauth
 
                     @endif
 
-                     {{--   <li >
-                    <a class="nav-link" href="adminProductos">MIS PUBLICACIONES</a>
-                </li>--}}
+
             </ul>
 
         </div>

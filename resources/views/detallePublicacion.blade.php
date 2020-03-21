@@ -24,9 +24,11 @@
             <h3>Descripción:</h3>
             <h4>{{$producto->prdDescripcion}}</h4>
             <br>
+
             <h3>Precio:</h3>
             <h4>{{'$'.$producto->prdPrecio}}</h4>
             <br>
+            <h6 style="color: #1b4b72"><strong> En stock: {{$producto->prdStock}}</strong></h6>
             {{--BOTON ADD CARRITO O IR A MIS PUBLICACIONES--}}
             @if($producto->prdIdUsuario == Auth::user()->usrId)
 
@@ -39,7 +41,7 @@
             <br><br>
             @endif
             {{--VENTANA EMERGENTE PARA AGREGAR AL CARRITO--}}
-            <div class="modal fade " id="addCarrito" >
+            <div class="modal fade col-auto" id="addCarrito" >
                 <div class="modal-dialog">
                     <div class="modal-content" style="background-color: #dee2e6">
                         {{--HEADER DE LA VENTANA EMERGENTE--}}
@@ -51,26 +53,26 @@
 
                         {{--BODY DE VENTANA EMERGENTE--}}
                         <div class="modal-body"  >
-                            <div class="card " style="width: 19rem;">
+                            <div class="card " style="width: auto;">
                                 <img src="{{ asset('images/productos') }}/{{$producto->prdImagen}}" class="card-img-top " alt="...">
                                 <div class="card-body ">
                                     <div class="form-group">
-                                        <label>{{$producto->prdNombre}}</label>
-                                        <select name="marId" class="form-control" required>
-                                            <option value="prdCantidad">Seleccione cantidad</option>
-                                            @foreach ( $producto as $prdStock )
-                                                <option value="{{ $prdStock }}">{{ $prdStock }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                        <label>Stock: {{ $producto->prdStock }}</label><br>
+                                       </div>
                                 </div>
                             </div>
-
                         </div>
 
                         {{--FOOTER VENTANA EMERGENTE--}}
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" >Agregar al Carrito</button>
+
+                            <form action="/addACarrito" method="POST">
+                                @csrf
+                                <h4 class="d-inline-block" for="cantidad">Selecciona cantidad:</h4>
+                                <input type="hidden" name="prdId" value="{{$producto->prdId}}">
+                                <input style="height: 4vh;" name="cantidad" id="cantidad" type="number" value="1" min="1" max="{{ $producto->prdStock }}" step="1"/>
+                                <button type="submit" class="btn btn-primary" >Agregar al Carrito</button>
+                            </form>
                         </div>
                     </div>
                 </div>

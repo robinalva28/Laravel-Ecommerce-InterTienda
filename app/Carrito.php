@@ -11,4 +11,9 @@ class Carrito extends Model
     protected $guarded = [];
     public $timestamps = false;
 
+    public function getProducto()
+    {
+        return $this->belongsTo('App\Producto', 'carIdProducto', 'prdId');
+    }
+
 }
