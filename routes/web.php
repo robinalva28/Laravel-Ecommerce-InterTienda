@@ -59,8 +59,8 @@ Route::group(['middleware' => 'validado'], function () {
     Route::post('/eliminarCarrito/{id}','CarritoController@destroy');
 
     ######################   USUARIO   ##########################
-    Route::get('/formModificarDatos/{id}','UsuariosController@edit');
-    Route::post('/modificarDatos/{id}','UsuariosController@update');
+    Route::get('/formModificarDatos','UsuariosController@edit');
+    Route::post('/modificarDatos','UsuariosController@update');
 
 });
 

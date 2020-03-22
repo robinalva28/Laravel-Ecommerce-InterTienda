@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 Use App\User;
+use App\Http\Controllers\Auth;
 use Illuminate\Validation\ValidationException;
 
 
@@ -66,19 +68,22 @@ class UsuariosController extends Controller
             ]);
     }
 
-    public function edit($id)
+    public function edit()
     {
-
+        $id = auth()->user()->usrId;
         $usuario = User::find($id);
+        //dd($usuario);
+        $usuario = User::find($id);
+
         return view('formModificarDatos',
             [
                 'usuario'=>$usuario
             ]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request)
     {
-
+        $id = auth()->user()->usrId;
         $usuario = User::find($id);
 
         //dd($request);

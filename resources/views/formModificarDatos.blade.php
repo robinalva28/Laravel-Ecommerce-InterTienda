@@ -11,7 +11,7 @@
 <div class="mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped alert bg-light p-4">
     <h1>@yield('h1')</h1>
 
-    <form action="/modificarDatos/{{$usuario->usrId}}" method="post" enctype="multipart/form-data">
+    <form action="/modificarDatos{{--/{{$usuario->usrId}}--}}" method="post" enctype="multipart/form-data">
         @csrf
 
         <br>

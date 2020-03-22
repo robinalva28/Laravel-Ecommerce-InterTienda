@@ -45,7 +45,7 @@
                 <td>{{ auth()->user()->fechaNacimiento }}</td>
                 <td ><img  src="{{ asset('images/avatares') }}/{{ auth()->user()->avatar }}" class="img-thumbnail" width="80px" ></td>
                     <td>
-                        <a href="/formModificarDatos/{{auth()->user()->usrId}}" class="btn btn-outline-secondary">
+                        <a href="/formModificarDatos" class="btn btn-outline-secondary">
                             Modificar datos
                         </a>
                     </td>
