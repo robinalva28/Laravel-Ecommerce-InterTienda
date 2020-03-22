@@ -166,14 +166,23 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
+
         $Productos = Marca::all();
         $categorias = Categoria::all();
+
         $producto = Producto::find($id);
-        return view('formModificarProducto',
-            [ 'producto'=>$producto,
-                'marcas'=>$Productos,
-                'categorias'=>$categorias
-            ]);
+
+        if($producto->prdIdUsuario == auth()->user()->usrId) {
+
+            return view('formModificarProducto',
+                ['producto' => $producto,
+                    'marcas' => $Productos,
+                    'categorias' => $categorias
+                ]);
+        }else{
+            return redirect('/adminUsuarioProductos')->with('mensaje', 'Imposible modificar producto.');
+        }
+
     }
 
 
@@ -195,6 +204,8 @@ class ProductosController extends Controller
         $validacion = $request->validate([
             'prdImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+
+        if($Producto->prdIdUsuario == auth()->user()->usrId) {
 
         $imageName = 'noDisponible.png';
         if ($request->file('prdImagen')) {
@@ -221,6 +232,10 @@ class ProductosController extends Controller
 
         return redirect('/adminUsuarioProductos')
             ->with('mensaje', 'Publicacion '.$Producto->prdNombre.' modificada con éxito');
+
+        }else{
+            return redirect('/adminUsuarioProductos')->with('mensaje', 'Imposible modificar producto.');
+        }
     }
 
     /**
