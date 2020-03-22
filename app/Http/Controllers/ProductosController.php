@@ -180,7 +180,7 @@ class ProductosController extends Controller
                     'categorias' => $categorias
                 ]);
         }else{
-            return redirect('/adminUsuarioProductos')->with('mensaje', 'Imposible modificar producto.');
+            return redirect('/adminUsuarioProductos')/*->with('mensaje', 'Imposible modificar producto.')*/;
         }
 
     }
@@ -234,7 +234,7 @@ class ProductosController extends Controller
             ->with('mensaje', 'Publicacion '.$Producto->prdNombre.' modificada con éxito');
 
         }else{
-            return redirect('/adminUsuarioProductos')->with('mensaje', 'Imposible modificar producto.');
+            return redirect('/adminUsuarioProductos')/*->with('mensaje', 'Imposible modificar producto.')*/;
         }
     }
 

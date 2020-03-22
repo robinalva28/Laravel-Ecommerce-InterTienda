@@ -21,7 +21,7 @@ Route::group(['middleware' => 'admin',
     Route::get('/formAgregarCategoria', 'CategoriasController@create');
     Route::post('/agregarCategoria', 'CategoriasController@store');
     Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit');
-    Route::post('/modificarCategoria', 'CategoriasController@update');
+    Route::post('/modificarCategoria/{id}', 'CategoriasController@update');
     Route::get('/eliminarCategoria/{id}','CategoriasController@destroy');
 
     ###### CRUD MARCAS

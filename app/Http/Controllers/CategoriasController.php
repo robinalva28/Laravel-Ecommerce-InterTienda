@@ -62,9 +62,6 @@ class CategoriasController extends Controller
                 'catNombre' => 'required|min:3|max:75',
             ]
         );
-        ###
-
-        //
         $validacion = $request->validate([
             'catImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
@@ -104,7 +101,15 @@ class CategoriasController extends Controller
      */
     public function edit($id)
     {
-        //
+
+
+        $categoria= Categoria::find($id);
+
+            return view('formModificarCategoria',
+                [
+                    'categoria' => $categoria,
+                ]);
+
     }
 
     /**
@@ -114,11 +119,35 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
         //
-        $Categoria = Categoria::find($request->input('catId'));
+        $Categoria = Categoria::find($id);
+        //dd($Categoria);
+
+        $validacion = $request->validate(
+            [
+                'catNombre' => 'required|min:3|max:75',
+            ]
+        );
+        $validacion = $request->validate([
+            'catImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $imageName = 'noDisponible.png';
+        if ($request->file('catImagen')) {
+            $imageName = time().'.'.request()->catImagen->getClientOriginalExtension();
+            $imagen = $request->file('catImagen');
+            $imagen->getClientOriginalExtension();
+            $imageName = $request->catImagen->getClientOriginalName();
+            $request->catImagen->move(public_path('images/categorias'), $imageName);
+        }
+
+
+
         $Categoria->catNombre = $request->input('catNombre');
+        $Categoria->catDescripcion = $request->input('catDescripcion');
+        $Categoria->catImagen = $imageName;
         $Categoria->save();
         return redirect('/admin/adminCategorias')
             ->with('mensaje', 'Categoria '.$Categoria->catNombre.' modificada con éxito');
