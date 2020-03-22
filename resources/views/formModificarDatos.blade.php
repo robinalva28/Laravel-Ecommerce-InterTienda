@@ -1,6 +1,6 @@
 @extends('layout.plantilla')
 
-@section('title', 'Alta de una nueva Marca')
+@section('title', 'Modificar datos de usuario')
 
 
 @section('contenido')

@@ -31,7 +31,7 @@ class CarritoController extends Controller
        //CREO UN FOREACH QUE IRA MODIFICANDO UNA VARIABLE ITERADORA PARA COMPROBAR SI EL PRODUCTO ESTÁ EN EL CARRITO
         $i = 0;
         foreach($car as $detalle){
-            if($detalle->carIdProducto= $request['prdId']){
+            if($detalle->carIdProducto == $request['prdId'] && $detalle->carUsuarios_usrId == Auth::user()->usrId){
                 $i++;
             }
         }
