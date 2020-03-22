@@ -13,8 +13,8 @@
             <h1>{{$categoria->catNombre}}</h1>
 
     </div>
-    <a href="/inicioAuth" class="btn btn-link">Volver a categorias</a>
-    <a href="/inicioAuth" class="btn btn-link">Ir a principal</a>
+    <a href="/allCategorias" class="btn btn-link">Volver a categorias</a>
+    <a href="/" class="btn btn-link">Ir a principal</a>
     <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
 
     <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">

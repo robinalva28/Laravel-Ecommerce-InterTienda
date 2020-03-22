@@ -13,12 +13,17 @@
             {{ session()->get('mensaje') }}
         </div>
     @endif
-    <form action="/modificarProducto/{{$producto->prdId }}" method="post" enctype="multipart/form-data">
+    <form action="/modificarProducto/{{$producto->prdId}}" method="post" enctype="multipart/form-data">
         @csrf
+        {{--INPUTS HIDDENS--}}
+
+        <input type="hidden" name="prdIdUsuario" value="{{Auth::user()->usrId}}">
+
+        {{--FIN DE INPUT HIDDEN--}}
 
         <div class="form-group">
-            <label for="prdNombre">Nombre del Producto:</label>
-            <input type="text" class="form-control" name="prdNombre"  value="{{ $producto->prdNombre }}" id="prdNombre" placeholder="nombre del Producto" required>
+            <label for="prdNombre">Nombre del Producto: antes  {{$producto->prdNombre }}</label>
+            <input type="text" class="form-control" name="prdNombre"  value="" id="prdNombre" placeholder="nombre del Producto" required>
         </div>
         <div class="form-group">
             <label for="prdPrecio">Precio:</label>
@@ -31,9 +36,9 @@
         </div>
 
         <div class="form-group">
-            <label>Categoría:</label>
-            <select name="catId" class="form-control" required>
-                <option value="{{$producto->getCategoria}}">Seleccione una Categoría</option>
+            <label>Categoría: antes {{$producto->getCategoria->catNombre}}</label>
+            <select name="prdIdCategoria" class="form-control" required>
+                <option value="">Seleccione una categoría</option>
                 @foreach( $categorias as $categoria )
                     <option value="{{ $categoria->catId }}">{{ $categoria->catNombre }}</option>
                 @endforeach
@@ -41,9 +46,9 @@
         </div>
 
         <div class="form-group">
-            <label>Marca:</label>
-            <select name="marId" class="form-control" required>
-                <option value="{{$producto->getMarca}}">Seleccione una marca</option>
+            <label>Marca: antes {{$producto->getMarca->marNombre}}</label>
+            <select name="prdIdMarca" class="form-control" required>
+                <option value="">Seleccione una marca</option>
                 @foreach ( $marcas as $marca )
                     <option value="{{ $marca->marId }}">{{ $marca->marNombre }}</option>
                 @endforeach
@@ -62,7 +67,7 @@
         </div>
 
         Imagen: <br>
-        <input type="file" name="prdImagen" value="{{$producto->prdImagen}}" class="form-control">
+        <input type="file" name="prdImagen" value="" class="form-control">
         <br>
         <button type="submit" class="btn btn-dark px-4">
             <i class="far fa-plus-square fa-lg mr-2"></i>

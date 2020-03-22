@@ -9,7 +9,7 @@
     <div class="tittle m-3">
         <h1>{{$producto->prdNombre}}</h1>
     </div>
-    <a href="/inicioAuth" class="btn btn-link">Volver a Principal</a>
+    <a href="/allCategorias" class="btn btn-link">Volver a Principal</a>
     <a href="/cat/{{$producto->prdIdCategoria}}" class="btn btn-link">Volver a Categoría</a>
 
     <div class="mt-4 mb-4 d-flex justify-content-start">

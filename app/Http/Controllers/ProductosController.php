@@ -184,13 +184,29 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
 
-        $Producto= Producto::findOrFail($id);
+        $Producto = Producto::find($id);
+
+        //dd($request);
+        //dd($Producto);
+        //imagen
+        $validacion = $request->validate([
+            'prdImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $imageName = 'noDisponible.png';
+        if ($request->file('prdImagen')) {
+            //$imageName = time().'.'.request()->prdImagen->getClientOriginalExtension();
+            $imagen = $request->file('prdImagen');
+            //$imagen->getClientOriginalExtension();
+            $imageName = $request->prdImagen->getClientOriginalName();
+            $request->prdImagen->move(public_path('images/productos'), $imageName);
+        }
 
         // For a sanity check, die and dump here temporarily
-        dd($request);
+
 
        // $Producto = Producto::find($request->input('prdId'));
         $Producto->prdNombre = $request->input('prdNombre');
@@ -199,8 +215,7 @@ class ProductosController extends Controller
         $Producto->prdIdCategoria = $request->input('prdIdCategoria');
         $Producto->prdIdMarca = $request->input('prdIdMarca');
         $Producto->prdIdUsuario = $request->input('prdIdUsuario');
-        $Producto->prdImagen = $request->input('prdImagen');
-        $Producto->prdIdUsuario = Auth::user()->usrId;
+        $Producto->prdImagen = $imageName;
         $Producto->save();
 
         return redirect('/adminUsuarioProductos')
