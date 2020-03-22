@@ -6,9 +6,12 @@
 
 @section('contenido')
 
-@section('h1', 'Alta de una nueva categoria')
-
+@section('h1', 'Nueva categoria')
+<div class=" col-md-9 mt-1 p-1 mx-auto mx-3 container-fluid">
+<h1>@yield('h1')</h1>
+</div>
 <div class="mx-auto mt-1 p-1  col-6 table table-bordered table-hover table-striped alert bg-light p-4">
+
     <form action="/admin/agregarCategoria" method="post" enctype="multipart/form-data">
         @csrf
 

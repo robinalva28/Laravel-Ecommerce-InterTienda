@@ -18,7 +18,7 @@ class ValidadoMiddleware
         if (auth()->check() && auth()->user()->validado)
             return $next($request);
 
-        return redirect('/adminUsuarioProductos')->with('mensaje', '¡Hola '.auth()->user()->nombre .'! En éste momento estás inhabilitado para
+        return redirect('/')->with('mensaje', '¡Hola '.auth()->user()->nombre .'! En éste momento estás inhabilitado para
         gestionar publicaciones, por favor ponte en contacto con un administrador de tu empresa para que habilite tus credenciales.');
     }
 }

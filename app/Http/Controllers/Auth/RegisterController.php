@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'fechaNacimiento' => $data['fechaNacimiento'],
             'password' => Hash::make($data['password']),
-            'avatar' => $data['avatar'],
+            'avatar' => 'sinAvatar.png',
             'validado' => false,
             'isAdmin'=> false
         ]);

@@ -23,7 +23,7 @@
 
         <div class="form-group">
             <label for="prdNombre">Nombre del Producto: antes  {{$producto->prdNombre }}</label>
-            <input type="text" class="form-control" name="prdNombre"  value="" id="prdNombre" placeholder="nombre del Producto" required>
+            <input type="text" class="form-control" name="prdNombre"  value="{{$producto->prdNombre }}" id="prdNombre" placeholder="nombre del Producto" required>
         </div>
         <div class="form-group">
             <label for="prdPrecio">Precio:</label>
@@ -38,7 +38,7 @@
         <div class="form-group">
             <label>Categoría: antes {{$producto->getCategoria->catNombre}}</label>
             <select name="prdIdCategoria" class="form-control" required>
-                <option value="">Seleccione una categoría</option>
+                <option value="{{$producto->getCategoria->catId}}">Seleccione una categoría</option>
                 @foreach( $categorias as $categoria )
                     <option value="{{ $categoria->catId }}">{{ $categoria->catNombre }}</option>
                 @endforeach
@@ -48,7 +48,7 @@
         <div class="form-group">
             <label>Marca: antes {{$producto->getMarca->marNombre}}</label>
             <select name="prdIdMarca" class="form-control" required>
-                <option value="">Seleccione una marca</option>
+                <option value="{{$producto->getCategoria->marId}}">Seleccione una marca</option>
                 @foreach ( $marcas as $marca )
                     <option value="{{ $marca->marId }}">{{ $marca->marNombre }}</option>
                 @endforeach

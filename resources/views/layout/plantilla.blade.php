@@ -61,6 +61,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>
                                     <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
+                                    <a class="dropdown-item" href="/formAgregarProducto">Publicar</a>
                                     <a class="dropdown-item" href="/perfil">Mis datos</a>
                                     @if(Auth::user()->isAdmin)
                                     <a class="dropdown-item" href="/admin/adminProductos">Todas Publicaciones</a>
@@ -90,6 +91,7 @@
 </header>
 
 @yield('contenido')
+@yield('aside')
 
 <!-- FOOTER -->
 <footer class="page-footer font-small blue mt-auto">

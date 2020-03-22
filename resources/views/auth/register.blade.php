@@ -9,7 +9,7 @@
                 <strong><div class="card-header">{{ __('Nuevo registro') }}</div></strong>
 
                 <div class="card-body">
-                    <form method="POST" action="/register">
+                    <form method="POST" action="/register" >
                         @csrf
 
                         <div class="form-group row">
@@ -106,7 +106,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                       {{-- <div class="form-group row">
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
 
                             <div class="col-md-6">
@@ -118,7 +118,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div>--}}
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 

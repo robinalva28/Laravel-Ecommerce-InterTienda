@@ -215,6 +215,7 @@ class ProductosController extends Controller
         $Producto->prdIdCategoria = $request->input('prdIdCategoria');
         $Producto->prdIdMarca = $request->input('prdIdMarca');
         $Producto->prdIdUsuario = $request->input('prdIdUsuario');
+        $Producto->prdStock = $request->input('prdStock');
         $Producto->prdImagen = $imageName;
         $Producto->save();
 

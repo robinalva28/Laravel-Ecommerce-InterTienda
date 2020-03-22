@@ -21,7 +21,7 @@
     <div class="container-fluid"  >
 
         <!-- CARDS DE PRODUCTOS-->
-        <div class="container container-fluid col-9 ">
+        <div class=" container container-fluid col-9 ">
             <br>
             <h1>Categorías</h1>
             <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
@@ -77,5 +77,10 @@
 
 
 @endsection
+{{--@section('aside')
+    <div class="container container-fluid col-2 float-right">
+        <aside></aside>
 
+    </div>
+@endsection--}}
 

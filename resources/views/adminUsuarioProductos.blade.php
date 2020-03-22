@@ -6,12 +6,32 @@
 
 @section('contenido')
 
-    <div class="{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
+    <div class="{{--card bg-light col-md-11 mt-1 p-1 --}} ">
         @if( session()->has('mensaje') )
             <div class="alert alert-success">
                 {{ session()->get('mensaje') }}
             </div>
         @endif
+
+            <?php $i= 0 ?>
+
+            @foreach($productos as $producto)
+                @if($producto->prdIdUsuario == Auth::user()->usrId)
+                <?php $i++ ?>
+                @endif
+            @endforeach
+
+            @if($i==0)
+
+                <div class="jumbotron container flex-column h-100 mt-5 ">
+                    <h1 class="display-4">¡Aún no has publicado nada!</h1>
+                    <p class="lead">En éste panel puedes administrar tus publicaciones como desees.</p>
+                    <hr class="my-4">
+                    <p>Haz click abajo para hacer tu primera publicación</p>
+                    <a class="btn btn-primary btn-lg" href="/formAgregarProducto" role="button">¡Publicar!</a>
+                </div>
+            @else
+
         <table class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
             <thead class="thead-dark">
             <tr class="mr-3">
@@ -76,5 +96,6 @@
             </tbody>
         </table>
     </div>
+    @endif
 @endsection
 

@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../resources/views/formModificarDatos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Middleware/ValidadoMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Middleware/ValidadoMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioProductos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/allCategorias.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/allCategorias.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/carrito.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/carrito.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/cat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/cat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/formAgregarCategoria.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formAgregarCategoria.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/formAgregarProducto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formAgregarProducto.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/formModificarProducto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formModificarProducto.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/inicio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/perfil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/perfil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
@@ -212,7 +221,7 @@
       <workItem from="1584465019190" duration="30291000" />
       <workItem from="1584500986221" duration="208000" />
       <workItem from="1584543362131" duration="7013000" />
-      <workItem from="1584810005878" duration="23521000" />
+      <workItem from="1584810005878" duration="30881000" />
     </task>
     <servers />
   </component>
@@ -228,10 +237,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="231" y="71" width="476" height="886" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581560737285" />
-    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584816988024">
+    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584845336666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584816988024" />
+    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584845336666" />
     <state x="625" y="177" width="674" height="679" key="#phpunit.xml" timestamp="1583175686383">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -240,10 +249,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="263" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583541569586" />
-    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog" timestamp="1584236409838">
+    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog" timestamp="1584843658984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584236409838" />
+    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584843658984" />
     <state x="464" y="154" key="SettingsEditor" timestamp="1583878467613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -5,14 +5,19 @@
 
 @section('contenido')
 
-@section('h1', 'Alta de un nuevo producto')
+@section('h1', 'Nueva publicación')
+<div class=" my-3 col-sm-11 col-md-11 col-lg-11 mx-auto ">
+<h1>    <strong>@yield('h1')</strong></h1>
+</div>
 
-<div class="card bg-light col-md-7 mt-5 p-3 mx-auto">
+
+<div class="card bg-light col-md-7 mt-5 p-3 mx-auto ">
+
     <form action="/formAgregarProducto" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
-            <label for="prdNombre">Nombre del Producto:</label>
+            <label for="prdNombre">Nombre del Producto/Servicio:</label>
             <input type="text" class="form-control" name="prdNombre"  value="{{ old('prdNombre') }}" id="prdNombre" placeholder="nombre del Producto" required>
         </div>
         <div class="form-group">
@@ -64,12 +69,12 @@
           {{--  <i class="far fa-plus-square fa-lg mr-2"></i>--}}
             Agregar Producto
         </button>
-        <a href="/adminUsuarioProductos" class="btn btn-outline-secondary ml-3">
+        <a href="/adminUsuarioProductos" class="btn btn-outline-secondary ml-3 ">
             volver al panel de productos
         </a>
 
         @if(count($errors))
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 ">
                 <div class="alert alert-danger">
                     <ul>
                         @foreach($errors->all() as $error)
