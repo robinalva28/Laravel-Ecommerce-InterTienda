@@ -6,13 +6,11 @@
 @section('contenido')
 
 @section('h1', 'Nueva publicación')
-<div class=" my-3 col-sm-11 col-md-11 col-lg-11 mx-auto ">
-<h1>    <strong>@yield('h1')</strong></h1>
-</div>
+
 
 
 <div class="card bg-light col-md-7 mt-5 p-3 mx-auto ">
-
+    <h3><strong>@yield('h1')</strong></h3><br>
     <form action="/formAgregarProducto" method="post" enctype="multipart/form-data">
         @csrf
 

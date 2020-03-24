@@ -12,6 +12,7 @@
 
         </div>
         <a href="/allCategorias" class="btn btn-link">Volver a categorias</a>
+        <a href="/allMarcas" class="btn btn-link">Ir a marcas</a>
         <a href="/" class="btn btn-link">Ir a principal</a>
         <br>
 

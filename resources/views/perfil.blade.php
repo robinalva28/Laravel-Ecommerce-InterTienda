@@ -1,6 +1,8 @@
 @extends('layout.plantilla')
 
-@section('title', 'Mi perfil')
+@section('title', 'Mi cuenta')
+
+@section('h1', 'Mi cuenta')
 
 @section('contenido')
     @if( session()->has('mensaje') )
@@ -9,7 +11,9 @@
         </div>
     @endif
     <div class=" col-md-9 mt-1 p-1 mx-auto mx-3 container-fluid">
-        <h1>@yield('h1')</h1>
+
+        <a href="/faq" class="btn btn-link">Preguntas frecuentes</a>
+        <a href="/contact" class="btn btn-link">Contactar con InterTienda</a>
     </div>
 <div class="card bg-light col-md-9 mt-1 p-1 mx-auto mx-3">
     <table class="table table-hover table-striped table-border ">
@@ -29,7 +33,8 @@
         </tr>
         </thead>
         <tbody>
-        <h1>{{ auth()->user()->nombre }}</h1>
+        <h2><strong>@yield('h1') - {{ auth()->user()->nombre }} {{ auth()->user()->apellido }}</strong></h2>
+        <br>
 
             <tr>
                 @if(auth()->user()->validado == 1)

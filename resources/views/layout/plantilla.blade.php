@@ -61,7 +61,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/allCategorias">Por Categorías</a>
-                                <a class="dropdown-item" href="/adminUsuarioProductos">Por Marcas</a>
+                                <a class="dropdown-item" href="/allMarcas">Por Marcas</a>
                                 <a class="dropdown-item" href="/todosLosProductos">Ver Todos</a>
                             </div>
                         </li>
@@ -75,7 +75,7 @@
                                   {{--  <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>--}}
                                     <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
                                     <a class="dropdown-item" href="/formAgregarProducto">Nueva publicación</a>
-                                    <a class="dropdown-item" href="/perfil">Mis datos</a>
+                                    <a class="dropdown-item" href="/perfil"> <i class="far fa-edit"></i> Mi cuenta</a>
                                     @if(Auth::user()->isAdmin)
                                     <a class="dropdown-item" href="/admin/adminProductos">Todas Publicaciones</a>
                                     <a class="dropdown-item" href="/admin/adminListaUsuarios">Usuarios registrados</a>
@@ -134,7 +134,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="/index">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
                         <a href="/faq">FAQ</a>

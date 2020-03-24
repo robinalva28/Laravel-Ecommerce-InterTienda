@@ -49,7 +49,7 @@
                 <tr>
                     <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
 
-                    <td><strong>{{$producto->getProducto->prdNombre}}.</strong><br>
+                    <td><strong> {{$producto->getProducto->prdNombre}}.  </strong><br>
                             {{$producto->getProducto->prdDescripcion}}
                     </td>
                     <td>${{$producto->getProducto->prdPrecio}}</td>

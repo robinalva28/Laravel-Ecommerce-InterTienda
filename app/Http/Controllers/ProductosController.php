@@ -38,6 +38,16 @@ class ProductosController extends Controller
             ]);
     }
 
+    public function allMarcas(){
+
+
+        $marcas = Marca::all();
+        return view('allMarcas',
+            [
+                'marcas'=> $marcas
+            ]);
+    }
+
     public function productosUsuario()
     {
         //
@@ -63,6 +73,8 @@ class ProductosController extends Controller
                 'categoria'=>$categoria
             ]);
     }
+
+
     public function prdEnCategorias2()
     {
         //
@@ -87,6 +99,20 @@ class ProductosController extends Controller
                 'productos'=>$productos,
                 'producto'=>$producto,
                 'categorias'=>$categorias
+            ]);
+    }
+
+    public function prdEnMarcas($id)
+    {
+        //
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+        $marcas = marca::all();
+        $marca = Marca::find($id);
+        return view('mar',
+            [
+                'productos'=>$productos,
+                'marcas'=>$marcas,
+                'marca'=>$marca
             ]);
     }
 

@@ -71,9 +71,12 @@ Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
 
 ########## CATEGORIAS VISIBLES
 Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
+Route::get('/mar/{id}', 'ProductosController@prdEnMarcas');
 Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
 Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
 Route::get('/allCategorias', 'ProductosController@allCategorias');
+Route::get('/allMarcas', 'ProductosController@allMarcas');
+
 
 ####### PERFIL #######
 Route::get('/perfil','UsuariosController@index');

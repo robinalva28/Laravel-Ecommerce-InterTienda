@@ -14,7 +14,7 @@
 
     @if(Auth::user())
         <div class="jumbotron">
-            <h1 class="display-4">BIENVENID@ {{ strtoupper(' ' . Auth::user()->nombre) }}</h1>
+            <h1 class="display-4">¡HOLA {{ strtoupper(' ' . Auth::user()->nombre) }}!</h1>
 
 
             <hr class="my-4">

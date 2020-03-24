@@ -33,7 +33,14 @@
             @else
 
         <table class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
+
             <thead class="thead-dark">
+
+                <th colspan="10">
+                   <h3><strong>@yield('h1')</strong></h3>
+               </th>
+            </tr>
+
             <tr class="mr-3">
                 <th>Nombre</th>
                 <th>Precio</th>
