@@ -51,16 +51,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
-
-        $edad = Carbon::now()->subYears(18);
-        $edad->format('Y-m-d');
-        /*return dd( $edad->format('Y-m-d'));exit;*/
-
         return Validator::make($data, [
-            'nombre' => ['required', 'string', 'max:255'],
-            'apellido' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
-            'fechaNacimiento'=>['required','date','before:'. $edad->format('Y-m-d')],
+            'nombre' => ['required', 'string', 'max:15'],
+            'apellido' => ['required', 'string', 'max:15'],
+            'email' => ['required', 'string', 'email', 'max:50', 'unique:usuarios'],
+            'fechaNacimiento'=>['required','date'],
             'password' => ['required', 'string', 'min:4','confirmed']
         ]);
     }

@@ -58,11 +58,13 @@ Route::group(['middleware' => 'validado'], function () {
     Route::post('/addACarrito','CarritoController@store');
     Route::post('/eliminarCarrito/{id}','CarritoController@destroy');
 
-    ######################   USUARIO   ##########################
-    Route::get('/formModificarDatos','UsuariosController@edit');
-    Route::post('/modificarDatos','UsuariosController@update');
+
 
 });
+
+######################   USUARIO   ##########################
+Route::get('/formModificarDatos','UsuariosController@edit');
+Route::post('/modificarDatos','UsuariosController@update');
 
 ############## CRUD PRODUCTOS ###################
 Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');

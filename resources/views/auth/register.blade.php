@@ -97,7 +97,7 @@
                             <label for="cuilEmpresa" class="col-md-4 col-form-label text-md-right">{{ __('CUIL de la empresa') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cuilEmpresa" type="text" class="form-control @error('cuilEmpresa') is-invalid @enderror" name="cuilEmpresa" value="{{ old('cuilEmpresa') }}" required autocomplete="email">
+                                <input id="cuilEmpresa" type="number" class="form-control @error('cuilEmpresa') is-invalid @enderror" name="cuilEmpresa" value="{{ old('cuilEmpresa') }}" required autocomplete="email">
 
                                 @error('cuilEmpresa')
                                 <span class="invalid-feedback" role="alert">

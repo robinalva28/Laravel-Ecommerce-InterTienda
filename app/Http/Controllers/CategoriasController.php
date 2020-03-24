@@ -143,8 +143,6 @@ class CategoriasController extends Controller
             $request->catImagen->move(public_path('images/categorias'), $imageName);
         }
 
-
-
         $Categoria->catNombre = $request->input('catNombre');
         $Categoria->catDescripcion = $request->input('catDescripcion');
         $Categoria->catImagen = $imageName;

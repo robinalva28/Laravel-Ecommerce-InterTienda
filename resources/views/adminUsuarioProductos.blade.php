@@ -48,9 +48,6 @@
             <tbody>
             @foreach( $productos as $producto )
                 <tr>
-
-                    @if($producto->prdIdUsuario == Auth::user()->usrId)
-
                     <td>{{ $producto->prdNombre }}</td>
                     <td>{{ '$'. $producto->prdPrecio }}</td>
                     <td>{{ $producto->getMarca->marNombre}}</td>
@@ -75,7 +72,6 @@
                             <a href="/detallePublicacion/{{$producto->prdId}}" class="nav-link">Vista previa</a>
 
                         </td>
-                    @endif
                 </tr>
 
             @endforeach
@@ -85,14 +81,9 @@
                     Nueva publicación
                 </a>
             </th>
-            <th></th>
-            <th></th>
-            <th>{{ $productos->links() }}</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+
+            <th colspan="8">{!! $productos->render() !!} </th>
+
             </tbody>
         </table>
     </div>

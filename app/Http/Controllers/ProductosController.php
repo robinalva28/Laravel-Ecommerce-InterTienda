@@ -41,7 +41,8 @@ class ProductosController extends Controller
     public function productosUsuario()
     {
         //
-        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->paginate(6);
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')
+            ->where('prdIdUsuario', '=', auth()->user()->usrId)->paginate(6);
 
         return view('adminUsuarioProductos',
             [
@@ -65,7 +66,7 @@ class ProductosController extends Controller
     public function prdEnCategorias2()
     {
         //
-        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->paginate(12);
         $categorias = Categoria::all();
         return view('todosLosProductos',
             [

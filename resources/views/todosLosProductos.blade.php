@@ -7,12 +7,14 @@
 
         <div class="tittle">
 
-        <br>
+
             <h1>Todos</h1>
 
         </div>
         <a href="/allCategorias" class="btn btn-link">Volver a categorias</a>
         <a href="/" class="btn btn-link">Ir a principal</a>
+        <br>
+
 
         <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
 
@@ -41,9 +43,16 @@
                     </div>
 
             @endforeach
+            <br>
 
         </div>
+        <div class="ml-5">
+            <h6 class="">{{$productos->links()}}</h6>
+        </div>
+        <br>
+        <br>
     </div>
+
 
 
 @endsection
