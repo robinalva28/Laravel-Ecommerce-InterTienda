@@ -6,7 +6,7 @@
 
 
 
-<div class="card bg-light col-md-8 mt-1 p-1 mx-auto mx-3">
+<div class="card bg-light col-md-10 mt-1 p-1 mx-auto mx-3">
     <table class="table table-hover table-striped table-border ">
         <thead class="thead-dark">
         <tr class="mr-3">
@@ -14,13 +14,14 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
+            <th>Empresa
+            <th>CUIL</th>
             <th>Celular</th>
          {{--   <th>Avatar</th>--}}
             <th>Fecha de nacimiento</th>
-          {{--  <th>Empresa</th>
-            <th>CUIL</th>--}}
-            <th>Validado</th>
-            <th> </th>
+
+            <th colspan="2">Validado</th>
+
        {{--     <th colspan="2">
                 <a href="/formAgregarProducto" class="btn btn-dark">
                     Nueva publicación
@@ -37,6 +38,8 @@
                 <td>{{ $detalle->nombre }}</td>
                 <td>{{ $detalle->apellido }}</td>
                 <td>{{ $detalle->email}}</td>
+                <td>empresa</td>
+                <td>{{ $detalle->cuilEmpresa}}</td>
                 <td>{{ $detalle->celular }}</td>
 
                {{-- <td ><img  src="{{ asset('images/avatares') }}/{{ $detalle->avatar }}" class="img-thumbnail" width="150px" ></td>--}}
@@ -47,7 +50,7 @@
                 <td style="color:green;" >Habilitado</td>
                     <td>
                         <a href="/admin/inhabilitarUsuario/{{$detalle->usrId}}" onclick="return confirm('¿Inhabilitar usuario?')" class="btn btn-outline-secondary">
-                            Inhabilitar usuario
+                            Inhabilitar
                         </a>
                     </td>
                     @elseif($detalle->isAdmin == 1)
@@ -57,7 +60,7 @@
                 <td style="color:red;" >No Habilitado</td>
                 <td>
                     <a href="/admin/habilitarUsuario/{{$detalle->usrId}}" onclick="return confirm('¿Validar usuario?')" class="btn btn-outline-secondary">
-                        Habilitar usuario
+                        Habilitar
                     </a>
                 </td>
                 @endif

@@ -16,7 +16,12 @@
 
 
         <div class="jumbotron col-4 mx-auto "   >
+            <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
+            <a href="/allCategorias" class="btn btn-link">Ir a categorías</a>
+            <a href="/" class="btn btn-link">Ir a principal</a>
+
             <h2 class="mx-auto"><strong><h1>@yield('h1')</h1></strong></h2>
+
             <hr class="my-4">
             @foreach($marcas as $marca)
 

@@ -50,13 +50,18 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $current_time=\Carbon\Carbon::now();
+
+        $current_time->subYears(18);
 
         return Validator::make($data, [
-            'nombre' => ['required', 'string', 'max:15'],
-            'apellido' => ['required', 'string', 'max:15'],
+            'nombre' => ['required', 'string', 'max:15','min:2'],
+            'apellido' => ['required', 'string', 'max:15','min:2'],
             'email' => ['required', 'string', 'email', 'max:50', 'unique:usuarios'],
-            'fechaNacimiento'=>['required','date'],
-            'password' => ['required', 'string', 'min:4','confirmed']
+            'cuilEmpresa' => ['required', 'digits:11'],
+            'celular'=> ['required','int'],
+            'fechaNacimiento'=>['required','date','date_format:Y-m-d',"before_or_equal:$current_time"],
+            'password' => ['required', 'string', 'min:8','confirmed', 'alpha_dash','different:nombre','different:email']
         ]);
     }
 
@@ -76,6 +81,7 @@ class RegisterController extends Controller
             'celular' => $data ['celular'],
             'email' => $data['email'],
             'fechaNacimiento' => $data['fechaNacimiento'],
+            'cuilEmpresa' => $data['cuilEmpresa'],
             'password' => Hash::make($data['password']),
             'avatar' => 'sinAvatar.png',
             'validado' => false,

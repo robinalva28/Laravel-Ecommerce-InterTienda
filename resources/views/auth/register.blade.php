@@ -80,23 +80,24 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="empresa" class="col-md-4 col-form-label text-md-right">{{ __('Empresa donde trabaja') }}</label>
+                        {{-- <div class="form-group row">
+                             <label for="empresa" class="col-md-4 col-form-label text-md-right">{{ __('Empresa donde trabaja') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="empresa" type="text" class="form-control @error('empresa') is-invalid @enderror" name="empresa" value="{{ old('empresa') }}" required autocomplete="email">
+                             <div class="col-md-6">
+                                 <input id="empresa" type="text" class="form-control @error('empresa') is-invalid @enderror" name="empresa" value="{{ old('empresa') }}" required autocomplete="email">
 
-                                @error('empresa')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                                 @error('empresa')
+                                 <span class="invalid-feedback" role="alert">
+                                         <strong>{{ $message }}</strong>
+                                     </span>
+                                 @enderror
+                             </div>
+                         </div>--}}
                         <div class="form-group row">
                             <label for="cuilEmpresa" class="col-md-4 col-form-label text-md-right">{{ __('CUIL de la empresa') }}</label>
 
                             <div class="col-md-6">
+                                <small><label for="password">En números. Sin guiones, signos ni espacios</label></small>
                                 <input id="cuilEmpresa" type="number" class="form-control @error('cuilEmpresa') is-invalid @enderror" name="cuilEmpresa" value="{{ old('cuilEmpresa') }}" required autocomplete="email">
 
                                 @error('cuilEmpresa')
@@ -123,6 +124,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
+                                <small><label for="password">Debe tener mínimo 8 dígitos. Puede ser alfanumérica</label></small>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
@@ -135,7 +137,7 @@
 
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">

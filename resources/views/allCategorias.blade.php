@@ -25,6 +25,9 @@
             <br>
             <h1>Categorías</h1>
             <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
+            <a href="/allMarcas" class="btn btn-link">Ir a marcas</a>
+            <a href="/" class="btn btn-link">Ir a principal</a>
+
             <div class="row  mt-4 mb-4 d-flex  justify-content-center  ">
                 <?php $i= 0 ?>
         @foreach($categorias as $categoria)

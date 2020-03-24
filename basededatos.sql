@@ -58,7 +58,8 @@ create table usuarios(
     celular			varchar(40),
     fechaNacimiento	date,
     usrIdEmpresa		int,
-    password			varchar(100),
+    cuilEmpresa      varchar(15),
+    password			varchar(150),
     avatar			varchar(100),
     validado boolean,/*por agregar*/
     isAdmin boolean,
