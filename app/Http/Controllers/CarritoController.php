@@ -16,7 +16,8 @@ class CarritoController extends Controller
     public function index()
     {
 
-        $carrito = Carrito::with('getProducto')->where("carUsuarios_usrId","=",Auth::user()->usrId)->paginate(4);
+        $carrito = Carrito::with('getProducto')
+            ->where("carUsuarios_usrId","=",Auth::user()->usrId)->paginate(6);
         //dd($carrito);
         return view('carrito',
         [

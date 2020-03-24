@@ -41,27 +41,40 @@
                             <li class="nav-item ">
                                 <a class="nav-link" href="/register">REGISTRAR</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/faq">F.A.Q.</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact">CONTACTO</a>
+                            </li>
                             @endif
                         @endauth
 
                 @endif
-                <li class="nav-item">
-                    <a class="nav-link" href="/faq">F.A.Q.</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">CONTACTO</a>
-                </li>
+
                     @if (Route::has('login'))
                         @auth
-                            {{--boton del usuario desplegable--}}
+                        {{--BOTON DESPLEGABLE EXPLORAR--}}
+                        <li class="nav-item dropdown">
+                            <a {{--style="color:royalblue;"--}} class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                               Dropdown><i class="fas fa-sign-in-alt"></i> PUBLICACIONES
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/allCategorias">Por Categorías</a>
+                                <a class="dropdown-item" href="/adminUsuarioProductos">Por Marcas</a>
+                                <a class="dropdown-item" href="/todosLosProductos">Ver Todos</a>
+                            </div>
+                        </li>
+
+                            {{--boton del usuario desplegable USUARIO--}}
                             <li class="nav-item dropdown">
                                 <a style="color:royalblue;" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>
+                                  {{--  <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>--}}
                                     <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
-                                    <a class="dropdown-item" href="/formAgregarProducto">Publicar</a>
+                                    <a class="dropdown-item" href="/formAgregarProducto">Nueva publicación</a>
                                     <a class="dropdown-item" href="/perfil">Mis datos</a>
                                     @if(Auth::user()->isAdmin)
                                     <a class="dropdown-item" href="/admin/adminProductos">Todas Publicaciones</a>

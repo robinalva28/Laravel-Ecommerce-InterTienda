@@ -7,7 +7,7 @@
 
     {{-- mensajes de ok --}}
     @if( session()->has('mensaje') )
-        <div class="alert alert-success">
+        <div class="alert alert-danger">
             {{ session()->get('mensaje') }}
         </div>
     @endif

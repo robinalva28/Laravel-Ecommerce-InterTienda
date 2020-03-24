@@ -36,6 +36,8 @@
                 @csrf
                 <button type="submit" class="btn btn-primary btn-lg">Administrar</button>
             </form>
+             {{--   @elseif($producto->prdIdUsuario == $carrito->carUsuarios_usrId)
+--}}
                 @else
             <a href="#addCarrito" class="btn btn-primary btn-lg" data-toggle="modal">Agregar al Carrito</a>
             <br><br>
