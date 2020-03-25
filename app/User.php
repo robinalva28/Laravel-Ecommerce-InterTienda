@@ -1,6 +1,8 @@
 <?php
 
 namespace App;
+
+Use App\Empresa;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -10,10 +12,14 @@ class User extends Authenticatable
 {
     protected $table = "usuarios";
     protected $primaryKey = "usrId";
-
-  /*  public $guarded = [];*/
+   public $guarded = [];
 
     use Notifiable;
+
+    public function getEmpresa()
+    {
+        return $this->belongsTo('App\Empresa', 'usrIdEmpresa', 'empId');
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre','apellido','celular', 'email', 'fechaNacimiento','empresa','cuilEmpresa','avatar','password', 'validado','isAdmin'
+        'nombre','apellido','celular', 'email', 'fechaNacimiento','usrIdEmpresa','cuilEmpresa','avatar','password', 'validado','isAdmin'
     ];
 
     /**

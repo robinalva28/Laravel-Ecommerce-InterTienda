@@ -27,7 +27,7 @@
             <th>Empresa</th>
             <th>Fecha de nacimiento</th>
             <th>Avatar</th>
-            <th></th>
+            <th colspan="2"></th>
 
 
         </tr>
@@ -46,7 +46,16 @@
                 <td>{{ auth()->user()->apellido }}</td>
                 <td>{{ auth()->user()->email}}</td>
                 <td>{{ auth()->user()->celular }}</td>
-                <td>{{ auth()->user()->empresa }}</td>
+
+                    @if(is_object(auth()->user()->getEmpresa))
+                        <td>{{auth()->user()->getEmpresa->empNombre}}</td>
+                    @else
+                        <td>
+                           Sin Empresa
+                        </td>
+                    @endif
+
+
                 <td>{{ auth()->user()->fechaNacimiento }}</td>
                 <td ><img  src="{{ asset('images/avatares') }}/{{ auth()->user()->avatar }}" class="img-thumbnail" width="80px" ></td>
                     <td>

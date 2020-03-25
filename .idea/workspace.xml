@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../resources/views/adminEmpresas.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/formAgregarEmpresa.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/formModificarEmpresa.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../public/js/js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Empresa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/EmpresasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/EmpresasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/allMarcas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/allMarcas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/formModificarDatos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formModificarDatos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/perfil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/perfil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +37,13 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -217,7 +223,7 @@
       <workItem from="1584810005878" duration="31506000" />
       <workItem from="1584847245366" duration="184000" />
       <workItem from="1584908111600" duration="7827000" />
-      <workItem from="1585067233220" duration="24787000" />
+      <workItem from="1585067233220" duration="33881000" />
     </task>
     <servers />
   </component>

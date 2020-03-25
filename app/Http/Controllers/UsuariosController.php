@@ -5,20 +5,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
+Use DB;
+Use App\Empresa;
 Use App\User;
 use App\Http\Controllers\Auth;
 use Illuminate\Validation\ValidationException;
+use mysql_xdevapi\CollectionFind;
 
 
 class UsuariosController extends Controller
 {
 
-
-
     public function index()
     {
-        //
         $usuario = User::all();
 
         return view('perfil',
@@ -29,8 +28,8 @@ class UsuariosController extends Controller
     public function listaUsuarios()
     {
         //
-        $usuario = User::all();
-
+        $usuario = User::with('getEmpresa')->get();
+        //dd($usuario);
         return view('adminListaUsuarios',
             [
                 'usuario'=>$usuario,
@@ -66,6 +65,33 @@ class UsuariosController extends Controller
             [
                 'usuario'=>$usuario,
             ]);
+    }
+
+    public function asignarEmpresa($id)
+    {
+
+        $user = User::find($id);
+        //dd($user/*->cuilEmpresa*/);
+        //REVISAR ESTA BUSQUEDA
+        //$empresa = Empresa::where('empCuil','=', $user->cuilEmpresa);
+        $empresa = DB::table('empresas')
+           ->where('empCuil','=', $user->cuilEmpresa)->get();
+
+        //dd($empresa[0]->empCuil/*->items->empNombre*/);
+        //CREO UN ARRAY CON TODOS LOS USUARIOS PARA RETORNAR LA VISTA
+       
+        //COMPRUEBO SI EL user COLOCÓ EL CUIL CORRESPONDIENTE A LA EMPRESA QUE SE LE QUIERE ASIGNAR
+        if($user->cuilEmpresa == $empresa[0]->empCuil && $user->validado){
+
+            $user->usrIdEmpresa = $empresa[0]->empId;
+            $user->save();
+            return redirect('/admin/adminListaUsuarios')->with('mensaje', 'Empresa asignada con éxito');
+
+        } else {
+
+            return redirect('/admin/adminListaUsuarios')
+                ->with('mensaje', 'Ha ocurrido un error al asignar la empresa');
+        }
     }
 
     public function edit()

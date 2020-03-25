@@ -24,7 +24,17 @@
         </div>
 
         <div class="form-group">
-            <label for="empresa">Empresa: {{$usuario->empresa}}</label>
+            <label for="empresa">Empresa:
+
+                @if(is_object(auth()->user()->getEmpresa))
+                    <td>{{auth()->user()->getEmpresa->empNombre}}</td>
+                @else
+                    <td>
+                        Sin Empresa
+                    </td>
+                @endif
+
+            </label>
         </div>
 
         <div class="form-group">

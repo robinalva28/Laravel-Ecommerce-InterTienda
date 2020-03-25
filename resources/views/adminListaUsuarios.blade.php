@@ -4,7 +4,12 @@
 
 @section('contenido')
 
-
+    {{-- mensajes de ok --}}
+    @if( session()->has('mensaje') )
+        <div class="alert alert-success">
+            {{ session()->get('mensaje') }}
+        </div>
+    @endif
 
 <div class="card bg-light col-md-10 mt-1 p-1 mx-auto mx-3">
     <table class="table table-hover table-striped table-border ">
@@ -38,13 +43,20 @@
                 <td>{{ $detalle->nombre }}</td>
                 <td>{{ $detalle->apellido }}</td>
                 <td>{{ $detalle->email}}</td>
-                <td>empresa</td>
+
+                @if(is_object($detalle->getEmpresa))
+                <td>{{$detalle->getEmpresa->empNombre}}</td>
+                @else
+                <td>
+                    <a href="/admin/asignarEmpresa/{{$detalle->usrId}}" onclick="return confirm('¿Asignar Empresa?')" class="btn btn-outline-secondary">
+                        Asignar
+                    </a>
+                    </td>
+                @endif
+
                 <td>{{ $detalle->cuilEmpresa}}</td>
                 <td>{{ $detalle->celular }}</td>
 
-               {{-- <td ><img  src="{{ asset('images/avatares') }}/{{ $detalle->avatar }}" class="img-thumbnail" width="150px" ></td>--}}
-               {{-- <td>{{ $detalle->usrIdEmpresa->empNombre }}</td>
-                <td>{{ $detalle->usrIdEmpresa->empCuil }}</td>--}}
                 <td>{{ $detalle->fechaNacimiento }}</td>
                 @if($detalle->validado == 1)
                 <td style="color:green;" >Habilitado</td>

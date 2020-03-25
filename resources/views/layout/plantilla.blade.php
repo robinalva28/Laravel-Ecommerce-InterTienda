@@ -77,11 +77,11 @@
                                     <a class="dropdown-item" href="/formAgregarProducto">Nueva publicación</a>
                                     <a class="dropdown-item" href="/perfil"> <i class="far fa-edit"></i> Mi cuenta</a>
                                     @if(Auth::user()->isAdmin)
-                                    <a class="dropdown-item" href="/admin/adminProductos">Todas Publicaciones</a>
-                                    <a class="dropdown-item" href="/admin/adminListaUsuarios">Usuarios registrados</a>
-                                    <a class="dropdown-item" href="/admin/adminMarcas">Admin marcas</a>
-                                    <a class="dropdown-item" href="/admin/adminCategorias">Admin categorias</a>
-                                    <a class="dropdown-item" href="/admin/adminEmpresas">Admin Empresas</a>
+                                    <a class="dropdown-item" href="/admin/adminProductos">PUBLICACIONES</a>
+                                    <a class="dropdown-item" href="/admin/adminListaUsuarios">USUARIOS EN BD</a>
+                                    <a class="dropdown-item" href="/admin/adminMarcas">MARCAS</a>
+                                    <a class="dropdown-item" href="/admin/adminCategorias">CATEGORIAS</a>
+                                    <a class="dropdown-item" href="/admin/adminEmpresas">EMPRESAS</a>
                                     @endif
                                         <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">

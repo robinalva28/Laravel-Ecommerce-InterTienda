@@ -66,6 +66,7 @@ class ProductosController extends Controller
         $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
         $categorias = Categoria::all();
         $categoria = Categoria::find($id);
+        //dd($productos);
         return view('cat',
             [
                 'productos'=>$productos,

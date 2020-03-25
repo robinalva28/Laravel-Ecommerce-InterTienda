@@ -41,7 +41,7 @@ Route::group(['middleware' => 'admin',
     Route::post('/agregarEmpresa', 'EmpresasController@store');
     Route::get('/formModificarEmpresa/{id}', 'EmpresasController@edit');
     Route::post('/modificarEmpresa/{id}', 'EmpresasController@update');
-
+    Route::get('/asignarEmpresa/{id}','UsuariosController@asignarEmpresa');
 
     ###### ADMIN SOBRE USUARIOS
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
