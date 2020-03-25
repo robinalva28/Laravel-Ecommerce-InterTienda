@@ -35,6 +35,14 @@ Route::group(['middleware' => 'admin',
     ############ SOBRE PRODUCTOS
     Route::get('/adminProductos', 'ProductosController@index');
 
+    ############ EMPRESAS
+    Route::get('/adminEmpresas', 'EmpresasController@index');
+    Route::get('/formAgregarEmpresa', 'EmpresasController@create');
+    Route::post('/agregarEmpresa', 'EmpresasController@store');
+    Route::get('/formModificarEmpresa/{id}', 'EmpresasController@edit');
+    Route::post('/modificarEmpresa/{id}', 'EmpresasController@update');
+
+
     ###### ADMIN SOBRE USUARIOS
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
     Route::get('/habilitarUsuario/{id}','UsuariosController@habilitarUsuario');

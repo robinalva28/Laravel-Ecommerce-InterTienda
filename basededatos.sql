@@ -43,7 +43,7 @@ create table carritos(
 /*CREACION DE LA TABLA EMPRESAS*/
 create table empresas(
 	empId			int auto_increment primary key,
-    empCuil			int not null,
+    empCuil			varchar(15) not null,
     empNombre		varchar(40)
 );
 

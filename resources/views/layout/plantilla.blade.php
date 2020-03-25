@@ -81,7 +81,7 @@
                                     <a class="dropdown-item" href="/admin/adminListaUsuarios">Usuarios registrados</a>
                                     <a class="dropdown-item" href="/admin/adminMarcas">Admin marcas</a>
                                     <a class="dropdown-item" href="/admin/adminCategorias">Admin categorias</a>
-                                    <a class="dropdown-item" href="/admin/adminCategorias">Admin Empresa</a>
+                                    <a class="dropdown-item" href="/admin/adminEmpresas">Admin Empresas</a>
                                     @endif
                                         <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">

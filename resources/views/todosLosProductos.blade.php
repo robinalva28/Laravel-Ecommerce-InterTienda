@@ -5,6 +5,31 @@
 
     <div class="container container-fluid">
 
+        <?php $i= 0 ?>
+
+        @foreach($productos as $producto)
+
+            <?php $i++ ?>
+        @endforeach
+
+        @if($i==0)
+
+
+            <div class="jumbotron col-8 mx-auto">
+                <a href="/allMarcas" class="btn btn-link">Ir a Marcas</a>
+                <a href="/allCategorias" class="btn btn-link">Ir a categorías</a>
+                <a href="/" class="btn btn-link">Ir a principal</a>
+                <br>
+                <h1 class="display-4">¡No encontramos nada !</h1>
+                <p class="lead">Puedes publicar algún artículo o servicio..</p>
+                <hr class="my-4">
+                <p>Si ya existen productos y/o servicios publicados recarga la página.</p>
+                <a class="btn btn-primary btn-lg" href="/formAgregarProducto" role="button">Nueva publicación</a>
+            </div>
+    </div>
+        @else
+
+
         <div class="tittle">
 
 
@@ -53,7 +78,7 @@
         <br>
         <br>
     </div>
-
+    @endif
 
 
 @endsection
