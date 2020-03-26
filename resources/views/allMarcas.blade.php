@@ -36,7 +36,7 @@
         </div>
     @else
 
-    <div class="jumbotron col-4 mx-auto "   >
+    <div   class="jumbotron col-4 mx-auto "   >
             <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
             <a href="/allCategorias" class="btn btn-link">Ir a categorías</a>
             <a href="/" class="btn btn-link">Ir a principal</a>
@@ -47,7 +47,7 @@
             @foreach($marcas as $marca)
 
                 <a href="/mar/{{$marca->marId}}" style="color: #1d643b; font-size: 3vh" class="nav-item" >
-                    <i class="fas fa-greater-than"></i>{{$marca->marNombre}} </a>
+                    <i class="zoom fas fa-greater-than">{{$marca->marNombre}}</i> </a>
                 <br>
 
             @endforeach
@@ -56,7 +56,7 @@
 
 
             <a href="/todosLosProductos" style="color: #1d643b; font-size: 3vh" class="nav-item" >
-                <i class="fas fa-greater-than"></i>Todas</a>
+                <i class=" zoom fas fa-greater-than">Todas</i></a>
             <br>
 
         </div>

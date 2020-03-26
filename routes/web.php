@@ -94,7 +94,6 @@ Route::get('/perfil','UsuariosController@index');
 Route::get('/', function(){
 
         return view ('/inicio');
-
 });
 
 

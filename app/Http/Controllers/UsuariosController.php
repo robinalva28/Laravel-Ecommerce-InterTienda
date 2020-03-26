@@ -70,27 +70,31 @@ class UsuariosController extends Controller
     public function asignarEmpresa($id)
     {
 
-        $user = User::find($id);
-        //dd($user/*->cuilEmpresa*/);
-        //REVISAR ESTA BUSQUEDA
-        //$empresa = Empresa::where('empCuil','=', $user->cuilEmpresa);
-        $empresa = DB::table('empresas')
-           ->where('empCuil','=', $user->cuilEmpresa)->get();
+        if(User::find($id)) {
 
-        //dd($empresa[0]->empCuil/*->items->empNombre*/);
-        //CREO UN ARRAY CON TODOS LOS USUARIOS PARA RETORNAR LA VISTA
-       
-        //COMPRUEBO SI EL user COLOCÓ EL CUIL CORRESPONDIENTE A LA EMPRESA QUE SE LE QUIERE ASIGNAR
-        if($user->cuilEmpresa == $empresa[0]->empCuil && $user->validado){
+            $user = User::find($id);
+            //dd($user/*->cuilEmpresa*/);
 
-            $user->usrIdEmpresa = $empresa[0]->empId;
-            $user->save();
-            return redirect('/admin/adminListaUsuarios')->with('mensaje', 'Empresa asignada con éxito');
+            //$empresa = Empresa::where('empCuil','=', $user->cuilEmpresa);
+            $empresa = DB::table('empresas')
+                ->where('empCuil', '=', $user->cuilEmpresa)->get();
 
-        } else {
+            //dd($empresa[0]->empCuil/*->items->empNombre*/);
 
-            return redirect('/admin/adminListaUsuarios')
-                ->with('mensaje', 'Ha ocurrido un error al asignar la empresa');
+
+            //COMPRUEBO SI EL user COLOCÓ EL CUIL CORRESPONDIENTE A LA EMPRESA QUE SE LE QUIERE ASIGNAR
+            if (isset($user->cuilEmpresa) == isset($empresa[0]->empCuil) && $user->validado) {
+
+                $user->usrIdEmpresa = $empresa[0]->empId;
+                $user->save();
+                return redirect('/admin/adminListaUsuarios')->with('mensaje', 'Empresa asignada con éxito');
+
+            } else {
+                return redirect('/admin/adminListaUsuarios')
+                    ->with('mensaje', 'Ha ocurrido un error al asignar la empresa,
+                    verifique que el CUIL está bien escrito en los datos del usuario,
+                    que esté habilitado y que la empresa es socio.');
+            }
         }
     }
 

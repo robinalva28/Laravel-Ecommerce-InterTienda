@@ -56,6 +56,7 @@
                     <td>{{$producto->carCantidadPrd}}</td>
                     <td>
 
+
                         <form action="/eliminarCarrito/{{$producto->carId}}" method="post">
                             @csrf
                             <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
@@ -70,6 +71,9 @@
             <th>  {{ $carrito->links() }}</th>
         </tbody>
     </table>
+        <div class="container-fluid">
+            <h4>Total: $ </h4>
+        </div>
     <button type="button" class="btn btn-success mb-5">Confirmar compra</button>
     @endif
 

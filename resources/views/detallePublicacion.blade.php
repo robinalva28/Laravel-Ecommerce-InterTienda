@@ -15,12 +15,13 @@
     <div class="mt-4 mb-4 d-flex justify-content-start">
         <div class="d-flex col-lg-6 col-sm-4 col-md-4 col-mb-4">
             <div class="card" style="width: 28rem;">
-                <img src="{{ asset('images/productos') }}/{{$producto->prdImagen}}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <img class="card-img-top" src="{{ asset('images/productos') }}/{{$producto->prdImagen}}"  alt="...">
+                <div class="card-body ">
                 </div>
             </div>
         </div>
-        <div  class=" justify-content-end ">
+
+        <div  class=" flex-row col-lg-6 col-sm-12 col-md-6 justify-content-end">
             <h3>Descripción:</h3>
             <h4>{{$producto->prdDescripcion}}</h4>
             <br>
@@ -49,7 +50,7 @@
                         {{--HEADER DE LA VENTANA EMERGENTE--}}
 
                         <div class="modal-header">
-                        <h4 class="modal-title">Un paso más ¡{{$producto->prdNombre}}!</h4>
+                        <h4 class="modal-title">A solo un paso: ¡{{$producto->prdNombre}}!</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                          </div>
 
@@ -81,13 +82,9 @@
             </div>
         </div>
     </div>
-
-    <div class="d-flex">
-
-    </div>
-
-
 </div>
+
+
 <!-- CARDS -->
 
 @endsection

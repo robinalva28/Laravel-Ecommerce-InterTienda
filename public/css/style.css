@@ -46,6 +46,17 @@ section h5{
     color:#59aaec;
 }
 
+/*para hacer zoom sobre la clase*/
+.zoom
+{
+    transition: transform .2s;
+}
+.zoom:hover
+{
+    transform: scale(1.15);
+}
+/*PARA EFECTO DE LUPA*/
+
 
 header nav div a:hover{
    border-bottom: 3px solid rgb(91, 165, 207);

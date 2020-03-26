@@ -32,7 +32,7 @@
                 <?php $i= 0 ?>
         @foreach($categorias as $categoria)
 
-                <div  class="col-lg-3 col-sm-12 col-md-6 mb-4 ">
+                <div  class="zoom col-lg-3 col-sm-12 col-md-6 mb-4 ">
                     <div onclick="location.href='cat/{{$categoria->catId}}'" class="card" style="width: 16rem;">
                         <img src="{{ asset('images/categorias') }}/{{$categoria->catImagen}}" class="card-img-top" alt="...">
                         <div class="card-body">
