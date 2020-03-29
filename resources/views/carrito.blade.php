@@ -93,7 +93,60 @@
         <div class="container-fluid">
 
         </div>
-    <button type="button" class="btn btn-success mb-5">Confirmar compra</button>
+    <a href="#confirmarCompra" data-toggle="modal" class="btn btn-success btn-lg" >Confirmar compra</a>
+
+
+            <div class="modal fade col-auto" id="confirmarCompra" >
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #dee2e6">
+                        {{--HEADER DE LA VENTANA EMERGENTE--}}
+
+                        <div class="modal-header">
+
+                            <h2 class="modal-title">¡Enhorabuena! compraste:</h2><br>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+
+                        {{--BODY DE VENTANA EMERGENTE--}}
+                        <div class="modal-body"  >
+                            @foreach($carrito as $producto)
+
+                                <label> <i class="fas fa-angle-double-right"></i> {{$producto->getProducto->prdNombre}}  </label>
+                                <br>
+
+                                <img  height="60px" src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}"
+                                     class=" " alt="...">
+                                <br>
+                            @endforeach
+                            <br>
+                            <div class="" style="width: auto;">
+                               {{-- <img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" class="card-img-top " alt="...">
+                               --}}
+                                    <div class="form-group">
+                                       <h5>En la sección Compras podrás acceder a la información del vendedor
+                                       y así pautar la entrega y formas de pago, si tienes algún inconveniente con la compra no dudes
+                                       en contactarnos.</h5>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        {{--FOOTER VENTANA EMERGENTE--}}
+                        <div class="modal-footer">
+
+                            <form action="/addACarrito" method="POST">
+                                @csrf
+                               {{-- <h4 class="d-inline-block" for="cantidad">Selecciona cantidad:</h4>
+                                <input type="hidden" name="prdId" value="{{$producto->prdId}}">
+                                <input style="height: 4vh;" name="cantidad" id="cantidad" type="number" value="1" min="1" max="{{ $producto->prdStock }}" step="1"/>
+                              --}}
+                                <button type="submit" class="btn btn-primary" >IR A MIS COMPRAS</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{--FIN DEL IF QUE MUESTRA EL CONTENIDO DEL CARRITO--}}
     @endif
 
 </div>

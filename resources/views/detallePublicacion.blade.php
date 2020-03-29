@@ -30,16 +30,16 @@
             <h4>{{'$'.$producto->prdPrecio}}</h4>
             <br>
             <h6 style="color: #1b4b72"><strong> En stock: {{$producto->prdStock}}</strong></h6>
-            {{--BOTON ADD CARRITO O IR A MIS PUBLICACIONES--}}
+            {{--BOTON ADD CARRITO O IR A MIS PUBLICACIONES también si el producto ya está en carrito--}}
             @if($producto->prdIdUsuario == Auth::user()->usrId)
 
             <form action="/adminUsuarioProductos" method="GET">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-lg">Administrar</button>
             </form>
-             {{--   @elseif($producto->prdIdUsuario == $carrito->carUsuarios_usrId)
---}}
-                @else
+
+            @else
+
             <a href="#addCarrito" class="btn btn-primary btn-lg" data-toggle="modal">Agregar al Carrito</a>
             <br><br>
             @endif

@@ -98,6 +98,10 @@ class UsuariosController extends Controller
         }
     }
 
+    public function compras(){
+        return view('/adminUsuarioCompras');
+    }
+
     public function edit()
     {
         $id = auth()->user()->usrId;

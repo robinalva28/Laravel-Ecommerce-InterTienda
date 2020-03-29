@@ -60,12 +60,12 @@
                         {{--BOTON DESPLEGABLE EXPLORAR--}}
                         <li class="nav-item dropdown">
                             <a {{--style="color:royalblue;"--}} class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                               Dropdown><i class="fas fa-sign-in-alt"></i> PUBLICACIONES
+                               Dropdown><i class="fas fa-box"></i> PUBLICACIONES
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/allCategorias">Por Categorías</a>
-                                <a class="dropdown-item" href="/allMarcas">Por Marcas</a>
-                                <a class="dropdown-item" href="/todosLosProductos">Ver Todos</a>
+                                <a class="dropdown-item" href="/allCategorias"><i class="fas fa-angle-double-right"></i> Por Categorías</a>
+                                <a class="dropdown-item" href="/allMarcas"><i class="fas fa-angle-double-right"></i> Por Marcas</a>
+                                <a class="dropdown-item" href="/todosLosProductos"><i class="fas fa-angle-double-right"></i> Ver Todos</a>
                             </div>
                         </li>
 
@@ -76,8 +76,10 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   {{--  <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>--}}
-                                    <a class="dropdown-item" href="/adminUsuarioProductos">Mis publicaciones</a>
-                                    <a class="dropdown-item" href="/formAgregarProducto">Nueva publicación</a>
+                                    <a class="dropdown-item" href="/adminUsuarioProductos"><i class="fas fa-folder"></i> Mis publicaciones</a>
+                                    <a class="dropdown-item" href="/formAgregarProducto"> <i class="fas fa-folder-plus"></i> 	Nueva publicación</a>
+                                    <a class="dropdown-item" href="/compras"> <i class="fab fa-linux"></i> Compras</a>
+                                    <a class="dropdown-item" href="/ventas"> <i class="fas fa-handshake"></i> Ventas</a>
                                     <a class="dropdown-item" href="/perfil"> <i class="far fa-edit"></i> Mi cuenta</a>
                                     @if(Auth::user()->isAdmin)
                                     <a class="dropdown-item" href="/admin/adminProductos">PUBLICACIONES</a>

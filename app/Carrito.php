@@ -16,4 +16,5 @@ class Carrito extends Model
         return $this->belongsTo('App\Producto', 'carIdProducto', 'prdId');
     }
 
+
 }

@@ -96,11 +96,16 @@ create table carritos(
 );
 /*CREACIOS DE TABLA INTERMEDIA VENTAS PRODUCTOS-USUARIOS*/
 create table ventas(
+    created_at DATE,
+	updated_at date,
 	venId			int auto_increment primary key,
     venIdProducto	int,
+    venStock      int,
     venIdUsuario	int,
+    venIdComprador    int,
     foreign key (venIdProducto) references productos(prdId),
-    foreign key (venIdUsuario) references usuarios(usrId)
+    foreign key (venIdUsuario) references usuarios(usrId),
+    foreign key (venIdComprador) references usuarios(usrId)
 );
 
 

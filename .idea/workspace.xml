@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioCompras.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioVentas.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/CategoriasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/CategoriasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminCategorias.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminCategorias.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Carrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Carrito.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/carrito.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/carrito.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layout/plantilla.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +227,7 @@
       <workItem from="1585165370057" duration="11001000" />
       <workItem from="1585346104609" duration="1846000" />
       <workItem from="1585406980180" duration="4095000" />
-      <workItem from="1585502107330" duration="7562000" />
+      <workItem from="1585502107330" duration="15628000" />
     </task>
     <servers />
   </component>
@@ -248,10 +255,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="263" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583541569586" />
-    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog" timestamp="1585095194575">
+    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog" timestamp="1585513153423">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585095194575" />
+    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585513153423" />
     <state x="464" y="154" key="SettingsEditor" timestamp="1583878467613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
