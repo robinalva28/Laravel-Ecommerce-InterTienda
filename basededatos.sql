@@ -11,9 +11,10 @@ FLUSH PRIVILEGES;*/
 /*HABILITAR USUARIO ADMINISTRADOR luego de haberlo creado con nombre = admin*/
 /*UPDATE usuarios
 SET
-    isAdmin = true
+    isAdmin = true,
+    validado = true
 WHERE
-    nombre = 'admin';	;*/
+    email = 'admin@admin.com';	*/
 
 use ecomerce;
 
@@ -61,6 +62,7 @@ create table usuarios(
     cuilEmpresa      varchar(15),
     password			varchar(150),
     avatar			varchar(100),
+    remember_token VARCHAR(100) NULL,
     validado boolean,/*por agregar*/
     isAdmin boolean,
     foreign key (usrIdEmpresa) references empresas(empId)

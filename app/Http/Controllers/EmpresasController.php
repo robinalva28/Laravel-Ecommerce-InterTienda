@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+Use DB;
+Use App\User;
 use App\Empresa;
 use Illuminate\Http\Request;
 
@@ -70,6 +72,31 @@ class EmpresasController extends Controller
             ->with('mensaje', 'Empresa '.$empresa->empNombre.' modificada con éxito');
     }
 
+    public function destroy($id)
+    {
+        //
+        $empresa = DB::table('empresas')
+            ->where('empId', '=', $id)->get();
+        //dd($empresa[0]->empNombre);
+        $usuarios = User::with('getEmpresa')->get();
+        //dd($usuarios);
 
+        $existenAfiliadosEn = [];
+        foreach ($usuarios as $user) {
+            if ($user->usrIdEmpresa == $empresa[0]->empId) {
+                $existenAfiliadosEn[$empresa[0]->empId] = $user->usrIdEmpresa;
+            }
+        }
+           //dd($existenAfiliadosEn);
+        if (isset($existenAfiliadosEn[$id])) {
+            return redirect ('admin/adminEmpresas')
+                ->with('mensaje', 'Imposible eliminar Empresa '.$empresa[0]->empNombre.', la misma tiene usuarios afiliados');;
+        }else{
+            Empresa::destroy($id);
+
+            return redirect ('admin/adminEmpresas')
+                ->with('mensaje', 'Empresa '.$empresa[0]->empNombre.' Eliminada con éxito');;
+        }
+    }
 
 }

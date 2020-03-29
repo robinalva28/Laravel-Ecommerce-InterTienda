@@ -42,6 +42,7 @@ Route::group(['middleware' => 'admin',
     Route::get('/formModificarEmpresa/{id}', 'EmpresasController@edit');
     Route::post('/modificarEmpresa/{id}', 'EmpresasController@update');
     Route::get('/asignarEmpresa/{id}','UsuariosController@asignarEmpresa');
+    Route::get('/eliminarEmpresa/{id}','EmpresasController@destroy');
 
     ###### ADMIN SOBRE USUARIOS
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
@@ -98,7 +99,7 @@ Route::get('/', function(){
 
 
 Route::get('/login', function(){
-    return view('login');
+    return view('/login');
 });
 
 ######## PREG FRECUENTES #########

@@ -38,13 +38,14 @@
             <tr>
                 <th scope="col">Producto</th>
                 <th colspan="1">&nbsp;</th>
-                <th scope="col">Precio</th>
+                <th scope="col">Precio und.</th>
                 <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
                 <th scope="col">Remover</th>
             </tr>
         </thead>
         <tbody>
-
+            @php $totalFinal = 0 @endphp
             @foreach($carrito as $producto)
                 <tr>
                     <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
@@ -54,7 +55,22 @@
                     </td>
                     <td>${{$producto->getProducto->prdPrecio}}</td>
                     <td>{{$producto->carCantidadPrd}}</td>
+                    <td>${{$producto->getProducto->prdPrecio * $producto->carCantidadPrd}}
+
+                        <br>
+                        <br>
+                        @php $i--; @endphp
+                    @if($i == 0)
+                            <h5><strong>Total carrito: ${{$totalFinal += $producto->getProducto->prdPrecio * $producto->carCantidadPrd}}</strong></h5>
+                        @else
+                            <label style="font-size: 0;"> Total carrito: $ {{$totalFinal
+                    += $producto->getProducto->prdPrecio * $producto->carCantidadPrd}}</label>
+                        @endif
+
+                    </td>
+
                     <td>
+
 
 
                         <form action="/eliminarCarrito/{{$producto->carId}}" method="post">
@@ -62,17 +78,20 @@
                             <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
                                 <i class="far fa-trash-alt"></i>
                             </button>
+
+
                         </form>
+
                     </td>
 
             </tr>
 
-            @endforeach
+               @endforeach
             <th>  {{ $carrito->links() }}</th>
         </tbody>
     </table>
         <div class="container-fluid">
-            <h4>Total: $ </h4>
+
         </div>
     <button type="button" class="btn btn-success mb-5">Confirmar compra</button>
     @endif

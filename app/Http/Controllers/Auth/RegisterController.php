@@ -55,8 +55,8 @@ class RegisterController extends Controller
         $current_time->subYears(18);
 
         return Validator::make($data, [
-            'nombre' => ['required', 'string', 'max:15','min:2'],
-            'apellido' => ['required', 'string', 'max:15','min:2'],
+            'nombre' => ['required', 'string','max:15','min:2'],
+            'apellido' => ['required', 'string','max:15','min:2'],
             'email' => ['required', 'string', 'email', 'max:50', 'unique:usuarios'],
             'cuilEmpresa' => ['required', 'digits:11'],
             'celular'=> ['required','int'],

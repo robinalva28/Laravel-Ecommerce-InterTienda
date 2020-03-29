@@ -58,15 +58,17 @@
                 <td>{{ $detalle->celular }}</td>
 
                 <td>{{ $detalle->fechaNacimiento }}</td>
-                @if($detalle->validado == 1)
-                <td style="color:green;" >Habilitado</td>
+
+                @if($detalle->isAdmin == 1)
+                    <td style="color:blue;" >Administrador</td>
+
+                    @elseif($detalle->validado == 1)
+                    <td style="color:green;" >Habilitado</td>
                     <td>
                         <a href="/admin/inhabilitarUsuario/{{$detalle->usrId}}" onclick="return confirm('¿Inhabilitar usuario?')" class="btn btn-outline-secondary">
                             Inhabilitar
                         </a>
                     </td>
-                    @elseif($detalle->isAdmin == 1)
-                    <td style="color:blue;" >Administrador</td>
                     <td></td>
                 @else
                 <td style="color:red;" >No Habilitado</td>

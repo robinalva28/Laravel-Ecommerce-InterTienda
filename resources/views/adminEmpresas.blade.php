@@ -39,9 +39,13 @@
                     </a>
                 </td>
                 <td>
-                    <a onclick="return confirm('¿Está seguro de eliminar ésta empegoría?')" href="" class="btn btn-outline-secondary">
-                        Eliminar
-                    </a>
+
+                    <form action="/admin/eliminarEmpresa/{{$empresa->empId}}">
+                        @csrf
+                        <button type="submit" onclick="return confirm('¿Desea eliminar ésta Empresa?')" class="btn btn-outline-secondary">
+                            Eliminar
+                        </button>
+                    </form>
                 </td>
             </tr>
         @endforeach

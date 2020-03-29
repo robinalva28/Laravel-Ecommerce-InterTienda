@@ -93,7 +93,7 @@ class UsuariosController extends Controller
                 return redirect('/admin/adminListaUsuarios')
                     ->with('mensaje', 'Ha ocurrido un error al asignar la empresa,
                     verifique que el CUIL está bien escrito en los datos del usuario,
-                    que esté habilitado y que la empresa es socio.');
+                    que esté habilitado y que la empresa está en sistema.');
             }
         }
     }
