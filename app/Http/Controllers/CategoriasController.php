@@ -159,6 +159,33 @@ class CategoriasController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        //$categoria = DB::table('categoria')
+        //    ->where('empId', '=', $id)->get();
+        //dd($empresa[0]->empNombre);
+
+        $categoria = Categoria::where('catId','=',$id)->get();
+        //dd($categoria[0]->catId);
+        $productos = Producto::with('getCategoria')->get();
+        //dd($productos);
+
+        $existenProductosEn = [];
+
+        foreach ($productos as $producto) {
+            if ($producto->prdIdCategoria == $id) {
+                $existenProductosEn[$categoria[0]->catId] = $producto->prdIdCategoria;
+            }
+        }
+        //dd($existenProductosEn);
+        if (isset($existenProductosEn[$id])) {
+            return redirect ('admin/adminCategorias')
+                ->with('mensaje', 'Imposible eliminar Categoria '.$categoria[0]->catNombre.
+                    ', existen publicaciones que hacen referencia a la misma');;
+        }else{
+            Categoria::destroy($id);
+
+            return redirect ('admin/adminCategorias')
+                ->with('mensaje', 'Categoria '.$categoria[0]->catNombre.' Eliminada con éxito');;
+        }
     }
 }
