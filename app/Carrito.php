@@ -16,5 +16,10 @@ class Carrito extends Model
         return $this->belongsTo('App\Producto', 'carIdProducto', 'prdId');
     }
 
+    public function getUsuario()
+    {
+        return $this->belongsTo('App\User', 'carUsuarios_usrId', 'usrId');
+    }
+
 
 }

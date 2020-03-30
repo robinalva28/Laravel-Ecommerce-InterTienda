@@ -61,8 +61,12 @@ Route::group(['middleware' => 'validado'], function () {
     Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
     Route::post('/modificarProducto/{id}', 'ProductosController@update');
     Route::get('/eliminarProducto/{id}','ProductosController@destroy');
-    Route::get('/ventas','UsuariosController@ventas');
-    Route::get('/compras','UsuariosController@compras');
+    Route::get('/ventas','VentasController@ventas');
+    Route::get('/compras','VentasController@compras');
+
+    ############# COMPRAS
+    Route::post('/addCompra','VentasController@addCompra');
+    Route::post('/vendedor','VentasController@datosVendedor');
 
 
     ##################### CARRITO ######################

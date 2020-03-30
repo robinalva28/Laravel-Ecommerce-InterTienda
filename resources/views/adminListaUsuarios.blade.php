@@ -61,6 +61,7 @@
 
                 @if($detalle->isAdmin == 1)
                     <td style="color:blue;" >Administrador</td>
+                    <td></td>
 
                     @elseif($detalle->validado == 1)
                     <td style="color:green;" >Habilitado</td>
@@ -69,7 +70,7 @@
                             Inhabilitar
                         </a>
                     </td>
-                    <td></td>
+
                 @else
                 <td style="color:red;" >No Habilitado</td>
                 <td>
@@ -78,6 +79,7 @@
                     </a>
                 </td>
                 @endif
+
               {{--  <td>
                     <a href="" class="btn btn-outline-secondary">
                         Eliminar

@@ -101,10 +101,10 @@ create table ventas(
 	venId			int auto_increment primary key,
     venIdProducto	int,
     venStock      int,
-    venIdUsuario	int,
+    venIdVendedor	int,
     venIdComprador    int,
     foreign key (venIdProducto) references productos(prdId),
-    foreign key (venIdUsuario) references usuarios(usrId),
+    foreign key (venIdVendedor) references usuarios(usrId),
     foreign key (venIdComprador) references usuarios(usrId)
 );
 

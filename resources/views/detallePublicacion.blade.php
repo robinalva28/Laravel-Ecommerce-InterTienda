@@ -34,7 +34,7 @@
             @if($producto->prdIdUsuario == Auth::user()->usrId)
 
             <form action="/adminUsuarioProductos" method="GET">
-                @csrf
+
                 <button type="submit" class="btn btn-primary btn-lg">Administrar</button>
             </form>
 

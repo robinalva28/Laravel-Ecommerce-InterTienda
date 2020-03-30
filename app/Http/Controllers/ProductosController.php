@@ -118,6 +118,8 @@ class ProductosController extends Controller
     }
 
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -185,6 +187,13 @@ class ProductosController extends Controller
     {
         //
     }
+
+  /*  public function cambiarStock($id, $newStock){
+
+        Producto::where('prdId','=',$id)->update([
+            'prdStock' => $newStock
+        ])->save();
+    }*/
 
     /**
      * Show the form for editing the specified resource.

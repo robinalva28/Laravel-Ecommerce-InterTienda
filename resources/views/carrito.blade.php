@@ -17,7 +17,7 @@
         @if($i==0)
 
             <div class="jumbotron">
-                <h1 class="display-4">¡Aún no has agregado nada al Carrito!</h1>
+                <h1 class="display-4">¡Tu carrito está vacío!</h1>
                 <p class="lead">Puedes agregar productos al carrito con tan solo un click.</p>
                 <hr class="my-4">
                 <p>Haz click abajo para visitar las categorías</p>
@@ -68,22 +68,14 @@
                         @endif
 
                     </td>
-
                     <td>
-
-
-
                         <form action="/eliminarCarrito/{{$producto->carId}}" method="post">
                             @csrf
                             <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
                                 <i class="far fa-trash-alt"></i>
                             </button>
-
-
                         </form>
-
                     </td>
-
             </tr>
 
                @endforeach
@@ -93,9 +85,13 @@
         <div class="container-fluid">
 
         </div>
-    <a href="#confirmarCompra" data-toggle="modal" class="btn btn-success btn-lg" >Confirmar compra</a>
 
+        <form method="post" action="/addCompra" href="#confirmarCompra">
+            @csrf
+        <button type="submit" class="btn btn-success btn-lg">
+            <a href="#confirmarCompra"  data-toggle="modal"  >Confirmar compra </a></button>
 
+        </form>
             <div class="modal fade col-auto" id="confirmarCompra" >
                 <div class="modal-dialog">
                     <div class="modal-content" style="background-color: #dee2e6">
@@ -134,7 +130,7 @@
                         {{--FOOTER VENTANA EMERGENTE--}}
                         <div class="modal-footer">
 
-                            <form action="/addACarrito" method="POST">
+                            <form action="/compras" method="get">
                                 @csrf
                                {{-- <h4 class="d-inline-block" for="cantidad">Selecciona cantidad:</h4>
                                 <input type="hidden" name="prdId" value="{{$producto->prdId}}">
