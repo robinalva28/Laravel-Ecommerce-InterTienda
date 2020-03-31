@@ -17,7 +17,7 @@
             <th>Descripción</th>
             <th>Stock</th>
             <th>Imagen</th>
-            <th colspan="2"></th>
+            <th colspan="2">Estado de publicación</th>
         </tr>
         </thead>
         <tbody>
@@ -30,24 +30,18 @@
                 <td>{{ $producto->prdDescripcion }}</td>
                 <td>{{ $producto->prdStock }}</td>
                 <td ><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" ></td>
-                <td>
-                    <a href="/formModificarProducto/{{$producto->prdId}}" class="btn btn-outline-secondary">
-                        Modificar
-                    </a>
+                <td colspan="2">
+                @if($producto->eliminado)
+                        <label style="color:red;">Eliminado</label>
+                    @else
+                        <label style="color:green;">En linea</label>
+                    @endif
                 </td>
-                <td>
-                    <a href="" class="btn btn-outline-secondary">
-                        Eliminar
-                    </a>
-                </td>
+
             </tr>
         @endforeach
 
-        <th colspan="2">
-            <a href="/formAgregarProducto" class="btn btn-dark">
-                Nueva publicación
-            </a>
-        </th>
+
         <th></th>
         <th></th>
         <th>{{ $productos->links() }}</th>
