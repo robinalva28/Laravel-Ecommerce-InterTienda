@@ -39,7 +39,7 @@
                 <th colspan="10">
                    <h3><strong>@yield('h1')</strong></h3>
                </th>
-            </tr>
+
 
             <tr class="mr-3">
                 <th>Nombre</th>
@@ -68,7 +68,7 @@
                         </a>
                     </td>
                     <td>
-                        <form action="/eliminarProducto/{{$producto->prdId}} " method="get">
+                        <form action="/eliminarProducto/{{$producto->prdId}} " method="post">
                             @csrf
                             <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
                                 Eliminar

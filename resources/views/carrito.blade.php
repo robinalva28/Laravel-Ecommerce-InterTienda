@@ -54,8 +54,14 @@
                             {{$producto->getProducto->prdDescripcion}}
                     </td>
                     <td>${{$producto->getProducto->prdPrecio}}</td>
+                    {{--VERIFICO SI LA CANTIDAD DE STOCK ESTÁ DISPONIBLE TAMBIÉN EN LA TABLA DEL PRODUCTO--}}
+                    @if($producto->carCantidadPrd > $producto->getProducto->prdStock)
+                    <td><label style="color:red;">Stock no disp.</label></td>
+                    @else
                     <td>{{$producto->carCantidadPrd}}</td>
-                    <td>${{$producto->getProducto->prdPrecio * $producto->carCantidadPrd}}
+                    @endif
+
+                        <td>${{$producto->getProducto->prdPrecio * $producto->carCantidadPrd}}
 
                         <br>
                         <br>

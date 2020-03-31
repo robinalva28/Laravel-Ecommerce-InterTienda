@@ -60,7 +60,7 @@ Route::group(['middleware' => 'validado'], function () {
     Route::post('/formAgregarProducto', 'ProductosController@store');
     Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
     Route::post('/modificarProducto/{id}', 'ProductosController@update');
-    Route::get('/eliminarProducto/{id}','ProductosController@destroy');
+    Route::post('/eliminarProducto/{id}','ProductosController@destroy');
     Route::get('/ventas','VentasController@ventas');
     Route::get('/compras','VentasController@compras');
 
@@ -79,21 +79,25 @@ Route::group(['middleware' => 'validado'], function () {
 
 });
 
+Route::group(['middleware' => 'auth'], function () {
+
+
 ######################   USUARIO   ##########################
-Route::get('/formModificarDatos','UsuariosController@edit');
-Route::post('/modificarDatos','UsuariosController@update');
+    Route::get('/formModificarDatos', 'UsuariosController@edit');
+    Route::post('/modificarDatos', 'UsuariosController@update');
 
 ############## CRUD PRODUCTOS ###################
-Route::get('/adminUsuarioProductos','ProductosController@productosUsuario');
+    Route::get('/adminUsuarioProductos', 'ProductosController@productosUsuario');
 
 ########## CATEGORIAS VISIBLES
-Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
-Route::get('/mar/{id}', 'ProductosController@prdEnMarcas');
-Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
-Route::get('/todosLosProductos','ProductosController@prdEnCategorias2');
-Route::get('/allCategorias', 'ProductosController@allCategorias');
-Route::get('/allMarcas', 'ProductosController@allMarcas');
+    Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');
+    Route::get('/mar/{id}', 'ProductosController@prdEnMarcas');
+    Route::get('/detallePublicacion/{id}', 'ProductosController@prdEnDetalle');
+    Route::get('/todosLosProductos', 'ProductosController@prdEnCategorias2');
+    Route::get('/allCategorias', 'ProductosController@allCategorias');
+    Route::get('/allMarcas', 'ProductosController@allMarcas');
 
+});
 
 ####### PERFIL #######
 Route::get('/perfil','UsuariosController@index');

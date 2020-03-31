@@ -1,8 +1,8 @@
 @extends('layout.plantilla')
 
-@section('title', 'Formulario de alta una nueva Marca')
+@section('title', 'Nueva Marca')
 
-@section('h1', 'Fornulario de alta una nueva Marca')
+@section('h1', 'Nueva Marca')
 
 @section('contenido')
 

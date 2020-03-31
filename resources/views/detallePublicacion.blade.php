@@ -29,12 +29,13 @@
             <h3>Precio:</h3>
             <h4>{{'$'.$producto->prdPrecio}}</h4>
             <br>
-            <h6 style="color: #1b4b72"><strong> En stock: {{$producto->prdStock}}</strong></h6>
+            @if( $producto->prdStock > 0)
+                <h6 style="color: #1b4b72"><strong> En stock: {{$producto->prdStock}}</strong></h6>
+
             {{--BOTON ADD CARRITO O IR A MIS PUBLICACIONES también si el producto ya está en carrito--}}
             @if($producto->prdIdUsuario == Auth::user()->usrId)
 
             <form action="/adminUsuarioProductos" method="GET">
-
                 <button type="submit" class="btn btn-primary btn-lg">Administrar</button>
             </form>
 
@@ -61,7 +62,8 @@
                                 <div class="card-body ">
                                     <div class="form-group">
                                         <label>Stock: {{ $producto->prdStock }}</label><br>
-                                       </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -78,6 +80,9 @@
                             </form>
                         </div>
                     </div>
+                    @else
+                        <label style="color:red;">Sin stock</label><br>
+                    @endif
                 </div>
             </div>
         </div>

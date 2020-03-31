@@ -1,8 +1,8 @@
 @extends('layout.plantilla')
 
-@section('title', 'Formulario de modificación una Marca')
+@section('title', 'Modificar Marca')
 
-@section('h1', 'Fornulario de modificación una Marca')
+@section('h1', 'Modificar Marca')
 
 @section('contenido')
 

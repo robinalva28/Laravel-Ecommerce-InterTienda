@@ -57,9 +57,10 @@
                                 @if($detalle->prdIdUsuario == Auth::user()->usrId)
 
                                     <form action="/adminUsuarioProductos" method="GET">
-                                        @csrf
                                         <button type="submit" class="btn btn-outline-dark btn-lg">Administrar</button>
                                     </form>
+                                @elseif($detalle->prdStock == 0)
+                                    <label style="color:red;">Sin stock</label><br>
                                 @else
                                     <a href="/detallePublicacion/{{$detalle->prdId}}" class="btn btn-primary">+info</a>
                                     <br><br>

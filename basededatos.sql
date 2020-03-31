@@ -79,6 +79,7 @@ create table productos(
     prdIdUsuario	int,
     prdImagen		varchar(100),
     prdStock        int,
+    eliminado       boolean,
     foreign key (prdIdCategoria) references categorias(catId),
     foreign key (prdIdMarca) references marcas(marId),
     foreign key (prdIdUsuario) references usuarios(usrId)
@@ -107,6 +108,19 @@ create table ventas(
     foreign key (venIdVendedor) references usuarios(usrId),
     foreign key (venIdComprador) references usuarios(usrId)
 );
+
+/*CREACIÓN DE VARIAS MARCAS*/
+
+insert into marcas(marNombre) value('Samsung');
+insert into marcas(marNombre) value('Xiaomi');
+insert into marcas(marNombre) value('Apple');
+insert into marcas(marNombre) value('Oster');
+insert into marcas(marNombre) value('Patrick');
+insert into marcas(marNombre) value('Quicksilver');
+insert into marcas(marNombre) value('Zara');
+insert into marcas(marNombre) value('JBL');
+insert into marcas(marNombre) value('Adidas');
+insert into marcas(marNombre) value('Otras marcas');
 
 
 

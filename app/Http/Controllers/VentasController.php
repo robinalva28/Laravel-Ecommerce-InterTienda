@@ -80,18 +80,21 @@ class VentasController extends Controller
        // dd($enCarrito[1]);
         foreach($enCarrito as $compra) {
            // dd($compra->getProducto->prdId);
-                 Venta::create(
-                     [
-                         'venIdProducto' => $compra->getProducto->prdId,
-                         'venStock' => $compra->carCantidadPrd,
-                        'venIdVendedor'=> $compra->getProducto->prdIdUsuario,
-                        'venIdComprador'=>auth()->user()->usrId
-            ]);
                  //CAMBIO EL STOCK DE LOS PRODUCTOS EN BD
                 $cantActual = $compra->getProducto->prdStock;
                 $stockEnCar = $compra->carCantidadPrd;
                 //comparo si la cantidad publicada existe
+                $existeStock = true;
                 if($cantActual > 0 && $cantActual >= $stockEnCar) {
+
+                    //creo una instancia de venta en BD por cada producto
+                    Venta::create(
+                        [
+                            'venIdProducto' => $compra->getProducto->prdId,
+                            'venStock' => $compra->carCantidadPrd,
+                            'venIdVendedor'=> $compra->getProducto->prdIdUsuario,
+                            'venIdComprador'=>auth()->user()->usrId
+                        ]);
 
                     //dd($stockEnCar);
                     //dd($cantActual);
@@ -102,13 +105,14 @@ class VentasController extends Controller
                     //ELIMINO LAS INSTANCIAS DE CARRITO EN BD, A MEDIDA QUE SE CREA CADA VENTA
                     Carrito::destroy($compra->carId);
 
-                 }
+                 }else{
+                    return redirect('/carrito')->with('mensaje','No se pudo realizar alguna compra, verifique
+                    que los productos/servicios siguen disponibles.');
+                }
 
                  }
-
         return redirect('/compras')->with('mensaje', 'Felicidades por tu nueva compra, a continuación verás
                         la información de contacto del vendedor');
-
         }
 
 }

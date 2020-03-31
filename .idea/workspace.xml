@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../resources/views/detalleComprador.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../resources/views/detalleVendedor.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/MarcasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/MarcasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/VentasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioCompras.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioCompras.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioVentas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioVentas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioProductos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/carrito.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/carrito.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/formAgregarMarca.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formAgregarMarca.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/formModificarMarca.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formModificarMarca.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +231,7 @@
       <workItem from="1585406980180" duration="4095000" />
       <workItem from="1585502107330" duration="20353000" />
       <workItem from="1585573755576" duration="26783000" />
-      <workItem from="1585675202367" duration="948000" />
+      <workItem from="1585675202367" duration="8199000" />
     </task>
     <servers />
   </component>
@@ -236,18 +239,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584210862627">
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585679487781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584210862627" />
+    <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585679487781" />
     <state x="231" y="71" width="476" height="886" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581560737285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="231" y="71" width="476" height="886" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581560737285" />
-    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585511016277">
+    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585684224530">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585511016277" />
+    <state x="693" y="277" width="524" height="479" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585684224530" />
     <state x="625" y="177" width="674" height="679" key="#phpunit.xml" timestamp="1583175686383">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,10 +275,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583596431684" />
-    <state x="1211" y="238" key="run.anything.popup" timestamp="1585605492039">
+    <state x="1211" y="238" key="run.anything.popup" timestamp="1585679120366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1211" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585605492039" />
+    <state x="1211" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585679120366" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1585575306710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

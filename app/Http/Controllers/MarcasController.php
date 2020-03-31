@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Producto;
 use App\Marca;
 use Illuminate\Http\Request;
 
@@ -109,10 +110,34 @@ class MarcasController extends Controller
      */
     public function destroy($id)
     {
-        //
+      /*  //
         Marca::destroy($id);
 
-        return redirect ('admin/adminMarcas');
+        return redirect ('admin/adminMarcas');*/
+
+        $marca = Marca::where('marId','=',$id)->get();
+        //dd($marca[0]->marId);
+        $productos = Producto::with('getMarca')->get();
+        //dd($productos);
+
+        $existenProductosEn = [];
+
+        foreach ($productos as $producto) {
+            if ($producto->prdIdMarca == $id) {
+                $existenProductosEn[$marca[0]->marId] = $producto->prdIdMarca;
+            }
+        }
+        //dd($existenProductosEn);
+        if (isset($existenProductosEn[$id])) {
+            return redirect ('admin/adminMarcas')
+                ->with('mensaje', 'Imposible eliminar Marca '.$marca[0]->marNombre.
+                    ', existen publicaciones que hacen referencia a la misma');;
+        }else{
+            Marca::destroy($id);
+
+            return redirect ('admin/adminMarcas')
+                ->with('mensaje', 'Marca '.$marca[0]->marNombre.' Eliminada con éxito');;
+        }
 
     }
 }

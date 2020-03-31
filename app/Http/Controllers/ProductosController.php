@@ -52,7 +52,8 @@ class ProductosController extends Controller
     {
         //
         $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')
-            ->where('prdIdUsuario', '=', auth()->user()->usrId)->paginate(6);
+            ->where('prdIdUsuario', '=', auth()->user()->usrId)
+            ->where('eliminado','=',0)->paginate(6);
 
         return view('adminUsuarioProductos',
             [
@@ -79,7 +80,8 @@ class ProductosController extends Controller
     public function prdEnCategorias2()
     {
         //
-        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->paginate(12);
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')
+            ->where('eliminado','=',0)->paginate(12);
         $categorias = Categoria::all();
         return view('todosLosProductos',
             [
@@ -170,7 +172,8 @@ class ProductosController extends Controller
             'prdIdUsuario' => $request['usrId'],
             'prdImagen' => $imageName,
             'prdStock' => $request['prdStock'],
-            'prdIdUsuario'=>Auth::user()->usrId
+            'prdIdUsuario'=>Auth::user()->usrId,
+               'eliminado' => false
         ]);
 
             return redirect('adminUsuarioProductos'/*,'ProductosController@index'*/)
@@ -283,10 +286,26 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        Producto::destroy($id);
+        $prd = Producto::find($id);
+        //dd($prd->prdIdUsuario);
+        try {
+            if ($prd->prdIdUsuario == auth()->user()->usrId) {
 
-        return redirect('/adminUsuarioProductos')
-            ->with('mensaje', 'Publicación eliminada con éxito');
+                //dd($prd);
+                $prd->eliminado = 1;
+                $prd->save();
+                return redirect('/adminUsuarioProductos')
+                    ->with('mensaje', 'Publicación eliminada con éxito');
+
+            } else {
+                return redirect('/adminUsuarioProductos')
+                    ->with('mensaje', 'Error al eliminar');
+
+            }
+        }catch(\Exception $exception ){
+            return redirect('/adminUsuarioProductos')
+                ->with('mensaje', 'Error al eliminar'.$exception);
+        }
 
     }
 }
