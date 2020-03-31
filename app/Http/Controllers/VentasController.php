@@ -6,6 +6,7 @@ use App\Carrito;
 use App\Producto;
 use App\Venta;
 use Illuminate\Http\Request;
+use mysql_xdevapi\Exception;
 
 class VentasController extends Controller
 {
@@ -20,8 +21,53 @@ class VentasController extends Controller
         ]);
     }
 
-    public function detalleVendedor($id){
+    public function ventas(){
 
+        $ventas = Venta::with('getComprador','getVendedor','getProducto')
+            ->where('venIdVendedor', '=', auth()->user()->usrId)->paginate(6);
+
+        return view('/adminUsuarioVentas',[
+            'ventas'=>$ventas
+        ]);
+    }
+
+    public function detalleVendedor($id){
+        /*PASO POR PARÁMETRO EL ID DELA VENTA*/
+
+            $venta = Venta::find($id);
+           //dd($venta[0]->getVendedor);
+        try {
+            if (auth()->user()->usrId == $venta->venIdComprador) {
+                return view('/detalleVendedor',
+                    [
+                        'venta' => $venta
+                    ]);
+            } else {
+                return redirect('/compras');
+            }
+        }catch(\ErrorException $e){
+            return redirect('/compras');
+        }
+    }
+
+
+    public function detalleComprador($id){
+        /*PASO POR PARÁMETRO EL ID DELA VENTA*/
+
+        $compra= Venta::find($id);
+        // dd($compra->getVendedor->nombre);
+        try {
+            if ($compra->venIdVendedor == auth()->user()->usrId) {
+                return view('/detalleComprador',
+                    [
+                        'compra' => $compra
+                    ]);
+            } else {
+                return redirect('/ventas');
+            }
+        }catch (\ErrorException $e){
+            return redirect('/ventas');
+        }
     }
 
     public function addCompra(){
@@ -44,19 +90,25 @@ class VentasController extends Controller
                  //CAMBIO EL STOCK DE LOS PRODUCTOS EN BD
                 $cantActual = $compra->getProducto->prdStock;
                 $stockEnCar = $compra->carCantidadPrd;
-                //dd($stockEnCar);
-                //dd($cantActual);
-                Producto::where('prdId','=',$compra->carIdProducto)->update([
-                    'prdStock' => ($cantActual - $stockEnCar)
-                ]);
+                //comparo si la cantidad publicada existe
+                if($cantActual > 0 && $cantActual >= $stockEnCar) {
 
-                 //ELIMINO LAS INSTANCIAS DE CARRITO EN BD, A MEDIDA QUE SE CREA CADA VENTA
-                 Carrito::destroy($compra->carId);
+                    //dd($stockEnCar);
+                    //dd($cantActual);
+                    Producto::where('prdId', '=', $compra->carIdProducto)->update([
+                        'prdStock' => ($cantActual - $stockEnCar)
+                    ]);
+
+                    //ELIMINO LAS INSTANCIAS DE CARRITO EN BD, A MEDIDA QUE SE CREA CADA VENTA
+                    Carrito::destroy($compra->carId);
+
                  }
 
+                 }
 
         return redirect('/compras')->with('mensaje', 'Felicidades por tu nueva compra, a continuación verás
-        la información de contacto del vendedor');
+                        la información de contacto del vendedor');
+
         }
 
 }

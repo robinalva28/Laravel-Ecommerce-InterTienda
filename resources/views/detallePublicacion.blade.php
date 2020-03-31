@@ -13,7 +13,7 @@
     <a href="/cat/{{$producto->prdIdCategoria}}" class="btn btn-link">Volver a Categoría</a>
 
     <div class="mt-4 mb-4 d-flex justify-content-start">
-        <div class="d-flex col-lg-6 col-sm-4 col-md-4 col-mb-4">
+        <div class="d-flex col-lg-6 col-sm-8 col-md-9 col-mb-4">
             <div class="card" style="width: 28rem;">
                 <img class="card-img-top" src="{{ asset('images/productos') }}/{{$producto->prdImagen}}"  alt="...">
                 <div class="card-body ">
@@ -50,7 +50,7 @@
                         {{--HEADER DE LA VENTANA EMERGENTE--}}
 
                         <div class="modal-header">
-                        <h4 class="modal-title">A solo un paso: ¡{{$producto->prdNombre}}!</h4>
+                        <h4 class="modal-title">Al carrito: ¡{{$producto->prdNombre}}!</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                          </div>
 

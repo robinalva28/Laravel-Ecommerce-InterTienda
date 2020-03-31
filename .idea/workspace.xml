@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../resources/views/detalleComprador.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/detalleVendedor.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Carrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Carrito.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProductosController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/VentasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basededatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../basededatos.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioCompras.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioCompras.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioVentas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioVentas.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/carrito.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/carrito.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/detallePublicacion.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
@@ -228,7 +227,8 @@
       <workItem from="1585346104609" duration="1846000" />
       <workItem from="1585406980180" duration="4095000" />
       <workItem from="1585502107330" duration="20353000" />
-      <workItem from="1585573755576" duration="13483000" />
+      <workItem from="1585573755576" duration="26783000" />
+      <workItem from="1585675202367" duration="948000" />
     </task>
     <servers />
   </component>
@@ -256,26 +256,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="263" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583541569586" />
-    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog" timestamp="1585513153423">
+    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog" timestamp="1585596842079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585513153423" />
+    <state x="800" y="495" width="354" height="147" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585596842079" />
     <state x="464" y="154" key="SettingsEditor" timestamp="1583878467613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="464" y="154" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583878467613" />
-    <state width="498" height="445" key="SwitcherDM" timestamp="1583772878351">
+    <state width="498" height="445" key="SwitcherDM" timestamp="1585594706901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="445" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1583772878351" />
+    <state width="498" height="445" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1585594706901" />
     <state x="757" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583596431684">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583596431684" />
-    <state x="1211" y="238" key="run.anything.popup" timestamp="1585175894721">
+    <state x="1211" y="238" key="run.anything.popup" timestamp="1585605492039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1211" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585175894721" />
+    <state x="1211" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585605492039" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1585575306710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

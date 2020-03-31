@@ -66,7 +66,8 @@ Route::group(['middleware' => 'validado'], function () {
 
     ############# COMPRAS
     Route::post('/addCompra','VentasController@addCompra');
-    Route::post('/vendedor','VentasController@datosVendedor');
+    Route::get('/vendedor/{id}','VentasController@detalleVendedor');
+    Route::get('/comprador/{id}','VentasController@detalleComprador');
 
 
     ##################### CARRITO ######################

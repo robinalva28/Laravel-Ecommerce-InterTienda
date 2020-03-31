@@ -42,6 +42,7 @@
             <table class="table table-hover table-striped ">
                 <thead>
                 <tr>
+                    <th scope="col">Fecha</th>
                     <th scope="col">Producto</th>
                     <th colspan="1">&nbsp;</th>
                     <th scope="col">Precio und.</th>
@@ -54,6 +55,9 @@
                 @php $totalFinal = 0 @endphp
                 @foreach($compras as $producto)
                     <tr>
+                        <th>
+                            <label for="fecha" type="date">{{$producto->created_at->format('d-m-y')}} </label>
+                        </th>
                         <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
 
                         <td><strong> {{$producto->getProducto->prdNombre}}.  </strong><br>
@@ -66,72 +70,20 @@
                         <td>
 
                             {{--INICIO DE VENTANA EMERGENTE CON DATOS DEL VENDEDOR--}}
-                                <a href="#datosVendedor" class="btn btn-success btn" data-toggle="modal"  >Ver datos</a>
-
-                            <div class="modal fade col-auto" id="datosVendedor" >
-                                <div class="modal-dialog">
-                                    <div class="modal-content" style="background-color: #dee2e6">
-                                        {{--HEADER DE LA VENTANA EMERGENTE--}}
-
-                                        <div class="modal-header">
-
-                                            <h2 class="modal-title">Éstos son los datos del vendedor</h2><br>
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        </div>
-
-                                        {{--BODY DE VENTANA EMERGENTE--}}
-                                        <div class="modal-body"  >
-
-                                               <h5> <i class="fas fa-angle-double-right"></i> {{$producto->getVendedor->nombre}}  </h5>
-                                            <br>
-                                               <label> <i class="fas fa-angle-double-right"></i> {{$producto->getVendedor->apellido}}  </label>
-                                                <br>
-
-                                                <img  height="60px" src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}"
-                                                      class=" " alt="...">
-                                                <br>
-
-                                            <br>
-                                            <div class="" style="width: auto;">
-                                                {{-- <img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" class="card-img-top " alt="...">
-                                                --}}
-                                                <div class="form-group">
-                                                    <h5>En la sección Compras podrás acceder a la información del vendedor
-                                                        y así pautar la entrega y formas de pago, si tienes algún inconveniente con la compra no dudes
-                                                        en contactarnos.</h5>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        {{--FOOTER VENTANA EMERGENTE--}}
-                                        <div class="modal-footer">
-
-                                            <form action="/compras" method="get">
-
-                                                {{-- <h4 class="d-inline-block" for="cantidad">Selecciona cantidad:</h4>
-                                                 <input type="hidden" name="prdId" value="{{$producto->prdId}}">
-                                                 <input style="height: 4vh;" name="cantidad" id="cantidad" type="number" value="1" min="1" max="{{ $producto->prdStock }}" step="1"/>
-                                               --}}
-                                                <button type="submit" class="btn btn-primary" >IR A MIS COMPRAS</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <a href="/vendedor/{{$producto->venId}}" class="btn btn-success btn"  >Ver datos</a>
 
                         </td>
 
                     </tr>
 
                 @endforeach
-                <th>  {{ $compras->links() }}</th>
+                <th colspan="7">  {{ $compras->links() }}</th>
                 </tbody>
             </table>
-            <div class="container-fluid">
+            {{--<div class="container-fluid">
 
             </div>
-            <button type="button" class="btn btn-success mb-5">Confirmar compra</button>
+            <button type="button" class="btn btn-success mb-5">Confirmar compra</button>--}}
         @endif
 
     </div>
