@@ -30,7 +30,7 @@
     <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
         <h2><strong>Carrito</strong>
             <small>
-                <a class="float-right" href="/allCategorias" class="btn btn-link">Ir a categorias</a>
+                <a class="float-right" href="/todosLosProductos" class="btn btn-link">Ir a todas las publicaciones</a>
             </small>
         </h2>
 
