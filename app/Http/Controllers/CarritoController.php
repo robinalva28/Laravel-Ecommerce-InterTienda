@@ -16,8 +16,10 @@ class CarritoController extends Controller
     public function index()
     {
 
+        /*->where('eliminado','=',0)*/
         $carrito = Carrito::with('getProducto')
-            ->where("carUsuarios_usrId","=",Auth::user()->usrId)->paginate(6);
+            ->where("carUsuarios_usrId","=",Auth::user()->usrId)
+            ->paginate(6);
         //dd($carrito);
         return view('carrito',
         [

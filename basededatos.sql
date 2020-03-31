@@ -8,7 +8,7 @@ create database ecomerce;
 /*CREATE USER 'root'@'localhost' IDENTIFIED BY 'rob';
 GRANT ALL PRIVILEGES ON ecomerce. * TO 'root'@'localhost';
 FLUSH PRIVILEGES;*/
-/*HABILITAR USUARIO ADMINISTRADOR luego de haberlo creado con nombre = admin*/
+/*HABILITAR USUARIO ADMINISTRADOR luego de haberlo creado con email = admin@admin.com*/
 /*UPDATE usuarios
 SET
     isAdmin = true,
@@ -121,6 +121,25 @@ insert into marcas(marNombre) value('Zara');
 insert into marcas(marNombre) value('JBL');
 insert into marcas(marNombre) value('Adidas');
 insert into marcas(marNombre) value('Otras marcas');
+
+/*CREACION DE VARIAS CATEGORIAS*/
+insert into categorias(catNombre, catDescripcion, catImagen)
+    values('Tecnología', 'Cualquier equipo tecnológico que quieras comprar', 'cateroria_tecnologia.png');
+insert into categorias(catNombre, catDescripcion, catImagen)
+  values('Vestimenta', 'Cualquier ropa o calzado que quieras comprar', 'cateroria_vestimenta.png');
+insert into categorias(catNombre, catDescripcion, catImagen)
+    values('Hogar', 'Todo para el hogar', 'otros_01.png'
+);
+insert into categorias(catNombre, catDescripcion, catImagen)
+    values('Otros + Servicios', 'Otros productos mas servicios ofrecidos', 'cateroria_otros.png'
+);
+
+
+
+
+
+
+
 
 
 

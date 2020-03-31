@@ -64,7 +64,8 @@ class ProductosController extends Controller
     public function prdEnCategorias($id)
     {
         //
-        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')
+            ->where('eliminado','=',0)->get();
         $categorias = Categoria::all();
         $categoria = Categoria::find($id);
         //dd($productos);
@@ -108,7 +109,8 @@ class ProductosController extends Controller
     public function prdEnMarcas($id)
     {
         //
-        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')->get();
+        $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')
+            ->where('eliminado','=',0)->get();
         $marcas = marca::all();
         $marca = Marca::find($id);
         return view('mar',

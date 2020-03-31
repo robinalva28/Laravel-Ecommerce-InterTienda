@@ -79,13 +79,13 @@ class VentasController extends Controller
             ->where('carUsuarios_usrId','=',auth()->user()->usrId)->get();
        // dd($enCarrito[1]);
         foreach($enCarrito as $compra) {
-           // dd($compra->getProducto->prdId);
+           // dd($compra->getProducto->eliminado);
                  //CAMBIO EL STOCK DE LOS PRODUCTOS EN BD
                 $cantActual = $compra->getProducto->prdStock;
                 $stockEnCar = $compra->carCantidadPrd;
                 //comparo si la cantidad publicada existe
                 $existeStock = true;
-                if($cantActual > 0 && $cantActual >= $stockEnCar) {
+                if( $compra->getProducto->eliminado == 0 && $cantActual > 0 && $cantActual >= $stockEnCar) {
 
                     //creo una instancia de venta en BD por cada producto
                     Venta::create(

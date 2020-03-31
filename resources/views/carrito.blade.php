@@ -11,7 +11,9 @@
     @endif
         <?php $i= 0 ?>
         @foreach($carrito as $producto)
+
             <?php $i++ ?>
+
         @endforeach
 
         @if($i==0)
@@ -50,9 +52,16 @@
                 <tr>
                     <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
 
-                    <td><strong> {{$producto->getProducto->prdNombre}}.  </strong><br>
+                    <td><strong> {{$producto->getProducto->prdNombre}}. </strong><br>
+                        @if($producto->getProducto->eliminado)
+
+                        <label style="color:red;">Producto no disp.</label>
+                            @else
                             {{$producto->getProducto->prdDescripcion}}
+
+                            @endif
                     </td>
+
                     <td>${{$producto->getProducto->prdPrecio}}</td>
                     {{--VERIFICO SI LA CANTIDAD DE STOCK ESTÁ DISPONIBLE TAMBIÉN EN LA TABLA DEL PRODUCTO--}}
                     @if($producto->carCantidadPrd > $producto->getProducto->prdStock)
