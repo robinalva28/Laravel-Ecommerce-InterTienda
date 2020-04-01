@@ -77,7 +77,7 @@ class ProductosController extends Controller
             ]);
     }
 
-
+    /* =====RETORNA A TODOS LOS PRODUCTOS====== */
     public function prdEnCategorias2()
     {
         //
@@ -90,8 +90,8 @@ class ProductosController extends Controller
                 'categorias'=>$categorias
             ]);
     }
-    //PROGRAMAR PARA MOSTRAR LOS DETALLES DE LA PUBLICACION DDESDE DONDE SE PUEDE AGREGAR AL CARRITO
 
+    /* =====RETORNA EL DETALLE DE UNA PUBLICACION====== */
     public function prdEnDetalle($id)
     {
         //
@@ -106,6 +106,7 @@ class ProductosController extends Controller
             ]);
     }
 
+    /* =====RETORNA PRODUCTOS POR MARCA====== */
     public function prdEnMarcas($id)
     {
         //
@@ -193,12 +194,7 @@ class ProductosController extends Controller
         //
     }
 
-  /*  public function cambiarStock($id, $newStock){
 
-        Producto::where('prdId','=',$id)->update([
-            'prdStock' => $newStock
-        ])->save();
-    }*/
 
     /**
      * Show the form for editing the specified resource.
@@ -290,6 +286,8 @@ class ProductosController extends Controller
     {
         $prd = Producto::find($id);
         //dd($prd->prdIdUsuario);
+        /* =====SOLO PERMITE QUE EL USUARIO EDITE PRODUCTOS ASOCIADOS
+                        A SU ID============== */
         try {
             if ($prd->prdIdUsuario == auth()->user()->usrId) {
 

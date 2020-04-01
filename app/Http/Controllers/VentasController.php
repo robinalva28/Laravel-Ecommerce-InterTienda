@@ -13,6 +13,10 @@ class VentasController extends Controller
     //
     public function compras(){
 
+        /*================================================================================
+        =======OBTENGO Y RETORNO LAS COMPRAS DEL USUARIO AUTENTICADO======================
+        ==================================================================================*/
+
         $compras = Venta::with('getComprador','getVendedor','getProducto')
             ->where('venIdComprador', '=', auth()->user()->usrId)->paginate(6);
 
@@ -23,6 +27,10 @@ class VentasController extends Controller
 
     public function ventas(){
 
+
+        /*================================================================================
+        =======OBTENGO Y RETORNO LAS VENTAS DEL USUARIO AUTENTICADO======================
+        ==================================================================================*/
         $ventas = Venta::with('getComprador','getVendedor','getProducto')
             ->where('venIdVendedor', '=', auth()->user()->usrId)->paginate(6);
 
@@ -32,10 +40,12 @@ class VentasController extends Controller
     }
 
     public function detalleVendedor($id){
-        /*PASO POR PARÁMETRO EL ID DELA VENTA*/
+
 
             $venta = Venta::find($id);
            //dd($venta[0]->getVendedor);
+        /*TRY CATCH PARA OBTENER DETALLE DE UN VENDEDOR
+        NOTA: EL TRY IMPIDE UN ERROREXCEPTION AL ACCEDER A UN VENDEDOR AJENO*/
         try {
             if (auth()->user()->usrId == $venta->venIdComprador) {
                 return view('/detalleVendedor',
@@ -45,6 +55,8 @@ class VentasController extends Controller
             } else {
                 return redirect('/compras');
             }
+            /* REDIRECCIONA SI UN USUARIO INTENTA
+            VER DATOS DE UN VENDEDOR ASOCIADO A UNA COMPRA AJENA */
         }catch(\ErrorException $e){
             return redirect('/compras');
         }
@@ -56,6 +68,8 @@ class VentasController extends Controller
 
         $compra= Venta::find($id);
         // dd($compra->getVendedor->nombre);
+        /*TRY CATCH PARA OBTENER DETALLE DE UN COMPRADOR
+        NOTA: EL TRY IMPIDE UN ERROREXCEPTION AL ACCEDER A UN COMPRADOR AJENO*/
         try {
             if ($compra->venIdVendedor == auth()->user()->usrId) {
                 return view('/detalleComprador',
@@ -65,29 +79,33 @@ class VentasController extends Controller
             } else {
                 return redirect('/ventas');
             }
+            /* REDIRECCIONA SI UN USUARIO INTENTA
+            VER DATOS DE UN COMPRADOR ASOCIADO A UNA VENTA AJENA */
         }catch (\ErrorException $e){
             return redirect('/ventas');
         }
     }
 
     public function addCompra(){
-        ##### PENDIENTE ELIMINAR CANTIDAD DE PRODUCTOS DEL STOCK DEL ORIGINAL<<-- LISTO
-        ##### ELIMINAR LOS CARRITOS DE LA BASE DE DATOS <<-LISTO
-        ##### IMPACTO EN VISTAS <<-listo
-        ##### MENSAJE DE FELICITACION POR COMPRA(INVESTIGAR vent emergente) ????
+        /*
+         * HACE EFECTIVA UNA COMPRA CONFIRMÁNDOLA DESDE EL CARRITO
+         * */
         $enCarrito = Carrito::with('getUsuario')
             ->where('carUsuarios_usrId','=',auth()->user()->usrId)->get();
        // dd($enCarrito[1]);
+        /*LISTO CADA PRODUCTO EN EL CARRITO*/
         foreach($enCarrito as $compra) {
            // dd($compra->getProducto->eliminado);
-                 //CAMBIO EL STOCK DE LOS PRODUCTOS EN BD
+
+                 //VARIABLES QUE CONTIENEN STOCK EN TABLE PRODUCTOS
+                // Y STOCK EN CARRITO DE LA MISMA PUBLICACION
                 $cantActual = $compra->getProducto->prdStock;
                 $stockEnCar = $compra->carCantidadPrd;
-                //comparo si la cantidad publicada existe
-                $existeStock = true;
+
+                //COMPARO SI LA CANTIDAD EN CARRITO ESTÁ DISPONIBLE, Y SI NO ESTÁ ELIMINADO
                 if( $compra->getProducto->eliminado == 0 && $cantActual > 0 && $cantActual >= $stockEnCar) {
 
-                    //creo una instancia de venta en BD por cada producto
+                    //CREO UNA INSTANCIA DE VENTA EN LA TABLE VENTAS POR CADA PRODUCTO
                     Venta::create(
                         [
                             'venIdProducto' => $compra->getProducto->prdId,
@@ -98,6 +116,8 @@ class VentasController extends Controller
 
                     //dd($stockEnCar);
                     //dd($cantActual);
+
+                    //CAMBIO EL STOCK DEL PRODUCTO EN BD (LE RESTO LA CANTIDAD EN CARRITO)
                     Producto::where('prdId', '=', $compra->carIdProducto)->update([
                         'prdStock' => ($cantActual - $stockEnCar)
                     ]);
@@ -106,11 +126,13 @@ class VentasController extends Controller
                     Carrito::destroy($compra->carId);
 
                  }else{
+                    //POR FALSE
                     return redirect('/carrito')->with('mensaje','No se pudo realizar alguna compra, verifique
                     que los productos/servicios siguen disponibles.');
                 }
 
                  }
+        //POR TRUE
         return redirect('/compras')->with('mensaje', 'Felicidades por tu nueva compra, a continuación verás
                         la información de contacto del vendedor');
         }

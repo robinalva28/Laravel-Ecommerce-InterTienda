@@ -3,12 +3,19 @@
 @section('title', 'Carrito')
 
 @section("contenido")
+    {{--===================--}}
+    {{--MENSAJES DE ALERTA--}}
+    {{--===================--}}
 <div class="container d-flex flex-column h-100 mt-3">
     @if( session()->has('mensaje') )
         <div class="alert alert-success">
             {{ session()->get('mensaje') }}
         </div>
     @endif
+
+        {{--===================================================================--}}
+        {{--VARIABLE $i ALMACENA LA CANTIDAD DE POSICIONES RECIBIDAS(PRODUCTOS)--}}
+        {{--===================================================================--}}
         <?php $i= 0 ?>
         @foreach($carrito as $producto)
 
@@ -16,6 +23,9 @@
 
         @endforeach
 
+        {{--===================================================================--}}
+        {{--MUESTRO MENSAJE DE CARRITO VACIO SI NO SE RECIBEN PRODUCTOS DESDE EL CONTROLADOR--}}
+        {{--===================================================================--}}
         @if($i==0)
 
             <div class="jumbotron">
@@ -26,7 +36,9 @@
                 <a class="btn btn-primary btn-lg" href="/allCategorias" role="button">¡Ir a categorías!</a>
             </div>
         @else
-
+            {{--===================================================================--}}
+            {{--SI SE RECIBEN PRODUCTOS MUESTRO LA TABLA CON C/U DE LOS PRODUCTOS EN CARRITO--}}
+            {{--===================================================================--}}
     <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
         <h2><strong>Carrito</strong>
             <small>
@@ -47,42 +59,72 @@
             </tr>
         </thead>
         <tbody>
+        {{--===================================================================--}}
+        {{--VARIABLE $totalFinal ALMACENA EL PRECIO TOTAL DE TOD0 (PRD * CANTIDAD)--}}
+        {{--===================================================================--}}
             @php $totalFinal = 0 @endphp
             @foreach($carrito as $producto)
                 <tr>
+                    {{--COLUMNAS--}}
+
+                    {{--IMAGEN DE PRODUCTO--}}
+
                     <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
 
+                    {{--COL NOMBRE Y DESCRIPCION DE PRODUCTO--}}
                     <td><strong> {{$producto->getProducto->prdNombre}}. </strong><br>
                         @if($producto->getProducto->eliminado)
-
+                        {{--CONDICIONAL PARA PRODUCTOS NO DISPONIBLES--}}
                         <label style="color:red;">Producto no disp.</label>
                             @else
                             {{$producto->getProducto->prdDescripcion}}
 
                             @endif
                     </td>
-
+                    {{--=======================--}}
+                    {{--======COL PRECIO=======--}}
+                    {{--=======================--}}
                     <td>${{$producto->getProducto->prdPrecio}}</td>
-                    {{--VERIFICO SI LA CANTIDAD DE STOCK ESTÁ DISPONIBLE TAMBIÉN EN LA TABLA DEL PRODUCTO--}}
+
+
+                    {{--===============================--}}
+                    {{--======COL CANTIDAD STOCK=======--}}
+                    {{--===============================--}}
+                    {{--VERIFICO SI LA CANTIDAD DE STOCK ESTÁ DISPONIBLE TAMBIÉN EN LA TABLA PRODUCTOS
+                    Y MUESTRO UN MENSAJE DISTINTO EN CADA SITUACIÓN--}}
+
                     @if($producto->carCantidadPrd > $producto->getProducto->prdStock)
+
                     <td><label style="color:red;">Stock no disp.</label></td>
                     @else
                     <td>{{$producto->carCantidadPrd}}</td>
                     @endif
 
-                        <td>${{$producto->getProducto->prdPrecio * $producto->carCantidadPrd}}
 
+                    {{--=======================--}}
+                    {{--======COL PRECIO TOTAL=======--}}
+                    {{--=======================--}}
+                        <td>${{$producto->getProducto->prdPrecio * $producto->carCantidadPrd}}
                         <br>
                         <br>
+                            {{--RESTO LAS ITERACIONES DE CADA PRODUCTO EN CARRITO A MEDIDA QUE SE TRAEN--}}
                         @php $i--; @endphp
+
+
+                            {{--=======================--}}
+                            {{--======COL PRECIO TOTAL=======--}}
+                            {{--=======================--}}
                     @if($i == 0)
                             <h5><strong>Total carrito: ${{$totalFinal += $producto->getProducto->prdPrecio * $producto->carCantidadPrd}}</strong></h5>
                         @else
+                        {{--SUMA OCULTA DE CADA PRODUCTO, SOLO SE MOSTRARÁ EL TOTAL CUANDO LA CONDICIÓN DE TRUE--}}
                             <label style="font-size: 0;"> Total carrito: $ {{$totalFinal
                     += $producto->getProducto->prdPrecio * $producto->carCantidadPrd}}</label>
                         @endif
 
                     </td>
+
+                    {{--BOTON FORM ELIMINAR PRODUCTO DEL CARRITO--}}
                     <td>
                         <form action="/eliminarCarrito/{{$producto->carId}}" method="post">
                             @csrf
@@ -100,62 +142,15 @@
         <div class="container-fluid">
 
         </div>
-
+            {{--=======================--}}
+            {{--======FORM BOTON CONFIRMAR COMPRA=======--}}
+            {{--=======================--}}
         <form method="post" action="/addCompra" href="#confirmarCompra">
             @csrf
         <button type="submit" onclick="return confirm('¿Confirmar compra?')" class="btn btn-success btn-lg">Confirmar compra</button>
 
         </form>
-          {{--  <div class="modal fade col-auto" id="confirmarCompra" >
-                <div class="modal-dialog">
-                    <div class="modal-content" style="background-color: #dee2e6">
-                        --}}{{--HEADER DE LA VENTANA EMERGENTE--}}{{--
 
-                        <div class="modal-header">
-
-                            <h2 class="modal-title">¡Enhorabuena! compraste:</h2><br>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-
-                        --}}{{--BODY DE VENTANA EMERGENTE--}}{{--
-                        <div class="modal-body"  >
-                            @foreach($carrito as $producto)
-
-                                <label> <i class="fas fa-angle-double-right"></i> {{$producto->getProducto->prdNombre}}  </label>
-                                <br>
-
-                                <img  height="60px" src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}"
-                                     class=" " alt="...">
-                                <br>
-                            @endforeach
-                            <br>
-                            <div class="" style="width: auto;">
-                               --}}{{-- <img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" class="card-img-top " alt="...">
-                               --}}{{--
-                                    <div class="form-group">
-                                       <h5>En la sección Compras podrás acceder a la información del vendedor
-                                       y así pautar la entrega y formas de pago, si tienes algún inconveniente con la compra no dudes
-                                       en contactarnos.</h5>
-                                    </div>
-
-                            </div>
-                        </div>
-
-                        --}}{{--FOOTER VENTANA EMERGENTE--}}{{--
-                        <div class="modal-footer">
-
-                            <form action="/compras" method="get">
-                                @csrf
-                               --}}{{-- <h4 class="d-inline-block" for="cantidad">Selecciona cantidad:</h4>
-                                <input type="hidden" name="prdId" value="{{$producto->prdId}}">
-                                <input style="height: 4vh;" name="cantidad" id="cantidad" type="number" value="1" min="1" max="{{ $producto->prdStock }}" step="1"/>
-                              --}}{{--
-                                <button type="submit" class="btn btn-primary" >IR A MIS COMPRAS</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>--}}
             {{--FIN DEL IF QUE MUESTRA EL CONTENIDO DEL CARRITO--}}
     @endif
 

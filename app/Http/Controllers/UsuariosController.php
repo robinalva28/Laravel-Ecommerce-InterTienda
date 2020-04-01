@@ -117,6 +117,8 @@ class UsuariosController extends Controller
 
     public function update(Request $request)
     {
+        /*OBTENGO EL ID DIRECTAMENTE DESDE EL AUTH
+            DE ÉSTA MANERA UN USUARIO NO PUEDE EDITAR INFORMACIÓN AJENA*/
         $id = auth()->user()->usrId;
         $usuario = User::find($id);
 

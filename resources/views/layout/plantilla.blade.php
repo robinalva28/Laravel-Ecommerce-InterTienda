@@ -32,10 +32,11 @@
                 <li class="nav-item active ">
                     <a class="nav-link" href="/">PRINCIPAL</a>
                 </li>
+                {{--===================================================================--}}
+                {{--NAV SECCIÓN NO LOGUEADOS--}}
+                {{--===================================================================--}}
                 @if (Route::has('login'))
-
                         @auth
-
                         @else
                         <li class="nav-item ">
                             <a class="nav-link"  href="/login">INGRESAR</a>
@@ -54,8 +55,11 @@
                         @endauth
 
                 @endif
+                {{--===================================================================--}}
+                {{--NAV SECCIÓN LOGUEADOS--}}
+                {{--===================================================================--}}
 
-                    @if (Route::has('login'))
+            @if (Route::has('login'))
                         @auth
                         {{--BOTON DESPLEGABLE EXPLORAR--}}
                         <li class="nav-item dropdown">
@@ -69,8 +73,10 @@
                             </div>
                         </li>
 
-                            {{--boton del usuario desplegable USUARIO--}}
-                            <li class="nav-item dropdown">
+                        {{--===================================================================--}}
+                        {{--boton del usuario desplegable USUARIO--}}
+                        {{--===================================================================--}}
+                        <li class="nav-item dropdown">
                                 <a style="color:royalblue;" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    Dropdown><i class="fas fa-user-edit "></i>{{ strtoupper(' ' . Auth::user()->nombre) }}
                                 </a>
@@ -81,7 +87,11 @@
                                     <a class="dropdown-item" href="/compras"> <i class="fab fa-linux"></i> Compras</a>
                                     <a class="dropdown-item" href="/ventas"> <i class="fas fa-handshake"></i> Ventas</a>
                                     <a class="dropdown-item" href="/perfil"> <i class="far fa-edit"></i> Mi cuenta</a>
-                                    @if(Auth::user()->isAdmin)
+                                    {{--===================================================================--}}
+                                    {{--BOTON DESPLEGABLE ADMINISTRADOR--}}
+                                    {{--===================================================================--}}
+
+                                @if(Auth::user()->isAdmin)
                                     <a class="dropdown-item" href="/admin/adminProductos">PUBLICACIONES</a>
                                     <a class="dropdown-item" href="/admin/adminListaUsuarios">USUARIOS EN BD</a>
                                     <a class="dropdown-item" href="/admin/adminMarcas">MARCAS</a>

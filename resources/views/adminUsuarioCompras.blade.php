@@ -69,7 +69,7 @@
                         @php $i--; @endphp
                         <td>
 
-                            {{--INICIO DE VENTANA EMERGENTE CON DATOS DEL VENDEDOR--}}
+                            {{--IR A DATOS DEL VENDEDOR--}}
                                 <a href="/vendedor/{{$producto->venId}}" class="btn btn-success btn"  >Ver datos</a>
 
                         </td>

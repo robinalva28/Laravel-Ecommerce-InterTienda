@@ -5,6 +5,9 @@
 
     <div class="container container-fluid">
 
+        {{--===================================================================--}}
+        {{--VARIABLE $i ALMACENA LA CANTIDAD DE POSICIONES RECIBIDAS(PRODUCTOS)--}}
+        {{--===================================================================--}}
         <?php $i= 0 ?>
 
         @foreach($productos as $producto)
@@ -12,8 +15,10 @@
             <?php $i++ ?>
         @endforeach
 
+        {{--===================================================================--}}
+        {{--MUESTRO MENSAJE DE SIN PRODUCTOS SI NO SE RECIBEN PRODUCTOS DESDE EL CONTROLADOR--}}
+        {{--===================================================================--}}
         @if($i==0)
-
 
             <div class="jumbotron col-8 mx-auto">
                 <a href="/allMarcas" class="btn btn-link">Ir a Marcas</a>
@@ -29,6 +34,9 @@
     </div>
         @else
 
+            {{--===================================================================--}}
+            {{--SI SE RECIBEN PRODUCTOS MUESTRO LA CARD CON C/U DE LOS PRODUCTOS--}}
+            {{--===================================================================--}}
 
         <div class="tittle">
 
@@ -54,11 +62,20 @@
                                 {{-- <p class="card-text">{{$detalle->prdDescripcion}}</p>--}}
                                 <p><b>{{'Marca: '.$detalle->getMarca->marNombre}}</b></p>
                                 <p><b>{{'$'.$detalle->prdPrecio}}</b></p>
+
+                                {{--=============================================================================--}}
+                                {{--=SI EL PRODUCTO ES DEL USER AUTENTICADO MUESTRO BOTON ADMINISTRAR=======--}}
+                                {{--=============================================================================--}}
                                 @if($detalle->prdIdUsuario == Auth::user()->usrId)
 
                                     <form action="/adminUsuarioProductos" method="GET">
                                         <button type="submit" class="btn btn-outline-dark btn-lg">Administrar</button>
                                     </form>
+
+                                    {{--=============================================================================--}}
+                                    {{--=MENSAJE (SIN STOCK) SI NO HAY STOCK EN BD=======--}}
+                                    {{--=============================================================================--}}
+
                                 @elseif($detalle->prdStock == 0)
                                     <label style="color:red;">Sin stock</label><br>
                                 @else

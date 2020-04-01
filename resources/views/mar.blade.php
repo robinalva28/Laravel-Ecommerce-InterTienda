@@ -23,9 +23,18 @@
 
         <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
 
-            <?php $i= 0 ?>
+            {{--===================================================================--}}
+            {{--VARIABLE $i QUE SE ITERA CON CADA MARCA ENCONTRADA EN BD--}}
+            {{--===================================================================--}}
+
+        <?php $i= 0 ?>
             @foreach($productos as $detalle)
                 @if($detalle->prdIdMarca == $marca->marId)
+
+
+                    {{--===================================================================--}}
+                    {{--LISTADO DE LOS PRODUCTOS CORRESPONDIENTES A LA MARCA--}}
+                    {{--===================================================================--}}
 
                     <div class="col-lg-3 col-sm-12 col-md-6 mb-4 mx-2">
                         <div class="card" style="width: 18rem; background-color: #EEEEEE;" >
@@ -36,7 +45,12 @@
                                 <p><b>{{'Marca: '.$detalle->getMarca->marNombre}}</b></p>
                                 <p><b>{{'$'.$detalle->prdPrecio}}</b></p>
 
-                                @if($detalle->prdIdUsuario == Auth::user()->usrId)
+
+                                {{--===================================================================--}}
+                                {{--SI UN PRODUCTO ES PROPIO DEL USER AUTENTICADO MUESTRA BTN ADMINISTRAR--}}
+                                {{--===================================================================--}}
+
+                            @if($detalle->prdIdUsuario == Auth::user()->usrId)
 
                                     <form action="/adminUsuarioProductos" method="GET">
                                         @csrf
@@ -54,6 +68,9 @@
                 @endif
             @endforeach
 
+                {{--===================================================================--}}
+                {{--MENSAJE - NO HAY MARCAS AFILIADAS--}}
+                {{--===================================================================--}}
 
             @if($i==0)
 

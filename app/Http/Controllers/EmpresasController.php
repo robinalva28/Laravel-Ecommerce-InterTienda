@@ -63,8 +63,6 @@ class EmpresasController extends Controller
             ]
         );
 
-
-
         $empresa->empNombre = $request->input('empNombre');
         $empresa->empCuil = $request->input('empCuil');
         $empresa->save();
@@ -75,23 +73,29 @@ class EmpresasController extends Controller
     public function destroy($id)
     {
         //
+        /*PARA ELIMINAR UNA EMPRESA DEBE NO TENER USUARIOS AFILIADOS*/
         $empresa = DB::table('empresas')
             ->where('empId', '=', $id)->get();
         //dd($empresa[0]->empNombre);
         $usuarios = User::with('getEmpresa')->get();
         //dd($usuarios);
-
+        /*VARIABLE QUE ALMACENA LOS USUARIOS AFILIADOS*/
         $existenAfiliadosEn = [];
         foreach ($usuarios as $user) {
+            /*VERIFICO SI ALGUN USUARIO TIENE EL ID QUE CORRESPONDA ALA EMPRESA
+            QUE INTENTO ELIMINAR*/
             if ($user->usrIdEmpresa == $empresa[0]->empId) {
                 $existenAfiliadosEn[$empresa[0]->empId] = $user->usrIdEmpresa;
             }
         }
            //dd($existenAfiliadosEn);
+        /*SI EXISTEN USUARIOS AFILIADOS NO ELIMINO*/
         if (isset($existenAfiliadosEn[$id])) {
             return redirect ('admin/adminEmpresas')
                 ->with('mensaje', 'Imposible eliminar Empresa '.$empresa[0]->empNombre.', la misma tiene usuarios afiliados');;
         }else{
+
+            /*SI NO EXISTEN USUARIOS AFILIADOS LA ELIMINO*/
             Empresa::destroy($id);
 
             return redirect ('admin/adminEmpresas')
