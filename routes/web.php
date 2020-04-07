@@ -48,6 +48,7 @@ Route::group(['middleware' => 'admin',
     Route::get('/adminListaUsuarios','UsuariosController@listaUsuarios');
     Route::get('/habilitarUsuario/{id}','UsuariosController@habilitarUsuario');
     Route::get('/inhabilitarUsuario/{id}','UsuariosController@inhabilitarUsuario');
+    Route::get('/verPerfil/{id}','UsuariosController@verPerfil');
 
 
 });

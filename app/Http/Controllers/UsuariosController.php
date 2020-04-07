@@ -25,6 +25,17 @@ class UsuariosController extends Controller
                 'usuario'=>$usuario,
             ]);
     }
+
+    public function verPerfil($id)
+    {
+        $usuario = User::find($id);
+
+        return view('/verPerfil',
+            [
+                'usuario'=>$usuario,
+            ]);
+    }
+
     public function listaUsuarios()
     {
         //

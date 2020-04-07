@@ -87,9 +87,10 @@ class VentasController extends Controller
     }
 
     public function addCompra(){
+
         /*
-         * HACE EFECTIVA UNA COMPRA CONFIRMÁNDOLA DESDE EL CARRITO
-         * */
+         HACE EFECTIVA UNA COMPRA CONFIRMÁNDOLA DESDE EL CARRITO
+        */
         $enCarrito = Carrito::with('getUsuario')
             ->where('carUsuarios_usrId','=',auth()->user()->usrId)->get();
        // dd($enCarrito[1]);
@@ -97,7 +98,7 @@ class VentasController extends Controller
         foreach($enCarrito as $compra) {
            // dd($compra->getProducto->eliminado);
 
-                 //VARIABLES QUE CONTIENEN STOCK EN TABLE PRODUCTOS
+            //VARIABLES QUE CONTIENEN STOCK EN TABLE PRODUCTOS
                 // Y STOCK EN CARRITO DE LA MISMA PUBLICACION
                 $cantActual = $compra->getProducto->prdStock;
                 $stockEnCar = $compra->carCantidadPrd;
