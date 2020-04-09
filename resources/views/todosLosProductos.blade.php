@@ -55,8 +55,8 @@
             @foreach($productos as $detalle)
 
                     <div class="zoom col-lg-3 col-sm-12 col-md-6 mb-4 mx-2">
-                        <div class="card" style="width: 17rem; background-color: #EEEEEE;" >
-                            <img style="box-shadow: 2px 2px 2px #59aaec;" src="{{ asset('images/productos') }}/{{$detalle->prdImagen}}" class="card-img-top" alt="...">
+                        <div class="card" style="width: 17rem;  background-color: #EEEEEE;" >
+                            <img  {{--height="270"--}} style=" max-height: 24rem; box-shadow: 2px 2px 2px #59aaec;" src="{{ asset('images/productos') }}/{{$detalle->prdImagen}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$detalle->prdNombre}}</h5>
                                 {{-- <p class="card-text">{{$detalle->prdDescripcion}}</p>--}}

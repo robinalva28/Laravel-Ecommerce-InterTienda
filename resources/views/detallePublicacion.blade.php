@@ -14,11 +14,12 @@
 
     <div class="mt-4 mb-4 d-flex justify-content-start">
         <div class="d-flex col-lg-6 col-sm-8 col-md-9 col-mb-4">
-            <div class="card" style="width: 28rem;">
-                <img class="card-img-top" src="{{ asset('images/productos') }}/{{$producto->prdImagen}}"  alt="...">
+            <div class="card" style="width: 28rem; ">
+                <img style="max-height: 38rem;" class="card-img-top" src="{{ asset('images/productos') }}/{{$producto->prdImagen}}"  alt="...">
                 <div class="card-body ">
                 </div>
             </div>
+
         </div>
 
         <div  class=" flex-row col-lg-6 col-sm-12 col-md-6 justify-content-end">
@@ -87,6 +88,8 @@
             </div>
         </div>
     </div>
+    <br>
+
 </div>
 
 

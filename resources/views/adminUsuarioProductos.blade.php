@@ -61,7 +61,8 @@
                     <td>{{ $producto->getCategoria->catNombre }}</td>
                     <td>{{ $producto->prdDescripcion }}</td>
                     <td>{{ $producto->prdStock }}</td>
-                    <td ><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" ></td>
+                    <td ><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}"
+                               class="img-thumbnail" width="80px" style="max-height: 100px;" ></td>
                     <td>
                         <a href="formModificarProducto/{{$producto->prdId}}" class="btn btn-outline-secondary">
                             Modificar
