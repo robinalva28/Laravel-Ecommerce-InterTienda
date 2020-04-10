@@ -54,15 +54,24 @@ class UsuariosController extends Controller
     public function habilitarUsuario($id)
     {
         //
-        $usuario = User::find($id);
-        $usuario->validado = 1;
-        $usuario->save();
-        $usuario = User::all();
 
-        return view('adminListaUsuarios',
-            [
-                'usuario'=>$usuario,
-            ]);
+        $usuario = User::find($id);
+        if($usuario->usrIdEmpresa != null) {
+            $usuario->validado = 1;
+            $usuario->save();
+            $usuario = User::all();
+
+            return view('adminListaUsuarios',
+                [
+                    'usuario'=>$usuario,
+                ]);
+        }else{
+
+            $usuario = User::all();
+
+            return redirect('/admin/adminListaUsuarios')->with('mensaje','Imposible habilitar usuario, no posee empresa asignada');
+        }
+
     }
 
     public function inhabilitarUsuario($id)
@@ -94,7 +103,7 @@ class UsuariosController extends Controller
 
 
             //COMPRUEBO SI EL user COLOCÓ EL CUIL CORRESPONDIENTE A LA EMPRESA QUE SE LE QUIERE ASIGNAR
-            if (isset($user->cuilEmpresa) == isset($empresa[0]->empCuil) && $user->validado) {
+            if (isset($user->cuilEmpresa) == isset($empresa[0]->empCuil) /*&& $user->validado*/) {
 
                 $user->usrIdEmpresa = $empresa[0]->empId;
                 $user->save();
@@ -103,8 +112,8 @@ class UsuariosController extends Controller
             } else {
                 return redirect('/admin/adminListaUsuarios')
                     ->with('mensaje', 'Ha ocurrido un error al asignar la empresa,
-                    verifique que el CUIL está bien escrito en los datos del usuario,
-                    que esté habilitado y que la empresa está en sistema.');
+                    verifique que el CUIL está bien escrito en los datos del usuario
+                    y que la empresa está en sistema.');
             }
         }
     }
