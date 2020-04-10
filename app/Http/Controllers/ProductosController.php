@@ -54,7 +54,6 @@ class ProductosController extends Controller
 
     public function productosUsuario()
     {
-        //
         $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario')
             ->where('prdIdUsuario', '=', auth()->user()->usrId)
             ->where('eliminado','=',0)->paginate(6);
@@ -63,6 +62,23 @@ class ProductosController extends Controller
             [
                 'productos'=>$productos,
             ]);
+    }
+
+    public function adminProductosUsuario($id)
+    {
+        //
+        if(auth()->user()->isAdmin) {
+            $productos = Producto::with('getMarca', 'getCategoria', 'getUsuario', 'getVenta')
+                ->where('prdIdUsuario', '=', $id)/*
+            ->where('eliminado','=',0)*/ ->paginate(6);
+           // $usuario = User::where('usrId','=',$id)->get();
+              //  dd($usuario->nombre);
+            return view('adminUsuarioProductos',
+                [
+                    'productos' => $productos,
+                //    'usuario'=>$usuario
+                ]);
+        }
     }
 
     public function prdEnCategorias($id)

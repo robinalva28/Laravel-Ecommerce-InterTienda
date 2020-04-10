@@ -16,7 +16,7 @@
             <?php $i= 0 ?>
 
             @foreach($productos as $producto)
-                @if($producto->prdIdUsuario == Auth::user()->usrId)
+                @if($producto->prdIdUsuario == Auth::user()->usrId or Auth::user()->isAdmin)
                 <?php $i++ ?>
                 @endif
             @endforeach
@@ -32,13 +32,19 @@
                 </div>
             @else
 
-        <table class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
+        <table  class="table  table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
 
             <thead class="thead-dark">
 
                 <th colspan="10">
+                    @if(Auth::user()->isAdmin)
+                        <h3><strong>PUBLICACIONES DE {{strtoupper($productos[0]->getUsuario->nombre
+                            . ' '.$productos[0]->getUsuario->apellido)}}</strong></h3>
+                        @else
                    <h3><strong>@yield('h1')</strong></h3>
-               </th>
+                        @endif
+
+                </th>
 
 
             <tr class="mr-3">
@@ -77,17 +83,24 @@
                         </form>
                     </td>
                         <td >
-                            <a href="/detallePublicacion/{{$producto->prdId}}" class="nav-link">Vista previa</a>
-
+                            <a href="/detallePublicacion/{{$producto->prdId}}" class="nav-link">Vista previa
+                            @if($producto->eliminado)
+                                <label style="color:red;">Eliminado</label>
+                                @endif
+                            </a>
                         </td>
                 </tr>
 
             @endforeach
 
-            <th colspan="2">
+            <th colspan="4">
                 <a href="/formAgregarProducto" class="btn btn-dark">
                     Nueva publicación
                 </a>
+                @if(Auth::user()->isAdmin)
+                    <a class="btn btn-outline-dark" href="/admin/verPerfil/{{$producto->getUsuario->usrId}}">
+                        {{'Volver a los datos de '. $producto->getUsuario->nombre .' '. $producto->getUsuario->apellido}} </a>
+                @endif
             </th>
 
             <th colspan="8">{!! $productos->render() !!} </th>

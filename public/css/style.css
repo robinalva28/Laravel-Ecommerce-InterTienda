@@ -64,11 +64,7 @@ section h5{
 {
     transform: scale(1.15);
 }
-/*PARA BORDEADO AZUL EN TABLAS*/
 
-.table{
-    border: #1b4b72 2px;
-}
 
 
 header nav div a:hover{

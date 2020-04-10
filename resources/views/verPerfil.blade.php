@@ -65,6 +65,7 @@
             <tr>
                 <td colspan="9">
                 <a href="/admin/adminProductos" class="btn btn-outline-dark">Volver</a>
+                <a href="/admin/adminUsuarioProductos/{{$usuario->usrId}}" class="btn btn-outline-dark">Ver publicaciones de {{$usuario->nombre}}</a>
                 </td>
             </tr>
             </tbody>

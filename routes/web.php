@@ -49,6 +49,7 @@ Route::group(['middleware' => 'admin',
     Route::get('/habilitarUsuario/{id}','UsuariosController@habilitarUsuario');
     Route::get('/inhabilitarUsuario/{id}','UsuariosController@inhabilitarUsuario');
     Route::get('/verPerfil/{id}','UsuariosController@verPerfil');
+    Route::get('/adminUsuarioProductos/{id}', 'ProductosController@adminProductosUsuario');
 
 
 });
@@ -89,6 +90,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 ############## CRUD PRODUCTOS ###################
     Route::get('/adminUsuarioProductos', 'ProductosController@productosUsuario');
+
 
 ########## CATEGORIAS VISIBLES
     Route::get('/cat/{id}', 'ProductosController@prdEnCategorias');

@@ -41,7 +41,6 @@
             </form>
 
             @else
-
             <a href="#addCarrito" class="btn btn-primary btn-lg" data-toggle="modal">Agregar al Carrito</a>
             <br><br>
             @endif
@@ -82,7 +81,16 @@
                         </div>
                     </div>
                     @else
+                        @if($producto->prdIdUsuario == Auth::user()->usrId &&
+                            $producto->prdStock < 1)
+
+                            <form action="/adminUsuarioProductos" method="GET">
+                                <button type="submit" class="btn btn-primary btn-lg">Administrar</button>
+                            </form>
                         <label style="color:red;">Sin stock</label><br>
+                            @else
+                            <label style="color:red;">Sin stock</label><br>
+                            @endif
                     @endif
                 </div>
             </div>
