@@ -27,9 +27,9 @@ class CreateUsuariosTable extends Migration
             $table->string('remember_token',100)->nullable();
             $table->boolean('validado');
             $table->boolean('isAdmin');
-
+/*
             $table->foreign('usrIdEmpresa')
-                ->references('empId')->on('empresas');
+                ->references('empId')->on('empresas');*/
 
 
             $table->timestamps();

@@ -19,8 +19,8 @@ class CreateCarritosTable extends Migration
             $table->integer('carUsuarios_usrId');
             $table->integer('carCantidadPrd');
 
-            $table->foreign('carUsuarios_usrId')
-                ->references('usrId')->on('usuarios');
+         /*   $table->foreign('carUsuarios_usrId')
+                ->references('usrId')->on('usuarios');*/
 
             //$table->timestamps();
         });
