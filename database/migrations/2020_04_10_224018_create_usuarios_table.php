@@ -20,10 +20,10 @@ class CreateUsuariosTable extends Migration
             $table->string('email',40);
             $table->string('celular',40);
             $table->date('fechaNacimiento');
-            $table->integer('usrIdEmpresa');
+            $table->integer('usrIdEmpresa')->nullable();
             $table->string('cuilEmpresa',15);
             $table->string('password',150);
-            $table->string('avatar',100);
+            $table->string('avatar',100)->nullable();
             $table->string('remember_token',100)->nullable();
             $table->boolean('validado');
             $table->boolean('isAdmin');
