@@ -28,8 +28,6 @@
                 <th>Fecha de nacimiento</th>
                 <th>Avatar</th>
                 <th colspan="2"></th>
-
-
             </tr>
             </thead>
             <tbody>

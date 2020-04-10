@@ -66,7 +66,7 @@
                             <a {{--style="color:royalblue;"--}} class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                Dropdown><i class="fas fa-box"></i> PUBLICACIONES
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/allCategorias"><i class="fas fa-angle-double-right"></i> Por Categorías</a>
                                 <a class="dropdown-item" href="/allMarcas"><i class="fas fa-angle-double-right"></i> Por Marcas</a>
                                 <a class="dropdown-item" href="/todosLosProductos"><i class="fas fa-angle-double-right"></i> Ver Todos</a>

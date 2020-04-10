@@ -26,6 +26,10 @@ class Producto extends Model
     {
         return $this->belongsTo('App\User', 'prdIdUsuario', 'usrId');
     }
+    public function getVenta()
+    {
+        return $this->belongsTo('App\Venta', 'prdId', 'venIdProducto');
+    }
 
 
 

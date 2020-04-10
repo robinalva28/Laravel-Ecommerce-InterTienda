@@ -22,8 +22,17 @@ footer {
     color: white;
 
 }
+/*ESPACIADO ENTRE LOS ITEMS DE LOS MENÚS DESPLEGABLES*/
+.dropdown-item{
+    padding: 1vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
 
-
+}
+.dropdown-item:hover {
+    color: white;
+    background-color: royalblue;
+}
  footer a{
     color:#9dd1f2;
  }
@@ -55,7 +64,11 @@ section h5{
 {
     transform: scale(1.15);
 }
-/*PARA EFECTO DE LUPA*/
+/*PARA BORDEADO AZUL EN TABLAS*/
+
+.table{
+    border: #1b4b72 2px;
+}
 
 
 header nav div a:hover{

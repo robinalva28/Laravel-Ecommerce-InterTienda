@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Venta;
 use Illuminate\Support\Facades\Auth;
 use App\Categoria;
 use App\Marca;
@@ -19,11 +20,14 @@ class ProductosController extends Controller
     public function index()
     {
         //
-        $productos = Producto::with('getMarca', 'getCategoria')->paginate(6);
-
+        $productos = Producto::with('getMarca', 'getCategoria','getUsuario','getVenta')->paginate(6);
+        //dd($productos->getVenta->getIdProducto);
+        $allVentas = Venta::all();
+        //dd($allVentas);
         return view('adminProductos',
             [
                 'productos'=>$productos,
+                'allVentas'=>$allVentas
             ]);
     }
 
