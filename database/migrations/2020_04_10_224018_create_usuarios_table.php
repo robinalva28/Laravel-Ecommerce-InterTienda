@@ -22,7 +22,6 @@ class CreateUsuariosTable extends Migration
             $table->date('fechaNacimiento');
             $table->integer('usrIdEmpresa');
             $table->string('cuilEmpresa',15);
-            $table->string('cuilEmpresa',15);
             $table->string('password',150);
             $table->string('avatar',100);
             $table->string('remember_token',100)->nullable();
