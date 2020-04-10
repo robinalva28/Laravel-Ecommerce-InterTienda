@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UsuariosController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +143,9 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.." />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../resources/views" />
       <recent name="$PROJECT_DIR$/../public" />
@@ -226,7 +229,7 @@
       <workItem from="1586225829133" duration="4894000" />
       <workItem from="1586231657601" duration="600000" />
       <workItem from="1586465721898" duration="9853000" />
-      <workItem from="1586542485743" duration="9968000" />
+      <workItem from="1586542485743" duration="11319000" />
     </task>
     <servers />
   </component>
@@ -234,6 +237,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="703" y="325" width="504" height="383" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586553812065">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="703" y="325" width="504" height="383" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586553812065" />
     <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585679487781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
