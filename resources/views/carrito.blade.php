@@ -99,8 +99,6 @@
                     @else
                     <td>{{$producto->carCantidadPrd}}</td>
                     @endif
-
-
                     {{--=======================--}}
                     {{--======COL PRECIO TOTAL=======--}}
                     {{--=======================--}}
@@ -109,8 +107,6 @@
                         <br>
                             {{--RESTO LAS ITERACIONES DE CADA PRODUCTO EN CARRITO A MEDIDA QUE SE TRAEN--}}
                         @php $i--; @endphp
-
-
                             {{--=======================--}}
                             {{--======COL PRECIO TOTAL=======--}}
                             {{--=======================--}}
