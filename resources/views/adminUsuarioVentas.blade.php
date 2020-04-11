@@ -38,7 +38,7 @@
                 <h2><strong>@yield('h1')</strong></h2>
 
             </div>
-            <table class="table table-hover table-striped ">
+                <table role="table" class="table  table-hover table-striped table-borderless mx-auto mt-1 p-1 col-md-12 ">
                 <thead>
                 <tr>
                     <th scope="col">Fecha</th>
@@ -59,19 +59,19 @@
                         </th>
                         <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
 
-                        <td><strong> {{$producto->getProducto->prdNombre}}.  </strong><br>
+                          <td role="cell" class="tdnombre tabla-valor"><p><strong> {{$producto->getProducto->prdNombre}}.  </strong><br>
                             {{$producto->getProducto->prdDescripcion}}
-                        </td>
-                        <td>${{$producto->getProducto->prdPrecio}}</td>
-                        <td>{{$producto->venStock}}</td>
-                        <td>${{$producto->getProducto->prdPrecio * $producto->venStock}}</td>
+                              </p></td>
+                        <td role="cell" class="tdprecio tabla-valor"><p>${{$producto->getProducto->prdPrecio}}</p></td>
+                        <td role="cell" class="tdstock tabla-valor"><p>{{$producto->venStock}}</p></td>
+                        <td role="cell" class="tdtotal tabla-valor"><p>${{$producto->getProducto->prdPrecio * $producto->venStock}}</p></td>
 
                         @php $i--; @endphp
 
-                        <td>
+                          <td role="cell" class="tddatoscontacto tabla-valor"><p>
                             {{--INICIO DE VENTANA EMERGENTE CON DATOS DEL VENDEDOR--}}
                             <a href="/comprador/{{$producto->venId}}" class="btn btn-success btn"  >Ver datos</a>
-                        </td>
+                              </p></td>
                     </tr>
 
                 @endforeach

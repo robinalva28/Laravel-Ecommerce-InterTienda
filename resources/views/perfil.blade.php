@@ -16,18 +16,18 @@
         <a href="/contact" class="btn btn-link">Contactar con InterTienda</a>
     </div>
 <div class="card bg-light col-md-9 mt-1 p-1 mx-auto mx-3">
-    <table class="table table-hover table-striped table-border ">
-        <thead class="thead-dark">
+    <table role="table" class="table  table-hover table-striped table-borderless mx-auto mt-1 p-1 col-md-12 ">
+    <thead class="thead-dark">
         <tr class="mr-3">
-            <th>Habilitado</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Celular</th>
-            <th>Empresa</th>
-            <th>Fecha de nacimiento</th>
-            <th>Avatar</th>
-            <th colspan="2"></th>
+               <th role="columnheader" >Habilitado</th>
+               <th role="columnheader" >Nombre</th>
+               <th role="columnheader" >Apellido</th>
+               <th role="columnheader" >Email</th>
+               <th role="columnheader" >Celular</th>
+               <th role="columnheader" >Empresa</th>
+               <th role="columnheader" >Fecha de nacimiento</th>
+               <th role="columnheader" >Avatar</th>
+            <th role="columnheader" colspan="2"></th>
 
 
         </tr>
@@ -38,31 +38,32 @@
 
             <tr>
                 @if(auth()->user()->validado == 1)
-                    <td style="color:green;" >Si</td>
+                    <td class="tdhabilitado tabla-valor" style="color:green;" >Si</td>
                 @else
-                    <td style="color:red;" >No</td>
+                    <td class="tdhabilitado tabla-valor" style="color:red;" >No</td>
                 @endif
-                <td>{{ auth()->user()->nombre }}</td>
-                <td>{{ auth()->user()->apellido }}</td>
-                <td>{{ auth()->user()->email}}</td>
-                <td>{{ auth()->user()->celular }}</td>
+                <td role="cell" class="tdnombre tabla-valor"><p>{{ auth()->user()->nombre }}</p></td>
+                    <td role="cell" class="tdapellido tabla-valor"><p>{{ auth()->user()->apellido }}</p></td>
+                    <td role="cell" class="tdemail tabla-valor"><p>{{ auth()->user()->email}}</p></td>
+                    <td role="cell" class="tdcelular tabla-valor"><p>{{ auth()->user()->celular }}</p></td>
 
                     @if(is_object(auth()->user()->getEmpresa))
-                        <td>{{auth()->user()->getEmpresa->empNombre}}</td>
+                        <td role="cell" class="tdempresa tabla-valor"><p>{{auth()->user()->getEmpresa->empNombre}}</p></td>
                     @else
-                        <td>
+                           <td role="cell" class="tdempresa tabla-valor"><p>
                            Sin Empresa
-                        </td>
+                               </p></td>
                     @endif
 
 
-                <td>{{ auth()->user()->fechaNacimiento }}</td>
-                <td ><img  src="{{ asset('images/avatares') }}/{{ auth()->user()->avatar }}" class="img-thumbnail" width="80px" ></td>
-                    <td>
+                    <td role="cell" class="tdnacimiento tabla-valor"><p>{{ auth()->user()->fechaNacimiento }}</p></td>
+                    <p ><img  src="{{ asset('images/avatares') }}/{{ auth()->user()->avatar }}" class="img-thumbnail" width="80px" >
+                    </td>
+                       <td role="cell" class=" tabla-valor"><p>
                         <a href="/formModificarDatos" class="btn btn-outline-secondary">
                             Modificar datos
                         </a>
-                    </td>
+                           </p></td>
             </tr>
 
         </tbody>

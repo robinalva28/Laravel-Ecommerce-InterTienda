@@ -18,13 +18,13 @@
     <a href="/" class="btn btn-link">Ir a principal</a>
     <a href="/todosLosProductos" class="btn btn-link">Ver todo</a>
 
-    <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
+    <div class="row mt-4 mb-4 d-flex justify-content-center ">
 
         <?php $i= 0 ?>
     @foreach($productos as $detalle)
         @if($detalle->prdIdCategoria == $categoria->catId)
 
-        <div class="zoom    col-lg-3 col-sm-12 col-md-6 mb-4 mx-2">
+        <div class="zoom   {{-- col-lg-3 col-sm-12 col-md-6 mb-4 mx-2--}}">
             <div class="card" style="width: 18rem; background-color: #EEEEEE;" >
                 <img style="max-height: 24rem; box-shadow: 2px 2px 2px #59aaec;" src="{{ asset('images/productos') }}/{{$detalle->prdImagen}}" class="card-img-top" alt="...">
                 <div class="card-body">

@@ -78,6 +78,7 @@ header nav div a:hover{
 	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
 	*/
 
+
 @media
 only screen
 and (max-width: 760px), (min-device-width: 768px)
@@ -92,6 +93,19 @@ and (max-device-width: 1024px)  {
         display: inline-block;
         /*padding:3px;*/
     }
+    /*.tableblock{
+        display: block;
+    }
+    .tableblock p{
+        !* background-color: #9dd1f2;*!
+        position: relative;
+        margin-bottom: 5px;
+        padding-top: 12px;
+        padding-right: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-height: 80px;
+    }*/
     tbody{
         border: #1b4b72 2px;
     }
@@ -114,19 +128,25 @@ and (max-device-width: 1024px)  {
     td {
         /* Behave  like a "row" */
         border: none;
-
+        color:#1d2124;
         margin:10px;
         border-bottom: 1px solid #1b4b72;
         position: relative;
+        padding: 0px;
         padding-left: 50%;
 
     }
-    .tabla-valor h5{
-        /*background-color: #9dd1f2;*/
+
+    .tabla-valor p{
+
+       /* background-color: #9dd1f2;*/
         position: relative;
-        padding-bottom: 0px;
-        padding-top: 11px;
-        margin: 0 auto;
+        margin-bottom: 5px;
+        padding-top: 12px;
+        padding-right: 5px;
+        /*margin-left: 5px;*/
+        /*max-height: 50px;*/
+
     }
 
 
@@ -142,11 +162,79 @@ and (max-device-width: 1024px)  {
         white-space: nowrap;
     }
 
+    .tdid::before {
+        content: "Id: ";
+
+    }
+    .tdnombre::before {
+        content: "Nombre: ";
+    }
+    .tdapellido::before {
+        content: "Apellido: ";
+    }
+    .tdprecio::before {
+        content: "Precio: ";
+    }
+    .tdmarca::before {
+        content: "Marca: ";
+    }
+    .tdcategoria::before {
+        content: "Categoria: ";
+    }
+    .tddescripcion::before {
+        content: "Descripcion: ";
+    }
+    .tdstock::before {
+        content: "Stock: ";
+    }
+    .tdimagen::before {
+        content: "Imagen: ";
+    }
+    .tdverpropietario::before {
+        content: "Ver propietario: ";
+    }
+    .tdmasinfo::before {
+        content: "Mas info: ";
+    }
+    .tdventas::before {
+        content: "Ventas: ";
+    }
+    .tdstockvendido::before {
+        content: "Stock vn: ";
+    }
+    .tdtotal::before {
+        content: "Total: ";
+    }
+    .tddatoscontacto::before {
+        content: "Contacto: ";
+    }
+
+    .tdeliminar::before {
+        content: "Eliminar: ";
+    }
+    .tdempresa::before {
+        content: "Empresa: ";
+    }
+
+    .tdemail::before {
+        content: "Email: ";
+    }
+    .tdcelular::before {
+        content: "Celular: ";
+    }
+
+    .tdnacimiento::before {
+        content: "Nacimiento: ";
+    }
+    .tdhabilitado::before {
+        content: "Habilitado: ";
+    }
     /*
     Label the data
 You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
     */
-    td:nth-of-type(1):before { content: 'Nombre'; }
+
+   /* td:nth-of-type(1):before { content: "nombre" }
     td:nth-of-type(2):before { content: "Precio:"; }
     td:nth-of-type(3):before { content: "Marca"; }
     td:nth-of-type(4):before { content: "Categoria:"; }
@@ -155,5 +243,5 @@ You could also use a data-* attribute and content for this. That way "bloats" th
     td:nth-of-type(7):before { content: "Imagen"; }
     td:nth-of-type(8):before { content: ""; }
     td:nth-of-type(9):before { content: ""; }
-    td:nth-of-type(10):before { content: ""; }
+    td:nth-of-type(10):before { content: ""; }*/
 }

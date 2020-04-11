@@ -50,11 +50,11 @@
         <br>
 
 
-        <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
+        <div class="row mt-4 mb-4 d-flex justify-content-center ">
 
             @foreach($productos as $detalle)
 
-                    <div class="zoom col-lg-3 col-sm-12 col-md-6 mb-4 mx-2">
+                    <div class="zoom {{--col-lg-3 col-sm-12 col-md-12 mb-4 mx-2 d-flex--}}">
                         <div class="card" style="width: 17rem;  background-color: #EEEEEE;" >
                             <img  {{--height="270"--}} style=" max-height: 24rem; box-shadow: 2px 2px 2px #59aaec;" src="{{ asset('images/productos') }}/{{$detalle->prdImagen}}" class="card-img-top" alt="...">
                             <div class="card-body">

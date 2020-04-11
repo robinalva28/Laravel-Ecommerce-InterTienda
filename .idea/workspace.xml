@@ -4,12 +4,16 @@
     <list default="true" id="d2faa1a8-e9f2-4ba5-bd9d-5b1a9369ba5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminListaUsuarios.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminProductos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioCompras.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioCompras.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioProductos.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/allCategorias.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/allCategorias.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/allMarcas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/allMarcas.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/formAgregarProducto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/formAgregarProducto.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/inicio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/adminUsuarioVentas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/adminUsuarioVentas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/carrito.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/carrito.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/cat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/cat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/mar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/mar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/perfil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/perfil.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/todosLosProductos.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,12 +153,12 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.." />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../resources/views" />
       <recent name="$PROJECT_DIR$/../public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/.." />
     </key>
   </component>
   <component name="RunManager">
@@ -238,7 +242,9 @@
       <workItem from="1586542485743" duration="20690000" />
       <workItem from="1586568294899" duration="252000" />
       <workItem from="1586571216746" duration="1042000" />
-      <workItem from="1586577630323" duration="10232000" />
+      <workItem from="1586577630323" duration="10647000" />
+      <workItem from="1586617750993" duration="11416000" />
+      <workItem from="1586629298934" duration="4528000" />
     </task>
     <servers />
   </component>

@@ -11,8 +11,8 @@
         </div>
     @endif
 
-<div class="card bg-light col-md-10 mt-1 p-1 mx-auto mx-3">
-    <table class="table table-hover table-striped table-border ">
+<div class=" col-md-10 mt-1 p-1 mx-auto mx-3">
+    <table role="table" class="table table-hover table-striped table-border ">
         <thead class="thead-dark">
         <tr class="mr-3">
             <th>ID</th>
@@ -34,7 +34,7 @@
             </th>--}}
         </tr>
         </thead>
-        <tbody>
+        <tbody role="rowgroup">
 
 
         @foreach( $usuario as $detalle )

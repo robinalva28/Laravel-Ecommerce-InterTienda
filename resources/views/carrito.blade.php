@@ -47,15 +47,15 @@
         </h2>
 
     </div>
-    <table class="table table-hover table-striped">
-        <thead>
+            <table role="table" class="table  table-hover table-striped table-borderless mx-auto mt-1 p-1 col-md-12 ">
+            <thead>
             <tr>
-                <th scope="col">Producto</th>
+                <th role="columnheader">Producto</th>
                 <th colspan="1">&nbsp;</th>
-                <th scope="col">Precio und.</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Total</th>
-                <th scope="col">Remover</th>
+                <th role="columnheader">Precio und.</th>
+                <th role="columnheader">Cantidad</th>
+                <th role="columnheader">Total</th>
+                <th role="columnheader">Remover</th>
             </tr>
         </thead>
         <tbody>
@@ -64,7 +64,7 @@
         {{--===================================================================--}}
             @php $totalFinal = 0 @endphp
             @foreach($carrito as $producto)
-                <tr>
+                <tr role="row" class="mr-3">
                     {{--COLUMNAS--}}
 
                     {{--IMAGEN DE PRODUCTO--}}
@@ -72,7 +72,8 @@
                     <th scope="row"><img src="{{ asset('images/productos') }}/{{$producto->getProducto->prdImagen}}" alt="..." class="img-fluid img-thumbnail" width="80px"></th>
 
                     {{--COL NOMBRE Y DESCRIPCION DE PRODUCTO--}}
-                    <td><strong> {{$producto->getProducto->prdNombre}}. </strong><br>
+                       <td role="cell" class="tdnombre tabla-valor"><p>
+                               <strong> {{$producto->getProducto->prdNombre}}. </strong><br>
                         @if($producto->getProducto->eliminado)
                         {{--CONDICIONAL PARA PRODUCTOS NO DISPONIBLES--}}
                         <label style="color:red;">Producto no disp.</label>
@@ -80,11 +81,12 @@
                             {{$producto->getProducto->prdDescripcion}}
 
                             @endif
-                    </td>
+
+                     </td>
                     {{--=======================--}}
                     {{--======COL PRECIO=======--}}
                     {{--=======================--}}
-                    <td>${{$producto->getProducto->prdPrecio}}</td>
+                       <td role="cell" class="tdprecio tabla-valor"><p>${{$producto->getProducto->prdPrecio}} </td>
 
 
                     {{--===============================--}}
@@ -95,14 +97,14 @@
 
                     @if($producto->carCantidadPrd > $producto->getProducto->prdStock)
 
-                    <td><label style="color:red;">Stock no disp.</label></td>
+                       <td role="cell" class="tdstock tabla-valor"><p><label style="color:red;">Stock no disp.</label> </td>
                     @else
-                    <td>{{$producto->carCantidadPrd}}</td>
+                       <td role="cell" class="tdstock tabla-valor"><p>{{$producto->carCantidadPrd}} </td>
                     @endif
                     {{--=======================--}}
                     {{--======COL PRECIO TOTAL=======--}}
                     {{--=======================--}}
-                        <td>${{$producto->getProducto->prdPrecio * $producto->carCantidadPrd}}
+                           <td role="cell" class="tdtotal tabla-valor"><p>${{$producto->getProducto->prdPrecio * $producto->carCantidadPrd}}
                         <br>
                         <br>
                             {{--RESTO LAS ITERACIONES DE CADA PRODUCTO EN CARRITO A MEDIDA QUE SE TRAEN--}}
@@ -118,17 +120,17 @@
                     += $producto->getProducto->prdPrecio * $producto->carCantidadPrd}}</label>
                         @endif
 
-                    </td>
+                     </td>
 
                     {{--BOTON FORM ELIMINAR PRODUCTO DEL CARRITO--}}
-                    <td>
+                       <td role="cell" class="tdeliminar tabla-valor"><p>
                         <form action="/eliminarCarrito/{{$producto->carId}}" method="post">
                             @csrf
                             <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
                                 <i class="far fa-trash-alt"></i>
                             </button>
                         </form>
-                    </td>
+                     </td>
             </tr>
 
                @endforeach

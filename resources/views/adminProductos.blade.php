@@ -6,110 +6,108 @@
 
 @section('contenido')
 
-    <div class="{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
+    <div class="container d-flex flex-column h-100 mt-3{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
         <div><h1>@yield('h1')</h1></div>
-    <table role="table" border="2px" class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
-        <thead role="rowgroup" class="thead-dark">
+        <table role="table" class="table  table-hover table-striped table-borderless mx-auto mt-1 p-1 col-md-12 ">
+            <thead role="rowgroup" class="thead-dark">
+            <tr class="mr-3">
+                <th role="columnheader">ID</th>
+                <th role="columnheader">Productos</th>
+                <th role="columnheader" colspan="2"></th>
+                <th role="columnheader">Propietario</th>
+                <th role="columnheader">Ventas</th>
+                <th role="columnheader">Stock <br>vendido</th>
+                <th role="columnheader">Stock <br>disp.</th>
+                {{--<th role="columnheader">Precio</th>
+                <th role="columnheader">Marca</th>
+                <th role="columnheader">Categoria</th>
+                <th role="columnheader">Descripción</th>
+                --}}
 
-        <tr role="row" class="mr-3">
-            <th  role="columnheader" data-id>ID</th>
-            <th  role="columnheader">Productos</th>
-            <th role="columnheader" colspan="2"></th>
-            <th  role="columnheader">Propietario</th>
-            <th  role="columnheader">Ventas</th>
-            <th  role="columnheader">Stock <br>vendido</th>
-            <th  role="columnheader">Stock <br>disp.</th>
-            {{--<th>Precio</th>
-            <th  role="columnheader">Marca</th>
-            <th  role="columnheader">Categoria</th>
-            <th  role="columnheader">Descripción</th>
-            --}}
+                <th role="columnheader" colspan="2">Estado de <br>publicación</th>
+            </tr>
+            </thead>
+            <tbody role="rowgroup">
+            @foreach( $productos as $producto )
+                <tr role="row">
+                    {{--ID--}}
+                    <td role="cell" class="tdid tabla-valor"><p>
+                        {{ $producto->prdId }}
+                        </p></td>
+                    {{--IMAGEN--}}
+                    <td role="cell" class="tdimagen tabla-valor"><p>
+                            <img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}"
+                                  class="img-thumbnail" width="80px" ></p></td>
 
-            <th role="columnheader" colspan="2">Estado de <br>publicación</th>
-        </tr>
-        </thead>
-        <tbody  role="rowgroup">
-        @foreach( $productos as $producto )
-            <tr role="row">
-                <td role="cell" class="tabla-valor">
-                   <h5>{{ $producto->prdId }}</h5>
-                </td>
+                    {{--DATOS DEL PRODUCTO(NOMBRE, MARCA, CATEGORIA, DESCRIPCION)--}}
+                    <td role="cell" class="tdnombre tabla-valor"><p><strong>{{ $producto->prdNombre }}.</strong><br>
+                        {{ ' Precio: $'. $producto->prdPrecio }}<br>
+                        {{ 'Marca: '.$producto->getMarca->marNombre}}<br>
+                        {{ 'Categoría: '.$producto->getCategoria->catNombre }}<br>
+                        {{ 'Descripción: '.$producto->prdDescripcion }}
+                        </p></td>
+                    {{--LINK PARA IR AL PERFIL--}}
+                    <th><a href="/admin/verPerfil/{{$producto->getUsuario->usrId}}">
+                            <strong>{{'ID. '.$producto->getUsuario->usrId}}</strong>
+                            {{$producto->getUsuario->nombre .' Ver datos'}} </a>
+                    </th>
+                    {{--VENTAS--}}
+                    <?php $i=0;$cant=0;$ventas=0; ?>
 
-                <td role="cell" class="tabla-valor">
-                    <h5><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" >
-                    </h5></td>
-
-                <td role="cell" class="tabla-valor" colspan="2" >
-                    <strong><h5>{{ $producto->prdNombre }}.</h5></strong><br>
-                    <h5>{{ ' Precio: $'. $producto->prdPrecio }}</h5><br>
-                    <h5>{{ 'Marca: '.$producto->getMarca->marNombre}}</h5><br>
-                    <h5>{{ 'Categoría: '.$producto->getCategoria->catNombre }}</h5><br>
-                    <h5>{{ 'Descripción: '.$producto->prdDescripcion }}</h5>
-                </td>
-
-
-                <th  role="columnheader"><a href="/admin/verPerfil/{{$producto->getUsuario->usrId}}"><strong>{{'ID. '.$producto->getUsuario->usrId}}</strong>
-                    {{$producto->getUsuario->nombre .' '. $producto->getUsuario->apellido}} </a>
-                    <br>
-
-                </th>
-                {{--VENTAS--}}
-                <?php $i=0;$cant=0;$ventas=0; ?>
-
-                {{--LLENO EL ITERADOR CON LA CANTIDAD DE OBJETOS QUE COINCIDAN--}}
-                @foreach($allVentas as $venta)
-
-                    @if($venta->venIdProducto == $producto->prdId)
-                        <?php $i++; ?>
-                    @endif
-                @endforeach
-                <td role="cell" class="tabla-valor">
-
-
+                    {{--LLENO EL ITERADOR CON LA CANTIDAD DE OBJETOS QUE COINCIDAN--}}
                     @foreach($allVentas as $venta)
 
                         @if($venta->venIdProducto == $producto->prdId)
-
-                            <label style="font-size: 0;">
-                                {{$cant += $venta->venStock}}
-                                {{$ventas++}}
-                            </label>
-                            <?php $i--; ?>
+                            <?php $i++; ?>
                         @endif
                     @endforeach
+                    <td role="cell" class="tdventas tabla-valor"><p>
+
+
+                        @foreach($allVentas as $venta)
+
+                            @if($venta->venIdProducto == $producto->prdId)
+
+                                <label style="font-size: 0;">
+                                    {{$cant += $venta->venStock}}
+                                    {{$ventas++}}
+                                </label>
+                                <?php $i--; ?>
+                            @endif
+                        @endforeach
                         {{--IMPRIMO LA CANTIDAD DE STOCK--}}
                         {{$ventas}}
 
-                </td>
-                {{--STOCK VENDIDO--}}
+                        </p></td>
+                    {{--STOCK VENDIDO--}}
 
-                <td role="cell" class="tabla-valor">
+                    <td role="cell" class="tdstockvendido tabla-valor"><p>
 
-                    {{--RECORRO CADA ESPACIO SUMANDO LA CANTIDAD DE PRODUCTOS VENDIDOS--}}
-                    <h5>{{$cant}}</h5>
-
-
-
-                </td>
-                <td role="cell" class="tabla-valor"> {{ $producto->prdStock }}</td>
-
-                 <td role="cell" class="tabla-valor" colspan="2">
-                @if($producto->eliminado)
-                        <label style="color:red;">Eliminado</label>
-                    @else
-                        <label style="color:green;">En linea</label>
-                    @endif
-                </td>
-
-            </tr>
-        @endforeach
+                        {{--RECORRO CADA ESPACIO SUMANDO LA CANTIDAD DE PRODUCTOS VENDIDOS--}}
+                        {{$cant}}
 
 
 
-        <th role="columnheader" style="border: 2px; padding-left: 50%;" colspan="9"> {{ $productos->links() }}</th>
+                        </p></td>
+                    <td role="cell" class="tdstock tabla-valor"><p>{{ $producto->prdStock }}</p></td>
 
-        </tbody>
-    </table>
+                    <td role="cell" class="tabla-valor"><p>
+                        @if($producto->eliminado)
+                            <label style="color:red;">Eliminado</label>
+                        @else
+                            <label style="color:green;">En linea</label>
+                        @endif
+                        </p></td>
+
+                </tr>
+            @endforeach
+
+
+
+            <th style="border: 2px; /*padding-left: 50%;*/" colspan="9"> {{ $productos->links() }}</th>
+
+            </tbody>
+        </table>
     </div>
 
 
