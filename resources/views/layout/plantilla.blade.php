@@ -67,9 +67,13 @@
                                Dropdown><i class="fas fa-box"></i> PUBLICACIONES
                             </a>
                             <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                                 <a class="dropdown-item" href="/allCategorias"><i class="fas fa-angle-double-right"></i> Por Categorías</a>
                                 <a class="dropdown-item" href="/allMarcas"><i class="fas fa-angle-double-right"></i> Por Marcas</a>
                                 <a class="dropdown-item" href="/todosLosProductos"><i class="fas fa-angle-double-right"></i> Ver Todos</a>
+                                <a class="dropdown-item" href="/formAgregarProducto"> <i class="fas fa-folder-plus"></i> Nueva publicación</a>
+                                <a class="dropdown-item" href="/adminUsuarioProductos"><i class="fas fa-folder"></i> Mis publicaciones</a>
+
                             </div>
                         </li>
 
@@ -82,10 +86,8 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   {{--  <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>--}}
-                                    <a class="dropdown-item" href="/adminUsuarioProductos"><i class="fas fa-folder"></i> Mis publicaciones</a>
-                                    <a class="dropdown-item" href="/formAgregarProducto"> <i class="fas fa-folder-plus"></i> 	Nueva publicación</a>
-                                    <a class="dropdown-item" href="/compras"> <i class="fab fa-linux"></i> Compras</a>
-                                    <a class="dropdown-item" href="/ventas"> <i class="fas fa-handshake"></i> Ventas</a>
+                                       <a class="dropdown-item" href="/compras"> <i class="fab fa-linux"></i> Mis Compras</a>
+                                    <a class="dropdown-item" href="/ventas"> <i class="fas fa-handshake"></i> Mis Ventas</a>
                                     <a class="dropdown-item" href="/perfil"> <i class="far fa-edit"></i> Mi cuenta</a>
                                     {{--===================================================================--}}
                                     {{--BOTON DESPLEGABLE ADMINISTRADOR--}}
