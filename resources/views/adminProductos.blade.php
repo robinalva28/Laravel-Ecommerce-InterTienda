@@ -6,14 +6,14 @@
 
 @section('contenido')
 
-    <div class="container d-flex flex-column h-100 mt-3{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
+    <div class="{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
         <div><h1>@yield('h1')</h1></div>
         <table role="table" class="table  table-hover table-striped table-borderless mx-auto mt-1 p-1 col-md-12 ">
             <thead role="rowgroup" class="thead-dark">
             <tr class="mr-3">
                 <th role="columnheader">ID</th>
                 <th role="columnheader">Productos</th>
-                <th role="columnheader" colspan="2"></th>
+                <th role="columnheader" ></th>
                 <th role="columnheader">Propietario</th>
                 <th role="columnheader">Ventas</th>
                 <th role="columnheader">Stock <br>vendido</th>
