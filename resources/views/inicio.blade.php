@@ -114,7 +114,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="./img/categoria_todo.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Todo</h5>
+                            <h5 class="card-title">Tod</h5>
                             <p class="card-text">Todos los productos y servicios publicados</p>
                             <a href="#" class="btn btn-primary">Ir</a>
                         </div>

@@ -32,11 +32,11 @@
                 </div>
             @else
 
-        <table  class="table  table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
+        <table role="table" class="table  table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
 
-            <thead class="thead-dark">
+            <thead role="rowgroup" class="thead-dark">
 
-                <th colspan="10">
+                <th  role="columnheader" colspan="10">
                     @if(Auth::user()->isAdmin)
                         <h3><strong>PUBLICACIONES DE {{strtoupper($productos[0]->getUsuario->nombre
                             . ' '.$productos[0]->getUsuario->apellido)}}</strong></h3>
@@ -47,63 +47,66 @@
                 </th>
 
 
-            <tr class="mr-3">
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Marca</th>
-                <th>Categoria</th>
-                <th>Descripción</th>
-                <th>Stock</th>
-                <th>Imagen</th>
-                <th colspan="3"></th>
+            <tr role="row" class="mr-3">
+                <th role="columnheader" >Nombre</th>
+                <th role="columnheader" >Precio</th>
+                <th role="columnheader" >Marca</th>
+                <th role="columnheader">Categoria</th>
+                <th role="columnheader">Descripción</th>
+                <th role="columnheader">Stock</th>
+                <th role="columnheader">Imagen</th>
+                <th role="columnheader" colspan="3"></th>
             </tr>
             </thead>
-            <tbody>
+            <tbody role="rowgroup">
             @foreach( $productos as $producto )
-                <tr>
-                    <td>{{ $producto->prdNombre }}</td>
-                    <td>{{ '$'. $producto->prdPrecio }}</td>
-                    <td>{{ $producto->getMarca->marNombre}}</td>
-                    <td>{{ $producto->getCategoria->catNombre }}</td>
-                    <td>{{ $producto->prdDescripcion }}</td>
-                    <td>{{ $producto->prdStock }}</td>
-                    <td ><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}"
-                               class="img-thumbnail" width="80px" style="max-height: 100px;" ></td>
-                    <td>
+                <tr role="row">
+                    <td role="cell" class="tabla-valor"><h5>{{ $producto->prdNombre }}</h5></td>
+                    <td role="cell" class="tabla-valor"><h5>{{ '$'. $producto->prdPrecio }}</h5></td>
+                    <td role="cell" class="tabla-valor"><h5>{{ $producto->getMarca->marNombre}}</h5></td>
+                    <td role="cell" class="tabla-valor"><h5>{{ $producto->getCategoria->catNombre }}</h5></td>
+                    <td role="cell" class="tabla-valor"><h5>{{ $producto->prdDescripcion }}</h5></td>
+                    <td role="cell" class="tabla-valor"><h5>{{ $producto->prdStock }}</h5></td>
+                    <td role="cell"  class="tabla-valor"><h5><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}"
+                               class="img-thumbnail" width="80px" style="max-height: 100px;
+                               margin-left: 30%;" ></h5></td>
+                    <td role="cell"  class="tabla-valor"><h5>
                         <a href="formModificarProducto/{{$producto->prdId}}" class="btn btn-outline-secondary">
                             Modificar
                         </a>
-                    </td>
-                    <td>
+                        </h5></td>
+                    <td role="cell"  class="tabla-valor"><h5>
                         <form action="/eliminarProducto/{{$producto->prdId}} " method="post">
                             @csrf
                             <button type="submit" onclick="return confirm('¿Desea eliminar éste producto?')" class="btn btn-outline-secondary">
                                 Eliminar
                             </button>
                         </form>
-                    </td>
-                        <td >
+                        </h5></td>
+                        <td role="cell"  class="tabla-valor"><h5>
                             <a href="/detallePublicacion/{{$producto->prdId}}" class="nav-link">Vista previa
                             @if($producto->eliminado)
                                 <label style="color:red;">Eliminado</label>
                                 @endif
                             </a>
-                        </td>
+                            </h5></td>
                 </tr>
 
             @endforeach
 
-            <th colspan="4">
+            <th role="columnheader" colspan="4">
                 <a href="/formAgregarProducto" class="btn btn-dark">
                     Nueva publicación
                 </a>
+                <br>
+                <br>
                 @if(Auth::user()->isAdmin)
                     <a class="btn btn-outline-dark" href="/admin/verPerfil/{{$producto->getUsuario->usrId}}">
                         {{'Volver a los datos de '. $producto->getUsuario->nombre .' '. $producto->getUsuario->apellido}} </a>
                 @endif
             </th>
 
-            <th colspan="8">{!! $productos->render() !!} </th>
+            <th role="columnheader" colspan="8">{!! $productos->render() !!} </th>
 
             </tbody>
         </table>

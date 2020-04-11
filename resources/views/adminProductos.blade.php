@@ -8,43 +8,47 @@
 
     <div class="{{--card bg-light col-md-11 mt-1 p-1 --}} mx-3">
         <div><h1>@yield('h1')</h1></div>
-    <table border="2px" class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
-        <thead class="thead-dark">
-        <tr class="mr-3">
-            <th>ID</th>
-            <th>Productos</th>
-            <th colspan="2"></th>
-            <th>Propietario</th>
-            <th>Ventas</th>
-            <th>Stock <br>vendido</th>
-            <th>Stock <br>disp.</th>
+    <table role="table" border="2px" class="table table-hover table-striped table-border mx-auto mt-1 p-1 col-md-12 ">
+        <thead role="rowgroup" class="thead-dark">
+
+        <tr role="row" class="mr-3">
+            <th  role="columnheader" data-id>ID</th>
+            <th  role="columnheader">Productos</th>
+            <th role="columnheader" colspan="2"></th>
+            <th  role="columnheader">Propietario</th>
+            <th  role="columnheader">Ventas</th>
+            <th  role="columnheader">Stock <br>vendido</th>
+            <th  role="columnheader">Stock <br>disp.</th>
             {{--<th>Precio</th>
-            <th>Marca</th>
-            <th>Categoria</th>
-            <th>Descripción</th>
+            <th  role="columnheader">Marca</th>
+            <th  role="columnheader">Categoria</th>
+            <th  role="columnheader">Descripción</th>
             --}}
 
-            <th colspan="2">Estado de <br>publicación</th>
+            <th role="columnheader" colspan="2">Estado de <br>publicación</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody  role="rowgroup">
         @foreach( $productos as $producto )
-            <tr>
-                <td>
-                    {{ $producto->prdId }}
+            <tr role="row">
+                <td role="cell" class="tabla-valor">
+                   <h5>{{ $producto->prdId }}</h5>
                 </td>
 
-                <td>  <img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" ></td>
+                <td role="cell" class="tabla-valor">
+                    <h5><img  src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail" width="80px" >
+                    </h5></td>
 
-                <td colspan="2"><strong>{{ $producto->prdNombre }}.</strong><br>
-                    {{ ' Precio: $'. $producto->prdPrecio }}<br>
-                    {{ 'Marca: '.$producto->getMarca->marNombre}}<br>
-                    {{ 'Categoría: '.$producto->getCategoria->catNombre }}<br>
-                    {{ 'Descripción: '.$producto->prdDescripcion }}
+                <td role="cell" class="tabla-valor" colspan="2" >
+                    <strong><h5>{{ $producto->prdNombre }}.</h5></strong><br>
+                    <h5>{{ ' Precio: $'. $producto->prdPrecio }}</h5><br>
+                    <h5>{{ 'Marca: '.$producto->getMarca->marNombre}}</h5><br>
+                    <h5>{{ 'Categoría: '.$producto->getCategoria->catNombre }}</h5><br>
+                    <h5>{{ 'Descripción: '.$producto->prdDescripcion }}</h5>
                 </td>
 
 
-                <th><a href="/admin/verPerfil/{{$producto->getUsuario->usrId}}"><strong>{{'ID. '.$producto->getUsuario->usrId}}</strong>
+                <th  role="columnheader"><a href="/admin/verPerfil/{{$producto->getUsuario->usrId}}"><strong>{{'ID. '.$producto->getUsuario->usrId}}</strong>
                     {{$producto->getUsuario->nombre .' '. $producto->getUsuario->apellido}} </a>
                     <br>
 
@@ -59,7 +63,7 @@
                         <?php $i++; ?>
                     @endif
                 @endforeach
-                <td>
+                <td role="cell" class="tabla-valor">
 
 
                     @foreach($allVentas as $venta)
@@ -79,17 +83,17 @@
                 </td>
                 {{--STOCK VENDIDO--}}
 
-                <td>
+                <td role="cell" class="tabla-valor">
 
                     {{--RECORRO CADA ESPACIO SUMANDO LA CANTIDAD DE PRODUCTOS VENDIDOS--}}
-                    {{$cant}}
+                    <h5>{{$cant}}</h5>
 
 
 
                 </td>
-                <td>{{ $producto->prdStock }}</td>
+                <td role="cell" class="tabla-valor"> {{ $producto->prdStock }}</td>
 
-                 <td colspan="2">
+                 <td role="cell" class="tabla-valor" colspan="2">
                 @if($producto->eliminado)
                         <label style="color:red;">Eliminado</label>
                     @else
@@ -102,7 +106,7 @@
 
 
 
-        <th style="border: 2px; padding-left: 50%;" colspan="9"> {{ $productos->links() }}</th>
+        <th role="columnheader" style="border: 2px; padding-left: 50%;" colspan="9"> {{ $productos->links() }}</th>
 
         </tbody>
     </table>

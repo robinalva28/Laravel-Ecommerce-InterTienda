@@ -71,3 +71,89 @@ header nav div a:hover{
    border-bottom: 3px solid rgb(91, 165, 207);
 
 }
+
+/*PRUEBA PARA HACER RESPONSIVE LAS TABLAS*/
+
+/*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+
+@media
+only screen
+and (max-width: 760px), (min-device-width: 768px)
+and (max-device-width: 1024px)  {
+
+ /*   th h3{
+        font-size: 5px;
+    }*/
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        /*ESTA BUENO DISPLAY INLINE-BLOCK*/
+        display: inline-block;
+        /*padding:3px;*/
+    }
+    tbody{
+        border: #1b4b72 2px;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin: 0 0 1rem 0;
+
+    }
+
+    tr:nth-child(odd) {
+        background: #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+
+        margin:10px;
+        border-bottom: 1px solid #1b4b72;
+        position: relative;
+        padding-left: 50%;
+
+    }
+    .tabla-valor h5{
+        /*background-color: #9dd1f2;*/
+        position: relative;
+        padding-bottom: 0px;
+        padding-top: 11px;
+        margin: 0 auto;
+    }
+
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0;
+        margin:0 auto;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /*
+    Label the data
+You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+    */
+    td:nth-of-type(1):before { content: 'Nombre'; }
+    td:nth-of-type(2):before { content: "Precio:"; }
+    td:nth-of-type(3):before { content: "Marca"; }
+    td:nth-of-type(4):before { content: "Categoria:"; }
+    td:nth-of-type(5):before { content: "Descripción"; }
+    td:nth-of-type(6):before { content: "Stock"; }
+    td:nth-of-type(7):before { content: "Imagen"; }
+    td:nth-of-type(8):before { content: ""; }
+    td:nth-of-type(9):before { content: ""; }
+    td:nth-of-type(10):before { content: ""; }
+}

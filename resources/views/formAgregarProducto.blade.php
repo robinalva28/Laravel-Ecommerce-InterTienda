@@ -9,7 +9,7 @@
 
 
 
-<div class="card bg-light col-md-7 mt-5 p-3 mx-auto ">
+<div class="card bg-light col-md-8 mt-5 p-3  mx-auto ">
     <h3><strong>@yield('h1')</strong></h3><br>
     <form action="/formAgregarProducto" method="post" enctype="multipart/form-data">
         @csrf
@@ -67,7 +67,9 @@
           {{--  <i class="far fa-plus-square fa-lg mr-2"></i>--}}
             Agregar Producto
         </button>
-        <a href="/adminUsuarioProductos" class="btn btn-outline-secondary ml-3 ">
+        <br>
+        <br>
+        <a href="/adminUsuarioProductos" class="btn btn-outline-secondary ">
             volver al panel de productos
         </a>
 
