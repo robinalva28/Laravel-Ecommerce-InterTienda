@@ -306,18 +306,31 @@ class ProductosController extends Controller
     {
         $prd = Producto::find($id);
         //dd($prd->prdIdUsuario);
-        /* =====SOLO PERMITE QUE EL USUARIO EDITE PRODUCTOS ASOCIADOS
+        /* =====SOLO PERMITE QUE EL USUARIO elimine PRODUCTOS ASOCIADOS
                         A SU ID============== */
+       // dd($prd->eliminado);
         try {
-            if ($prd->prdIdUsuario == auth()->user()->usrId) {
-
-                //dd($prd);
-                $prd->eliminado = 1;
-                $prd->save();
-                return redirect('/adminUsuarioProductos')
-                    ->with('mensaje', 'Publicación eliminada con éxito');
-
+            if (!$prd->eliminado) {
+                //dd(Auth::user()->isAdmin);
+                if($prd->prdIdUsuario == auth()->user()->usrId or Auth::user()->isAdmin ) {
+                    //dd($prd);
+                    $prd->eliminado = true;
+                    $prd->save();
+                    /*SI EL USUARIO ES ADMIN REDIRIJO A LA VISTA DE ADMINISTRADOR*/
+                    if (Auth::user()->isAdmin) {
+                        return redirect("/admin/adminUsuarioProductos/$prd->prdIdUsuario")
+                            ->with('mensaje', 'Publicación eliminada con éxito');
+                    } else {
+                        return redirect('/adminUsuarioProductos')
+                            ->with('mensaje', 'Publicación eliminada con éxito');
+                    }
+                }
             } else {
+                /*SI EL PRODUCTO YA ESTÁ ELIMINADO REDIRIJO A LA VISTA QUE CORESPONDA*/
+                if(Auth::user()->isAdmin){
+                    return redirect("/admin/adminUsuarioProductos/$prd->prdIdUsuario")
+                        ->with('mensaje', 'Ésta publicación ya está eliminada');
+                }
                 return redirect('/adminUsuarioProductos')
                     ->with('mensaje', 'Error al eliminar');
 
