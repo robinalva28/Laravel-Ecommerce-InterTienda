@@ -1,10 +1,9 @@
 
 
-<p>Proyecto hosteado en Heroku; https://guarded-gorge-96134.herokuapp.com/
-
+<p>
+Proyecto hosteado en Heroku; https://guarded-gorge-96134.herokuapp.com/
 ## COMO INGRESAR COMO ADMIN O USER
 
-## El proyecto se puede probar de dos maneras: Como usuario o administrador. 
 
 ## 1. COMO USUARIO; 
 Debe registrarse con un correo falso y contraseña de 8 caracteres como mínimo, éste usuario puede ver las publicaciones existentes pero no podrá publicar ni comprar nada porque ántes lo tiene que validar un administrador. 
