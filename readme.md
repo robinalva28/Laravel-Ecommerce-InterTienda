@@ -2,7 +2,7 @@
 
 <p>Proyecto hosteado en Heroku; https://guarded-gorge-96134.herokuapp.com/
 
-## LEER
+## COMO INGRESAR COMO ADMIN O USER
 
 ## El proyecto se puede probar de dos maneras: Como usuario o administrador. 
 
