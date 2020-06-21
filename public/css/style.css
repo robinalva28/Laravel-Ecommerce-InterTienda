@@ -136,7 +136,9 @@ and (max-device-width: 1024px)  {
         padding-left: 50%;
 
     }
-
+    .producto-peq{
+        display: inline-block;
+    }
     .tabla-valor p{
 
        /* background-color: #9dd1f2;*/
