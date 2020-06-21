@@ -18,10 +18,11 @@
 
 
             <hr class="my-4">
-            <a class="nav-link" href="/allCategorias">-Explora todas las categorías.</a>
-            <a class="nav-link" href="/allMarcas">-Explora todas las Marcas.</a>
-            <a class="nav-link" href="/todosLosProductos">-Explora todas las publicaciones.</a>
+            <a class="nav-link" href="/allCategorias">-Categorías.</a>
+            <a class="nav-link" href="/allMarcas">-Marcas.</a>
+            <a class="nav-link" href="/todosLosProductos">-Publicaciones.</a>
             <a class="nav-link" href="/perfil">-Ir a perfil.</a>
+            <a class="nav-link" href="/formAgregarProducto">-Nueva Publicación.</a>
 
         </div>
      @else
