@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href='css/style.css'>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
 
 
@@ -68,9 +69,11 @@
                             </a>
                             <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/allCategorias"><i class="fas fa-angle-double-right"></i> Por Categorías</a>
-                                <a class="dropdown-item" href="/allMarcas"><i class="fas fa-angle-double-right"></i> Por Marcas</a>
-                                <a class="dropdown-item" href="/todosLosProductos"><i class="fas fa-angle-double-right"></i> Ver Todos</a>
+                                <a class="dropdown-item" href="/todosLosProductos"><svg class="bi bi-basket-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
+                                    </svg> Ver Todas</a>
+                                <a class="dropdown-item" href="/allCategorias"><i class="fas fa-angle-double-right"></i>Categorías</a>
+                                <a class="dropdown-item" href="/allMarcas"><i class="fas fa-angle-double-right"></i>Marcas</a>
                                 <a class="dropdown-item" href="/formAgregarProducto"> <i class="fas fa-folder-plus"></i> Nueva publicación</a>
                                 <a class="dropdown-item" href="/adminUsuarioProductos"><i class="fas fa-folder"></i> Mis publicaciones</a>
 
@@ -184,11 +187,11 @@
                         <a href="#!"><i class="fab fa-instagram" ></i></a>
                     </li>
                     <li>
-                        <i class="far fa-envelope" > <a href="mailto:mitienda@gmail.com">mitienda@gmail.com</a></i>
+                        <i class="far fa-envelope" > <a href="mailto:robinnet28@gmail.com">robinnet28@gmail.com</a></i>
                         ​
                     </li>
                     <li>
-                        <i class="fas fa-phone" > 11-0123-4561</i>
+                        <i class="fas fa-phone" > 11-6489-7700</i>
                     </li>
                 </ul>
 
