@@ -11,7 +11,7 @@
     <link rel="icon" href="{{asset('img/logo2.png')}}" type="image/x-icon">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href='css/style.css'>
     <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
 
 
@@ -202,7 +202,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright Equipo 8 Digital House & Robinson Alvarez Company
+    <div class="footer-copyright text-center py-3">© 2020 Robinson Alvarez - Digital House
 
     </div>
     <!-- Copyright -->

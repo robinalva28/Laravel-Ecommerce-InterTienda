@@ -28,14 +28,14 @@
 
     <!--QUIENES SOMOS-->
     <div class="jumbotron">
-        <h1 class="display-4">HOME- QUIENES SOMOS</h1>
+        <h1 class="display-4">HOME - QUIENES SOMOS</h1>
 
         <hr class="my-4">
         <p>Bienvenidos al Círculo Privado de Compra-Venta de Artículos.</p>
         <p>Tenemos algo que vender, quizá mi compañero de oficina o de la oficina de al lado está buscando justo lo mismo, sin gastos de envíos ni comisiones. Conociendo a quien nos lo vende así nace InterTienda, un círculo de transacciones de productos dentro de tu ámbito de trabajo.</p>
         <p>¿Cómo acceder? Sencillo,
             <a href="/register">te registrás haciendo click aquí</a>
-            y un administrador (me escribes cuando te registres, aquí Robinson) te asigna una empresa y valida tu cuenta {{--valida que pertenecés a la empresa--}}, luego de ésto {{--te llega el email y--}} ya puedes publicar y ver los productos.</p>
+            y un administrador valida que pertenecés a la empresa, luego de ésto {{--te llega el email y--}} ya puedes publicar y ver los productos.</p>
 
     </div>
 
