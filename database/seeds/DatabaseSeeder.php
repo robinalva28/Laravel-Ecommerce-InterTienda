@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             );
         DB::table('marcas')->insert([
              'marNombre'=>'Quicksilver']
-            [);
+            );
         DB::table('marcas')->insert([
              'marNombre'=>'Zara']
             );
@@ -43,12 +43,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
 /*CREACION DE VARIAS CATEGORIAS*/
-        
+
         DB::table('categorias')->insert([
               'catNombre'=>'Teconología',
               'catDescripcion'=>'Cualquier equipo tecnológico que quieras comprar',
               'catImagen'=>'cateroria_tecnologia.png' ]);
-        DB::table('categorias')->insert([ [
+        DB::table('categorias')->insert([ 
              'catNombre'=>'Vestimenta',
               'catDescripcion'=>'Cualquier ropa o calzado que quieras comprar',
               'catImagen'=>'cateroria_vestimenta.png' ]);
