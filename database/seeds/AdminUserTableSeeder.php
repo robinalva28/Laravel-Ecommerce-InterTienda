@@ -12,7 +12,7 @@ class AdminUserTableSeeder extends Seeder
     public function run()
     {
         //
-
+        DB::table('usuarios')->truncate();
         DB::table('usuarios')->insert([
             'nombre' => 'Administrador',
             'apellido' => 'Supremo',

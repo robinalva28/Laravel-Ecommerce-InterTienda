@@ -180,7 +180,7 @@ class ProductosController extends Controller
         if ($request->file('prdImagen')) {
             //$imageName = time().'.'.request()->prdImagen->getClientOriginalExtension();
             $imagen = $request->file('prdImagen');
-            //$imagen->getClientOriginalExtension();
+            $imagen->getClientOriginalExtension();
             $imageName = $request->prdImagen->getClientOriginalName();
             $request->prdImagen->move(public_path('images/productos'), $imageName);
         }
