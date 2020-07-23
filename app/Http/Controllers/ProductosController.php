@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\User;
 use App\Venta;
 use Illuminate\Support\Facades\Auth;
@@ -175,16 +176,30 @@ class ProductosController extends Controller
         $validacion = $request->validate([
             'prdImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096'
         ]);
+        // ruta de las imagenes guardadas
+        $ruta = public_path().'/images/productos/';
 
-        $imageName = 'noDisponible.png';
+        //$imageName = 'noDisponible.png';
         if ($request->file('prdImagen')) {
-            //$imageName = time().'.'.request()->prdImagen->getClientOriginalExtension();
-            $imagen = $request->file('prdImagen');
-            $imagen->getClientOriginalExtension();
-            $imageName = $request->prdImagen->getClientOriginalName();
-            $request->prdImagen->move(public_path('images/productos'), $imageName);
-        }
+            $imagenOriginal = $request->file('prdImagen');
 
+            // crear instancia de imagen
+            $imagen = Image::make($imagenOriginal);
+
+            // generar un nombre aleatorio para la imagen
+            $temp_name = $this->random_string() . '.' . $imagenOriginal->getClientOriginalExtension();
+
+            // redimensionar el tamaño de la imagen
+            $imagen->resize(500,500);
+
+            // guardar imagen
+            //save( [ruta], [calidad])
+            $imagen->save($ruta . $temp_name, 100);
+
+            /*$imagen->getClientOriginalExtension();
+            $imageName = $request->prdImagen->getClientOriginalName();
+            $request->prdImagen->move(public_path('images/productos'), $imageName);*/
+        }
 
            $producto = Producto::create([
             'prdNombre' => $request['prdNombre'],
@@ -193,7 +208,7 @@ class ProductosController extends Controller
             'prdIdCategoria' => $request['catId'],
             'prdPrecio' => $request['prdPrecio'],
             'prdIdUsuario' => $request['usrId'],
-            'prdImagen' => $imageName,
+            'prdImagen' => $temp_name,
             'prdStock' => $request['prdStock'],
             'prdIdUsuario'=>Auth::user()->usrId,
                'eliminado' => false
@@ -202,6 +217,15 @@ class ProductosController extends Controller
             return redirect('adminUsuarioProductos'/*,'ProductosController@index'*/)
                 ->with('mensaje', 'Publicación '.$producto->prdNombre.' creada con éxito');
 
+    }
+    //Función Random String
+    protected function random_string() {
+       $key = '';
+       $keys = array_merge( range('a','z'), range(0,9) );
+       for($i=0; $i<10; $i++) {
+          $key .= $keys[array_rand($keys)];
+       }
+       return $key;
     }
     /**
      * Display the specified resource.

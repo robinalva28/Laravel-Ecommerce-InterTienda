@@ -97,11 +97,11 @@
                                     {{--===================================================================--}}
 
                                 @if(Auth::user()->isAdmin)
-                                    <a class="dropdown-item" href="/admin/adminProductos">PUBLICACIONES</a>
-                                    <a class="dropdown-item" href="/admin/adminListaUsuarios">USUARIOS EN BD</a>
-                                    <a class="dropdown-item" href="/admin/adminMarcas">MARCAS</a>
-                                    <a class="dropdown-item" href="/admin/adminCategorias">CATEGORIAS</a>
-                                    <a class="dropdown-item" href="/admin/adminEmpresas">EMPRESAS</a>
+                                    <a class="dropdown-item" style="color:#4c110f;" href="/admin/adminProductos"><strong>PUBLICACIONES</strong></a>
+                                    <a class="dropdown-item" style="color:#4c110f;" href="/admin/adminListaUsuarios"><strong>USUARIOS EN BD</strong></a>
+                                    <a class="dropdown-item" style="color:#4c110f;" href="/admin/adminMarcas"><strong>MARCAS</strong></a>
+                                    <a class="dropdown-item" style="color:#4c110f;" href="/admin/adminCategorias"><strong>CATEGORIAS</strong></a>
+                                    <a class="dropdown-item" style="color:#4c110f;" href="/admin/adminEmpresas"><strong>EMPRESAS</strong></a>
                                     @endif
                                         <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">

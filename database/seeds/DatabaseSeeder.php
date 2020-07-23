@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
               'catNombre'=>'Teconología',
               'catDescripcion'=>'Cualquier equipo tecnológico que quieras comprar',
               'catImagen'=>'cateroria_tecnologia.png' ]);
-        DB::table('categorias')->insert([ 
+        DB::table('categorias')->insert([
              'catNombre'=>'Vestimenta',
               'catDescripcion'=>'Cualquier ropa o calzado que quieras comprar',
               'catImagen'=>'cateroria_vestimenta.png' ]);
