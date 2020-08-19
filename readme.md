@@ -5,6 +5,7 @@
 
 ## COMO INGRESAR COMO ADMIN O USER
 Proyecto hosteado en Heroku; http://intertienda.herokuapp.com/
+Video explicativo en Youtube: https://www.youtube.com/watch?v=m3I7kk6peG4
 
 ## 1. COMO USUARIO; 
 ingresa con <strong>MAIL:usuario@usuario.com, PASS: 123456789</strong> o puedes registrarse con un correo falso y contraseña de 8 caracteres como mínimo, éste usuario puede ver las publicaciones existentes pero no podrá publicar ni comprar nada porque ántes lo tiene que validar un administrador. 
