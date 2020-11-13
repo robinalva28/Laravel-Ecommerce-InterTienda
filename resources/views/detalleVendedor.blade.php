@@ -25,7 +25,12 @@
 
         <div class="form-group">
             <label for="empresa">Empresa:
+                @if($venta->getVendedor->getEmpresa)
                     <td>{{$venta->getVendedor->getEmpresa->empNombre}}</td>
+                @else
+                    <td>Sin Empresa</td>
+                @endif
+
             </label>
         </div>
 

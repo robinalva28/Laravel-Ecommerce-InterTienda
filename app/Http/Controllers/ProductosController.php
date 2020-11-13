@@ -177,18 +177,19 @@ class ProductosController extends Controller
             'prdImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096'
         ]);
         // ruta de las imagenes guardadas
-        $ruta = public_path().'/images/productos/';
-
+        $ruta = public_path().'/images/productos/'; //ACA ME TRAE LA RUTA LOCAL DESDE RAIZ
+        //$ruta = '/images/productos/';
+        //dd($ruta);
         //$imageName = 'noDisponible.png';
         if ($request->file('prdImagen')) {
             $imagenOriginal = $request->file('prdImagen');
-
+            //dd(auth()->user()->nombre); OBTENGO EL NOMBRE DEL USUARIO LOGUEADO PARA CONCATENARLO AL NOMBRE DE LA IMAGEN
             // crear instancia de imagen
             $imagen = Image::make($imagenOriginal);
 
             // generar un nombre aleatorio para la imagen
-            $temp_name = $this->random_string() . '.' . $imagenOriginal->getClientOriginalExtension();
-
+            $temp_name = $this->random_string() . auth()->user()->nombre .'.' . $imagenOriginal->getClientOriginalExtension();
+            //dd($temp_name);
             // redimensionar el tamaño de la imagen
             $imagen->resize(500,500);
 
@@ -199,6 +200,7 @@ class ProductosController extends Controller
             /*$imagen->getClientOriginalExtension();
             $imageName = $request->prdImagen->getClientOriginalName();
             $request->prdImagen->move(public_path('images/productos'), $imageName);*/
+           // $request->prdImagen->move(public_path('images/productos'), $temp_name);
         }
 
            $producto = Producto::create([

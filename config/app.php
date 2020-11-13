@@ -136,14 +136,15 @@ return [
 
     'providers' => [
 
-        Intervention\Image\ImageServiceProvider::class,
+       /* Intervention\Image\ImageServiceProvider::class,*/ //COMENTADO A MANO
         /*
         / Aliases
         */
-        'Image' => Intervention\Image\Facades\Image::class,
+     /*   'Image' => Intervention\Image\Facades\Image::class,*/ //COMENTADO A MANO
         /*
          * Laravel Framework Service Providers...
          */
+
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
