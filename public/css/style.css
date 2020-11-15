@@ -65,9 +65,21 @@ section h5{
     transform: scale(1.15);
 }
 div.row a.zoom{
-    background:white;
+    background: rgba(0,71,186,0.2);
+
     border-radius: 4px;
     margin-right: 1vh;
+    color:black;
+}
+/*BOTONES EN MARCAS*/
+div a i.zoom{
+    background: rgba(0,71,186,0.1);
+    border-radius: 4px;
+    margin-right: 1vh;
+    color:black;
+    font-size: 2vh;
+    margin-bottom: 1vh;
+
 }
 
 div.row a.zoom:hover{

@@ -59,10 +59,9 @@
                         <div class="modal-body"  >
                             <div class="card " style="width: auto;">
                                 <img src="{{ asset('images/productos') }}/{{$producto->prdImagen}}" class="card-img-top " alt="...">
-                                <div class="card-body ">
-                                    <div class="form-group">
-                                        <label>Stock: {{ $producto->prdStock }}</label><br>
-
+                                <div class="card-body "style="background: #b9bbbe">
+                                    <div class="form-group" >
+                                        <label>Stock: <strong>{{ $producto->prdStock }}</strong></label><br>
                                     </div>
                                 </div>
                             </div>

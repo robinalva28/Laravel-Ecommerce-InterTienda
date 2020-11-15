@@ -13,8 +13,10 @@
     @endif
 
     @if(Auth::user())
-        <div class="jumbotron ">
+        <div class="jumbotron">
             <h1 class="display-4">¡HOLA {{ strtoupper(' ' . Auth::user()->nombre) }}!</h1>
+
+            <p>Bienvenido/a al Círculo Privado de Compra-Venta de Artículos.</p>
 
 
             <hr class="my-4">

@@ -36,21 +36,30 @@
         </div>
 
         <div class="form-group">
-            <label>Categoría: antes {{$producto->getCategoria->catNombre}}</label>
+            <label>Categoría:</label>
             <select name="prdIdCategoria" class="form-control" required>
                 <option value="{{$producto->getCategoria->catId}}">Seleccione una categoría</option>
+
                 @foreach( $categorias as $categoria )
+                    @if($producto->getCategoria->catNombre == $categoria->catNombre)
+                        <option value="{{ $categoria->catId }}" selected>{{ $categoria->catNombre }}</option>
+                    @else
                     <option value="{{ $categoria->catId }}">{{ $categoria->catNombre }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>
 
         <div class="form-group">
-            <label>Marca: antes {{$producto->getMarca->marNombre}}</label>
+            <label>Marca:</label>
             <select name="prdIdMarca" class="form-control" required>
-                <option value="{{$producto->getCategoria->marId}}">Seleccione una marca</option>
+                <option value="{{$producto->getMarca->marId}}">Seleccione una marca</option>
                 @foreach ( $marcas as $marca )
-                    <option value="{{ $marca->marId }}">{{ $marca->marNombre }}</option>
+                    @if($producto->getMarca->marNombre == $marca->marNombre)
+                        <option value="{{ $marca->marId  }}" selected>{{ $marca->marNombre  }}</option>
+                    @else
+                        <option value="{{$marca->marId  }}">{{ $marca->marNombre }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>

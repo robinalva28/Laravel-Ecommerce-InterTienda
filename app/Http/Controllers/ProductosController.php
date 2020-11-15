@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Hamcrest\BaseDescription;
 use Image;
 use App\User;
 use App\Venta;
@@ -253,6 +254,7 @@ class ProductosController extends Controller
 
         $Productos = Marca::all();
         $categorias = Categoria::all();
+
 
         $producto = Producto::find($id);
 

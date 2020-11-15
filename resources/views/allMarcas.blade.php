@@ -44,22 +44,22 @@
             <h2 class="mx-auto"><strong><h1>@yield('h1')</h1></strong></h2>
 
             <hr class="my-4">
-            <div class="justify-content-center px-4 py-1 ml-4">
+            <div class="container">
             @foreach($marcas as $marca)
 
-                <a href="/mar/{{$marca->marId}}" style="color: #1d643b; font-size: 3vh" class="nav-item just" >
+                <a href="/mar/{{$marca->marId}}"  class="nav-item just" >
                     <i class="zoom fas fa-greater-than">{{$marca->marNombre}}</i> </a>
                 <br>
 
             @endforeach
-            </div>
 
 
 
-            <a href="/todosLosProductos" style="color: #1d643b; font-size: 3vh" class="px-4 ml-4 nav-item" >
+
+            <a href="/todosLosProductos"  class="px-4 ml-4 nav-item" >
                 <i class=" zoom fas fa-greater-than">Todas</i></a>
             <br>
-
+            </div>
         </div>
     @endif
   @endsection
