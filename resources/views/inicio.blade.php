@@ -13,18 +13,23 @@
     @endif
 
     @if(Auth::user())
-        <div class="jumbotron">
+        <div class="jumbotron ">
             <h1 class="display-4">¡HOLA {{ strtoupper(' ' . Auth::user()->nombre) }}!</h1>
 
 
             <hr class="my-4">
-            <a class="nav-link" href="/allCategorias">-Categorías.</a>
-            <a class="nav-link" href="/allMarcas">-Marcas.</a>
-            <a class="nav-link" href="/todosLosProductos">-Publicaciones.</a>
-            <a class="nav-link" href="/perfil">-Ir a perfil.</a>
-            <a class="nav-link" href="/formAgregarProducto">-Nueva Publicación.</a>
-
+            <div class="container">
+                <div class="row">
+                    <a class="nav-link col-2 zoom" href="/allCategorias">CATEGORIAS</a>
+                    <a class="nav-link col-2 zoom" href="/allMarcas">MARCAS</a>
+                    <a class="nav-link col-2 zoom" href="/todosLosProductos">PUBLICACIONES</a>
+                    <a class="nav-link col-2 zoom" href="/formAgregarProducto">PUBLICAR</a>
+                    <a class="nav-link col-2 zoom" href="/perfil">MI PERFIL</a>
+                </div>
+            </div>
         </div>
+
+
      @else
 
     <!--QUIENES SOMOS-->

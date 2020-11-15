@@ -89,7 +89,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   {{--  <a class="dropdown-item" href="/allCategorias">Ver Categorías</a>--}}
-                                       <a class="dropdown-item" href="/compras"> <i class="fab fa-linux"></i> Mis Compras</a>
+                                    <a class="dropdown-item" href="/compras"> <i class="fab fa-linux"></i> Mis Compras</a>
                                     <a class="dropdown-item" href="/ventas"> <i class="fas fa-handshake"></i> Mis Ventas</a>
                                     <a class="dropdown-item" href="/perfil"> <i class="far fa-edit"></i> Mi cuenta</a>
                                     {{--===================================================================--}}

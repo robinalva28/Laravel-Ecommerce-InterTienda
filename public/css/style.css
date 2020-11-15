@@ -64,6 +64,16 @@ section h5{
 {
     transform: scale(1.15);
 }
+div.row a.zoom{
+    background:white;
+    border-radius: 4px;
+    margin-right: 1vh;
+}
+
+div.row a.zoom:hover{
+    background: #dae1e7;
+    border-radius: 6px;
+}
 
 
 
