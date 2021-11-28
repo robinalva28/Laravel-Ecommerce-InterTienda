@@ -8,7 +8,7 @@ Proyecto hosteado en Heroku; http://intertienda.herokuapp.com/
 Video explicativo en Youtube: https://www.youtube.com/watch?v=m3I7kk6peG4
 
 ## 1. COMO USUARIO; 
-ingresa con <strong>MAIL:usuario@usuario.com, PASS: 123456789</strong> o puedes registrarse con un correo falso y contraseña de 8 caracteres como mínimo, éste usuario puede ver las publicaciones existentes pero no podrá publicar ni comprar nada porque ántes lo tiene que validar un administrador. 
+ingresa con <strong>MAIL:usuario@usuario.com, PASS: 123456789</strong> o puedes registrarse con un correo falso y contraseña de 8 caracteres como mínimo, éste usuario puede ver las publicaciones existentes pero no podrá publicar ni comprar nada porque antes lo tiene que validar un administrador. Abajo explico como puedes entrar siendo administrador y habilitar tu usuario recién creado.
 
 ## Un usuario habilitado puede:
 
@@ -38,6 +38,8 @@ El administrador tiene accesos que el usuario no tiene, como lo son;
 -PUBLICACIONES: ver la lista de todas las publicaciones en BD con stock, ventas y stock total vendido, y si está eliminada o en linea, también puede eliminar las publicaciones de cualquier usuario.
 
 -ver todas las publicaciones de un usuario específico.
+    
+    Para habilitar un usuario debes crear una empresa con el mismo CUIL que le pusiste al usuario cuando lo creaste, luego vas a la sección USUARIOS EN BD y haces click en el botón HABILITAR correspondiente al usuario recién creado.
 
 Gracias
 
